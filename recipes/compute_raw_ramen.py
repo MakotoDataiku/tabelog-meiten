@@ -6,10 +6,10 @@ from dataiku import pandasutils as pdu
 from tabelog import Tabelog
 
 # -------------------------------------------------------------------------------- NOTEBOOK-CELL: CODE
-raw_ramen_df = Tabelog(base_url="https://tabelog.com/tokyo/rstLst/ramen/", test_mode=True, p_ward='東京都内')
+raw_ramen = Tabelog(base_url="https://tabelog.com/tokyo/rstLst/ramen/", test_mode=True, p_ward='東京都内')
 
 # -------------------------------------------------------------------------------- NOTEBOOK-CELL: CODE
-raw_ramen_df.df
+raw_ramen_df = raw_ramen.df
 
 # -------------------------------------------------------------------------------- NOTEBOOK-CELL: CODE
 # Write recipe outputs
