@@ -2,8 +2,8 @@
   "name": "wakati-dictionary",
   "type": "Filesystem",
   "params": {
-    "connection": "filesystem_folders",
-    "path": "${projectKey}/${odbId}",
+    "connection": "filesystem_root",
+    "path": "/usr/local/lib/mecab/dic/mecab-ipadic-neologd",
     "notReadyIfEmpty": false,
     "filesSelectionRules": {
       "mode": "ALL",
@@ -88,11 +88,11 @@
     }
   },
   "versionTag": {
-    "versionNumber": 0,
+    "versionNumber": 1,
     "lastModifiedBy": {
       "login": "admin"
     },
-    "lastModifiedOn": 1622486180893
+    "lastModifiedOn": 1622486209189
   },
   "creationTag": {
     "versionNumber": 0,
