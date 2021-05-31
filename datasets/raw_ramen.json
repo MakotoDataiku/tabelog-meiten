@@ -59,11 +59,11 @@
     "dimensions": []
   },
   "versionTag": {
-    "versionNumber": 1,
+    "versionNumber": 2,
     "lastModifiedBy": {
       "login": "admin"
     },
-    "lastModifiedOn": 1622466846064
+    "lastModifiedOn": 1622471917217
   },
   "creationTag": {
     "versionNumber": 0,
@@ -95,6 +95,10 @@
         "type": "string"
       },
       {
+        "name": "address",
+        "type": "string"
+      },
+      {
         "name": "score",
         "type": "string"
       },
@@ -108,6 +112,10 @@
       },
       {
         "name": "review",
+        "type": "string"
+      },
+      {
+        "name": "review_star",
         "type": "string"
       }
     ],
