@@ -10,7 +10,7 @@ import MeCab
 # -------------------------------------------------------------------------------- NOTEBOOK-CELL: CODE
 # Read recipe inputs
 raw_ramen = dataiku.Dataset("raw_ramen")
-df = raw_ramen.get_dataframe(limit=100)
+df = raw_ramen.get_dataframe()
 df_ramen = df.groupby(['store_name','score','review_cnt'])['review'].apply(list).apply(' '.join).reset_index().sort_values('score', ascending=False)
 
 w2v_folder = dataiku.Folder("m9JZdV7b").get_path()
