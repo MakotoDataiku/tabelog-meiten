@@ -59,11 +59,11 @@
     "dimensions": []
   },
   "versionTag": {
-    "versionNumber": 0,
+    "versionNumber": 1,
     "lastModifiedBy": {
       "login": "admin"
     },
-    "lastModifiedOn": 1622465271762
+    "lastModifiedOn": 1622466846064
   },
   "creationTag": {
     "versionNumber": 0,
@@ -85,8 +85,33 @@
     }
   },
   "schema": {
-    "columns": [],
-    "userModified": true
+    "columns": [
+      {
+        "name": "store_id",
+        "type": "string"
+      },
+      {
+        "name": "store_name",
+        "type": "string"
+      },
+      {
+        "name": "score",
+        "type": "string"
+      },
+      {
+        "name": "ward",
+        "type": "string"
+      },
+      {
+        "name": "review_cnt",
+        "type": "string"
+      },
+      {
+        "name": "review",
+        "type": "string"
+      }
+    ],
+    "userModified": false
   },
   "dkuProperties": [],
   "metrics": {
