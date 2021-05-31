@@ -24,18 +24,18 @@
       "items": [
         {
           "ref": "raw_ramen",
-          "appendMode": false
+          "appendMode": true
         }
       ]
     }
   },
   "labels": [],
   "versionTag": {
-    "versionNumber": 15,
+    "versionNumber": 16,
     "lastModifiedBy": {
       "login": "admin"
     },
-    "lastModifiedOn": 1622472410671
+    "lastModifiedOn": 1622475611730
   },
   "creationTag": {
     "versionNumber": 0,
