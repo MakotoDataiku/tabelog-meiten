@@ -2,7 +2,6 @@
 import dataiku
 import pandas as pd, numpy as np
 from dataiku import pandasutils as pdu
-import requests
 from tabelog import Tabelog
 
 raw_ramen_df = Tabelog(base_url="https://tabelog.com/tokyo/rstLst/ramen/", test_mode=True, p_ward='東京都内')
