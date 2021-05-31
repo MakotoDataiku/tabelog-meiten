@@ -52,12 +52,14 @@
     },
     "codeEnvs": {
       "python": {
-        "mode": "INHERIT",
-        "preventOverride": false
+        "mode": "EXPLICIT_ENV",
+        "preventOverride": false,
+        "envName": "ebay-scraping"
       },
       "r": {
         "mode": "INHERIT",
-        "preventOverride": false
+        "preventOverride": false,
+        "envName": "R-makoto"
       },
       "julia": {
         "mode": "INHERIT",
@@ -175,6 +177,13 @@
     "displayedState": {
       "checks": []
     }
+  },
+  "versionTag": {
+    "versionNumber": 0,
+    "lastModifiedBy": {
+      "login": "admin"
+    },
+    "lastModifiedOn": 1622465563692
   },
   "creationTag": {
     "versionNumber": 0,
