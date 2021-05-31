@@ -54,7 +54,7 @@
       "python": {
         "mode": "EXPLICIT_ENV",
         "preventOverride": false,
-        "envName": "ebay-scraping"
+        "envName": "japan-nlp"
       },
       "r": {
         "mode": "INHERIT",
@@ -179,11 +179,11 @@
     }
   },
   "versionTag": {
-    "versionNumber": 0,
+    "versionNumber": 1,
     "lastModifiedBy": {
       "login": "admin"
     },
-    "lastModifiedOn": 1622465563692
+    "lastModifiedOn": 1622465612755
   },
   "creationTag": {
     "versionNumber": 0,
