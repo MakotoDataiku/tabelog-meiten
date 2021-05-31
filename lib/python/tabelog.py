@@ -19,7 +19,9 @@ class Tabelog:
         self.ward = p_ward
         self.review_cnt = 0
         self.review = ''
-        self.columns = ['store_id', 'store_name', 'score', 'ward', 'review_cnt', 'review']
+        self.review_star = ''
+        self.address = ''
+        self.columns = ['store_id', 'store_name', 'address', 'score', 'ward', 'review_cnt', 'review', 'review_star']
         self.df = pd.DataFrame(columns=self.columns)
         self.__regexcomp = re.compile(r'\n|\s') # \nは改行、\sは空白
 
@@ -121,6 +123,14 @@ class Tabelog:
             print('  食べログ評価が3.5未満のため処理対象外')
             self.store_id_num -= 1
             return
+        
+        # 店の住所を取得
+        address_table = soup.find_all('p', class_='rstinfo-table__address')
+        address_table = address_table[0]
+        address = ''
+        for ad in address_table.find_all('span'):
+            address += ad.text
+        self.address = address
 
         # レビュー一覧URL取得
         #<a class="mainnavi" href="https://tabelog.com/tokyo/A1304/A130401/13143442/dtlrvwlst/"><span>口コミ</span><span class="rstdtl-navi__total-count"><em>60</em></span></a>
@@ -200,9 +210,17 @@ class Tabelog:
             review = ''
         else:
             review = review[0].p.text.strip() # strip()は改行コードを除外する関数
+        
+        # 各レビューの★の数を取得
+        review_star = soup.find_all('b', class_='c-rating-v2__val c-rating-v2__val--strong rvw-item__ratings--val')
+        if len(review_star) == 0:
+            review_star = ''
+        else:
+            review_star = review_star[0].string
 
         #print('\t\t口コミテキスト：', review)
         self.review = review
+        self.review_star = review_star
 
         # データフレームの生成
         self.make_df()
@@ -210,6 +228,6 @@ class Tabelog:
 
     def make_df(self):
         self.store_id = str(self.store_id_num).zfill(8) #0パディング
-        se = pd.Series([self.store_id, self.store_name, self.score, self.ward, self.review_cnt, self.review], self.columns) # 行を作成
+        se = pd.Series([self.store_id, self.store_name, self.address, self.score, self.ward, self.review_cnt, self.review, self.review_star], self.columns) # 行を作成
         self.df = self.df.append(se, self.columns) # データフレームに行を追加
         return
