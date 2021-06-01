@@ -64,8 +64,5 @@ vocab_df = pd.DataFrame(vectors, index=vocab)
 
 
 
-py_recipe_output = dataiku.Dataset("")
+py_recipe_output = dataiku.Dataset("ramen_vocab")
 py_recipe_output.write_with_schema(vocab_df)
-
-
-

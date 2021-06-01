@@ -42,17 +42,21 @@
         {
           "ref": "aLTWBozg",
           "appendMode": false
+        },
+        {
+          "ref": "ramen_vocab",
+          "appendMode": false
         }
       ]
     }
   },
   "labels": [],
   "versionTag": {
-    "versionNumber": 6,
+    "versionNumber": 7,
     "lastModifiedBy": {
       "login": "admin"
     },
-    "lastModifiedOn": 1622551254438
+    "lastModifiedOn": 1622551289547
   },
   "creationTag": {
     "versionNumber": 0,
