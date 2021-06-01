@@ -76,6 +76,71 @@
         "column": "cluster_labels"
       },
       "alwaysShowComment": false
+    },
+    {
+      "preview": false,
+      "metaType": "PROCESSOR",
+      "disabled": false,
+      "type": "ColumnRenamer",
+      "params": {
+        "renamings": [
+          {
+            "from": "cluster_0",
+            "to": "お店の営業体制"
+          },
+          {
+            "from": "cluster_2",
+            "to": "口コミ・ウェブサイト"
+          },
+          {
+            "from": "cluster_4",
+            "to": "ラーメンの具材・素材"
+          },
+          {
+            "from": "ラーメンの具材・素材",
+            "to": "ラーメンの具材・素材・味"
+          },
+          {
+            "from": "cluster_5",
+            "to": "ラーメンの値段"
+          },
+          {
+            "from": "cluster_1",
+            "to": "お店への行き方"
+          },
+          {
+            "from": "cluster_3",
+            "to": "口コミ"
+          },
+          {
+            "from": "お店への行き方",
+            "to": "地理的な情報・営業時間"
+          },
+          {
+            "from": "お店の営業体制",
+            "to": "接客などのサービス"
+          },
+          {
+            "from": "口コミ・ウェブサイト",
+            "to": "ウェブサイト"
+          }
+        ]
+      },
+      "alwaysShowComment": false
+    },
+    {
+      "preview": false,
+      "metaType": "PROCESSOR",
+      "disabled": false,
+      "type": "ColumnsSelector",
+      "params": {
+        "columns": [
+          "cluster_labels"
+        ],
+        "keep": false,
+        "appliesTo": "SINGLE_COLUMN"
+      },
+      "alwaysShowComment": false
     }
   ],
   "maxProcessedMemTableBytes": -1,
@@ -266,6 +331,7 @@
     "word1487": 100,
     "word1488": 100,
     "word1489": 100,
+    "お店への行き方": 175,
     "word1470": 100,
     "word1471": 100,
     "word1472": 100,
@@ -446,6 +512,7 @@
     "words_concat_2003": 143,
     "words_concat_2002": 143,
     "words_concat_2001": 143,
+    "お店の営業体制": 140,
     "word1580": 100,
     "word1581": 100,
     "word1582": 100,
@@ -465,6 +532,7 @@
     "word1576": 100,
     "word1577": 100,
     "word1578": 100,
+    "ウェブサイト": 100,
     "word1579": 100,
     "word1590": 100,
     "word1591": 100,
@@ -1184,6 +1252,7 @@
     "word_1874": 100,
     "word_1871": 100,
     "word_1872": 100,
+    "口コミ・ウェブサイト": 158,
     "word_1870": 100,
     "word_1859": 100,
     "word_1868": 100,
@@ -1251,6 +1320,7 @@
     "word_1690": 100,
     "words_concat_1169": 143,
     "words_concat_1164": 143,
+    "ラーメンの具材・素材": 100,
     "words_concat_1163": 143,
     "words_concat_1162": 143,
     "words_concat_1161": 143,
@@ -1584,6 +1654,7 @@
     "words_concat_1295": 143,
     "words_concat_1294": 143,
     "words_concat_1293": 143,
+    "ラーメンの値段": 162,
     "words_concat_1299": 143,
     "words_concat_1298": 143,
     "words_concat_1297": 143,
@@ -2290,6 +2361,7 @@
     "words_concat_449": 135,
     "word_190": 100,
     "word_199": 100,
+    "お店の営業状態": 100,
     "word_196": 100,
     "word_195": 100,
     "word_198": 100,
@@ -3472,6 +3544,7 @@
     "words_concat_255": 135,
     "words_concat_256": 135,
     "words_concat_257": 135,
+    "接客などのサービス": 170,
     "words_concat_200": 135,
     "words_concat_201": 135,
     "words_concat_202": 135,
@@ -4911,6 +4984,7 @@
     "words_concat_1828": 143,
     "words_concat_1827": 143,
     "words_concat_1826": 143,
+    "ラーメンの具材・素材・味": 179,
     "word_629": 100,
     "words_concat_731": 135,
     "word482": 100,
@@ -5096,6 +5170,7 @@
     "word418": 100,
     "word419": 100,
     "words_concat_730": 135,
+    "地理的な情報・営業時間": 164,
     "words_concat_775": 135,
     "words_concat_776": 135,
     "words_concat_777": 135,
@@ -6143,6 +6218,7 @@
     "word_915": 100,
     "word_918": 100,
     "word_917": 100,
+    "口コミ": 112,
     "word_901": 100,
     "word_900": 100,
     "word_903": 100,
