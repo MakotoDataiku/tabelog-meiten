@@ -5,28 +5,13 @@
   },
   "keys": [
     {
-      "column": "store_id"
-    },
-    {
       "column": "store_name"
-    },
-    {
-      "column": "address"
-    },
-    {
-      "column": "score"
-    },
-    {
-      "column": "ward"
     },
     {
       "column": "review_cnt"
     },
     {
       "column": "review"
-    },
-    {
-      "column": "review_star"
     }
   ],
   "globalCount": false,
@@ -66,6 +51,25 @@
   },
   "outputColumnNameOverrides": {},
   "postFilter": {
+    "$status": {
+      "schema": {
+        "columns": [
+          {
+            "name": "store_name",
+            "type": "string"
+          },
+          {
+            "name": "review_cnt",
+            "type": "string"
+          },
+          {
+            "name": "review",
+            "type": "string"
+          }
+        ],
+        "userModified": false
+      }
+    },
     "distinct": false,
     "enabled": false
   }
