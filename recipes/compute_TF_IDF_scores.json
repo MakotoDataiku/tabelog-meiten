@@ -38,16 +38,21 @@
   },
   "outputs": {
     "main": {
-      "items": []
+      "items": [
+        {
+          "ref": "reviews_TF_IDF",
+          "appendMode": false
+        }
+      ]
     }
   },
   "labels": [],
   "versionTag": {
-    "versionNumber": 7,
+    "versionNumber": 8,
     "lastModifiedBy": {
       "login": "admin"
     },
-    "lastModifiedOn": 1622566830524
+    "lastModifiedOn": 1622566833659
   },
   "creationTag": {
     "versionNumber": 0,
