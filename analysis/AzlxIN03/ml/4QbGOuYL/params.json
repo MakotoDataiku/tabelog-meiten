@@ -2409,7 +2409,7 @@
     {
       "def": {
         "type": "pivot_table",
-        "variant": "normal",
+        "variant": "colored",
         "name": "Count by cluster_labels and words",
         "userEditedName": false,
         "genericDimension0": [],
