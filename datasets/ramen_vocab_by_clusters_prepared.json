@@ -59,11 +59,11 @@
     "dimensions": []
   },
   "versionTag": {
-    "versionNumber": 1,
+    "versionNumber": 2,
     "lastModifiedBy": {
       "login": "admin"
     },
-    "lastModifiedOn": 1622556323081
+    "lastModifiedOn": 1622557155182
   },
   "creationTag": {
     "versionNumber": 0,
@@ -87,31 +87,27 @@
   "schema": {
     "columns": [
       {
-        "name": "cluster_labels",
+        "name": "接客などのサービス",
         "type": "string"
       },
       {
-        "name": "cluster_0",
+        "name": "地理的な情報・営業時間",
         "type": "string"
       },
       {
-        "name": "cluster_1",
+        "name": "ウェブサイト",
         "type": "string"
       },
       {
-        "name": "cluster_2",
+        "name": "口コミ",
         "type": "string"
       },
       {
-        "name": "cluster_3",
+        "name": "ラーメンの具材・素材・味",
         "type": "string"
       },
       {
-        "name": "cluster_4",
-        "type": "string"
-      },
-      {
-        "name": "cluster_5",
+        "name": "ラーメンの値段",
         "type": "string"
       }
     ],
