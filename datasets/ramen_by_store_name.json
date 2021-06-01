@@ -59,11 +59,11 @@
     "dimensions": []
   },
   "versionTag": {
-    "versionNumber": 2,
+    "versionNumber": 3,
     "lastModifiedBy": {
       "login": "admin"
     },
-    "lastModifiedOn": 1622563780387
+    "lastModifiedOn": 1622563815692
   },
   "creationTag": {
     "versionNumber": 0,
@@ -99,8 +99,20 @@
         "type": "string"
       },
       {
-        "name": "count",
-        "type": "bigint"
+        "name": "score_first",
+        "type": "string"
+      },
+      {
+        "name": "ward_first",
+        "type": "string"
+      },
+      {
+        "name": "review_cnt_first",
+        "type": "string"
+      },
+      {
+        "name": "review_concat",
+        "type": "string"
       }
     ],
     "userModified": true
