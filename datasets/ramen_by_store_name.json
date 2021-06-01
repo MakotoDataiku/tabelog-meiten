@@ -59,11 +59,11 @@
     "dimensions": []
   },
   "versionTag": {
-    "versionNumber": 1,
+    "versionNumber": 2,
     "lastModifiedBy": {
       "login": "admin"
     },
-    "lastModifiedOn": 1622563764366
+    "lastModifiedOn": 1622563780387
   },
   "creationTag": {
     "versionNumber": 0,
@@ -88,6 +88,14 @@
     "columns": [
       {
         "name": "store_name",
+        "type": "string"
+      },
+      {
+        "name": "store_id_first",
+        "type": "string"
+      },
+      {
+        "name": "address_first",
         "type": "string"
       },
       {
