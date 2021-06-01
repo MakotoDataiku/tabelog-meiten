@@ -122,8 +122,9 @@
       }
     }
   },
-  "name": "「隠れた名店」発見器",
+  "name": "「隠れた名店」発見を探してみた",
   "projectStatus": "Sandbox",
+  "imgPattern": 6,
   "metrics": {
     "probes": [],
     "engineConfig": {
@@ -179,11 +180,11 @@
     }
   },
   "versionTag": {
-    "versionNumber": 1,
+    "versionNumber": 2,
     "lastModifiedBy": {
       "login": "admin"
     },
-    "lastModifiedOn": 1622465612755
+    "lastModifiedOn": 1622559318297
   },
   "creationTag": {
     "versionNumber": 0,
