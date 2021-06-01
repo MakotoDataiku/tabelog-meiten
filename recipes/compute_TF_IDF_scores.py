@@ -58,10 +58,6 @@ for doc in corpus_tfidf:
         text_tfidf.append([dictionary[word[0]],word[1]])
     texts_tfidf.append(text_tfidf)
 
-# -------------------------------------------------------------------------------- NOTEBOOK-CELL: CODE
-soted_top20
-
-# -------------------------------------------------------------------------------- NOTEBOOK-CELL: CODE
 from operator import itemgetter
 
 texts_tfidf_sorted_top20 = [] 
