@@ -77,8 +77,11 @@
       "min": false,
       "countDistinct": false,
       "avg": false,
+      "$selected": false,
       "stddev": false,
-      "first": false
+      "first": true,
+      "orderColumn": "store_id",
+      "concatSeparator": ","
     },
     {
       "last": false,
@@ -95,8 +98,11 @@
       "min": false,
       "countDistinct": false,
       "avg": false,
+      "$selected": false,
       "stddev": false,
-      "first": false
+      "first": true,
+      "orderColumn": "store_id",
+      "concatSeparator": ","
     },
     {
       "last": false,
@@ -113,8 +119,11 @@
       "min": false,
       "countDistinct": false,
       "avg": false,
+      "$selected": false,
       "stddev": false,
-      "first": false
+      "first": true,
+      "orderColumn": "store_id",
+      "concatSeparator": ","
     },
     {
       "last": false,
@@ -124,15 +133,18 @@
       "count": false,
       "$idx": 5,
       "sum": false,
-      "concat": false,
+      "concat": true,
       "type": "string",
       "concatDistinct": false,
       "sum2": false,
       "min": false,
       "countDistinct": false,
       "avg": false,
+      "$selected": false,
       "stddev": false,
-      "first": false
+      "first": false,
+      "orderColumn": "store_id",
+      "concatSeparator": ","
     },
     {
       "last": false,
@@ -153,7 +165,7 @@
       "first": false
     }
   ],
-  "globalCount": true,
+  "globalCount": false,
   "engineParams": {
     "hive": {
       "skipPrerunValidate": false,
@@ -208,8 +220,20 @@
             "type": "string"
           },
           {
-            "name": "count",
-            "type": "bigint"
+            "name": "score_first",
+            "type": "string"
+          },
+          {
+            "name": "ward_first",
+            "type": "string"
+          },
+          {
+            "name": "review_cnt_first",
+            "type": "string"
+          },
+          {
+            "name": "review_concat",
+            "type": "string"
           }
         ],
         "userModified": false
