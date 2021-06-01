@@ -78,9 +78,6 @@ for i in range(len(texts_tfidf)):
     texts_tfidf_sorted_top20.append(word_list)
 
 # -------------------------------------------------------------------------------- NOTEBOOK-CELL: CODE
-
-
-# -------------------------------------------------------------------------------- NOTEBOOK-CELL: CODE
 ramen_by_restaurant = raw_ramen_df.groupby(['store_name', 'address', 'ward', 'score', 'review_cnt'])['review'].apply(list).apply(' '.join).reset_index().sort_values('score', ascending=False)
 
 # -------------------------------------------------------------------------------- NOTEBOOK-CELL: CODE
