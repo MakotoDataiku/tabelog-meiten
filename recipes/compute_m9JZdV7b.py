@@ -55,3 +55,17 @@ word2vec_ramen_model = word2vec.Word2Vec(wakati_ramen_text, sg = 1, size = 100, 
 # -------------------------------------------------------------------------------- NOTEBOOK-CELL: CODE
 # モデルのセーブ
 word2vec_ramen_model.save(w2v_folder+"/word2vec_ramen_model.model")
+
+max_vocab = 30000 #40000にしても結果は同じだった
+vocab = list(word2vec_ramen_model.wv.vocab.keys())[:max_vocab]
+vectors = [word2vec_ramen_model.wv[word] for word in vocab]
+
+vocab_df = pd.DataFrame(vectors, index=vocab)
+
+
+
+py_recipe_output = dataiku.Dataset("")
+py_recipe_output.write_with_schema(vocab_df)
+
+
+
