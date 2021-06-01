@@ -9,8 +9,8 @@ from gensim import models
 
 # -------------------------------------------------------------------------------- NOTEBOOK-CELL: CODE
 # Read recipe inputs
-ramen_clusters_named = dataiku.Dataset("ramen_clusters_named")
-df = ramen_clusters_named.get_dataframe()
+df = dataiku.Dataset("ramen_clusters_named").get_dataframe()
+raw_ramen_df = dataiku.Dataset("raw_ramen").get_dataframe()
 
 # -------------------------------------------------------------------------------- NOTEBOOK-CELL: CODE
 list_vocabs = df[df['cluster_labels'].isin(['接客などのサービス', '具材・素材・味'])]['words_concat'].values
@@ -78,7 +78,7 @@ for i in range(len(texts_tfidf)):
     texts_tfidf_sorted_top20.append(word_list)
 
 # -------------------------------------------------------------------------------- NOTEBOOK-CELL: CODE
-raw_ramen_df = dataiku.Dataset("raw_ramen").get_dataframe()
+
 
 # -------------------------------------------------------------------------------- NOTEBOOK-CELL: CODE
 ramen_by_restaurant = raw_ramen_df.groupby(['store_name', 'address', 'ward', 'score', 'review_cnt'])['review'].apply(list).apply(' '.join).reset_index().sort_values('score', ascending=False)
@@ -97,3 +97,7 @@ ramen_by_restaurant['id'] = ['ID-' + str(i + 1).zfill(6) for i in range(len(rame
 
 # -------------------------------------------------------------------------------- NOTEBOOK-CELL: CODE
 ramen_by_restaurant = ramen_by_restaurant.reset_index(drop=True)
+
+
+py_recipe_output = dataiku.Dataset("TF_IDF_words")
+py_recipe_output.write_with_schema(ramen_by_restaurant)

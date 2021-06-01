@@ -24,6 +24,10 @@
         {
           "ref": "ramen_clusters_named",
           "deps": []
+        },
+        {
+          "ref": "raw_ramen",
+          "deps": []
         }
       ]
     }
@@ -40,11 +44,11 @@
   },
   "labels": [],
   "versionTag": {
-    "versionNumber": 2,
+    "versionNumber": 3,
     "lastModifiedBy": {
       "login": "admin"
     },
-    "lastModifiedOn": 1622566618941
+    "lastModifiedOn": 1622566686344
   },
   "creationTag": {
     "versionNumber": 0,
