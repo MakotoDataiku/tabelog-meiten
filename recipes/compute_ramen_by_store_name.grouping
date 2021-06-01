@@ -5,7 +5,18 @@
   },
   "keys": [
     {
-      "column": "store_name"
+      "countDistinct": false,
+      "min": false,
+      "avg": false,
+      "last": false,
+      "max": false,
+      "column": "store_name",
+      "count": false,
+      "sum": false,
+      "concat": false,
+      "type": "string",
+      "stddev": false,
+      "first": false
     }
   ],
   "values": [
@@ -15,15 +26,20 @@
       "firstLastNotNull": false,
       "column": "store_id",
       "count": false,
+      "$idx": 0,
       "sum": false,
       "concat": false,
+      "type": "string",
       "concatDistinct": false,
       "sum2": false,
       "min": false,
       "countDistinct": false,
       "avg": false,
+      "$selected": false,
       "stddev": false,
-      "first": false
+      "first": true,
+      "orderColumn": "store_id",
+      "concatSeparator": ","
     },
     {
       "last": false,
@@ -31,15 +47,20 @@
       "firstLastNotNull": false,
       "column": "address",
       "count": false,
+      "$idx": 1,
       "sum": false,
       "concat": false,
+      "type": "string",
       "concatDistinct": false,
       "sum2": false,
       "min": false,
       "countDistinct": false,
       "avg": false,
+      "$selected": false,
       "stddev": false,
-      "first": false
+      "first": true,
+      "orderColumn": "store_id",
+      "concatSeparator": ","
     },
     {
       "last": false,
@@ -47,8 +68,10 @@
       "firstLastNotNull": false,
       "column": "score",
       "count": false,
+      "$idx": 2,
       "sum": false,
       "concat": false,
+      "type": "string",
       "concatDistinct": false,
       "sum2": false,
       "min": false,
@@ -63,8 +86,10 @@
       "firstLastNotNull": false,
       "column": "ward",
       "count": false,
+      "$idx": 3,
       "sum": false,
       "concat": false,
+      "type": "string",
       "concatDistinct": false,
       "sum2": false,
       "min": false,
@@ -79,8 +104,10 @@
       "firstLastNotNull": false,
       "column": "review_cnt",
       "count": false,
+      "$idx": 4,
       "sum": false,
       "concat": false,
+      "type": "string",
       "concatDistinct": false,
       "sum2": false,
       "min": false,
@@ -95,8 +122,10 @@
       "firstLastNotNull": false,
       "column": "review",
       "count": false,
+      "$idx": 5,
       "sum": false,
       "concat": false,
+      "type": "string",
       "concatDistinct": false,
       "sum2": false,
       "min": false,
@@ -111,8 +140,10 @@
       "firstLastNotNull": false,
       "column": "review_star",
       "count": false,
+      "$idx": 6,
       "sum": false,
       "concat": false,
+      "type": "string",
       "concatDistinct": false,
       "sum2": false,
       "min": false,
@@ -158,8 +189,32 @@
     }
   },
   "enlargeYourBits": true,
+  "outputColumnNameOverrides": {},
   "computedColumns": [],
   "postFilter": {
+    "$status": {
+      "schema": {
+        "columns": [
+          {
+            "name": "store_name",
+            "type": "string"
+          },
+          {
+            "name": "store_id_first",
+            "type": "string"
+          },
+          {
+            "name": "address_first",
+            "type": "string"
+          },
+          {
+            "name": "count",
+            "type": "bigint"
+          }
+        ],
+        "userModified": false
+      }
+    },
     "distinct": false,
     "enabled": false
   }
