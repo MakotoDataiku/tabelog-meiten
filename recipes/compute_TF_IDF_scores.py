@@ -92,5 +92,5 @@ ramen_by_restaurant['id'] = ['ID-' + str(i + 1).zfill(6) for i in range(len(rame
 ramen_by_restaurant = ramen_by_restaurant.reset_index(drop=True)
 
 
-py_recipe_output = dataiku.Dataset("TF_IDF_words")
+py_recipe_output = dataiku.Dataset("reviews_TF_IDF")
 py_recipe_output.write_with_schema(ramen_by_restaurant)
