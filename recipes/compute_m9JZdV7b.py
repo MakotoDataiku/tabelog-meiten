@@ -60,9 +60,8 @@ max_vocab = 30000 #40000にしても結果は同じだった
 vocab = list(word2vec_ramen_model.wv.vocab.keys())[:max_vocab]
 vectors = [word2vec_ramen_model.wv[word] for word in vocab]
 
-vocab_df = pd.DataFrame(vectors, index=vocab)
-
-
+vocab_df = pd.DataFrame(vectors)
+vocab_df['words'] = vocab
 
 py_recipe_output = dataiku.Dataset("ramen_vocab")
 py_recipe_output.write_with_schema(vocab_df)
