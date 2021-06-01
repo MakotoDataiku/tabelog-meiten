@@ -26,8 +26,55 @@
     "autoRefreshSample": false
   },
   "explorationFilters": [],
-  "exploreUIParams": {},
-  "steps": [],
+  "origin": "PREPARE_RECIPE",
+  "exploreUIParams": {
+    "autoRefresh": true
+  },
+  "steps": [
+    {
+      "preview": true,
+      "metaType": "PROCESSOR",
+      "disabled": false,
+      "type": "FindReplace",
+      "params": {
+        "output": "",
+        "mapping": [
+          {
+            "from": "cluster_0",
+            "to": "接客などのサービス"
+          },
+          {
+            "from": "cluster_1",
+            "to": "地理的な情報・営業時間"
+          },
+          {
+            "from": "cluster_2",
+            "to": "ウェブサイト"
+          },
+          {
+            "from": "cluster_3",
+            "to": "口コミ"
+          },
+          {
+            "from": "cluster_4",
+            "to": "具材・素材・味"
+          },
+          {
+            "from": "cluster_5",
+            "to": "値段"
+          }
+        ],
+        "normalization": "EXACT",
+        "columns": [
+          "cluster_labels"
+        ],
+        "appliesTo": "SINGLE_COLUMN",
+        "stopAfterFirstMatch": false,
+        "matching": "SUBSTRING"
+      },
+      "alwaysShowComment": false
+    }
+  ],
   "maxProcessedMemTableBytes": -1,
   "previewMode": "ALL_ROWS",
   "vizSampling": {
@@ -35,7 +82,11 @@
     "autoRefreshSample": false
   },
   "analysisColumnData": {},
-  "columnWidthsByName": {},
+  "columnWidthsByName": {
+    "cluster_labels": 148,
+    "count": 100,
+    "words_concat": 300
+  },
   "sorting": [],
   "globalSearchQuery": "",
   "coloring": {
