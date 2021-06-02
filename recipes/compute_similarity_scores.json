@@ -32,7 +32,7 @@
     "main": {
       "items": [
         {
-          "ref": "similarity_scores",
+          "ref": "jiro_similar",
           "appendMode": false
         }
       ]
@@ -40,11 +40,11 @@
   },
   "labels": [],
   "versionTag": {
-    "versionNumber": 2,
+    "versionNumber": 3,
     "lastModifiedBy": {
       "login": "admin"
     },
-    "lastModifiedOn": 1622674191983
+    "lastModifiedOn": 1622674206948
   },
   "creationTag": {
     "versionNumber": 0,
