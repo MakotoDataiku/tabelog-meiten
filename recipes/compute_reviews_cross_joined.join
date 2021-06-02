@@ -4,43 +4,183 @@
       "table2": 1,
       "table1": 0,
       "conditionsMode": "AND",
-      "type": "LEFT",
+      "rightLimit": {
+        "decisionColumn": {},
+        "maxMatches": 1,
+        "type": "KEEP_LARGEST",
+        "enabled": false
+      },
+      "type": "CROSS",
       "outerJoinOnTheLeft": true,
-      "on": []
+      "on": [
+        {
+          "column1": {
+            "name": "store_name",
+            "table": 0
+          },
+          "dateDiffUnit": "DAY",
+          "column2": {
+            "name": "store_name",
+            "table": 1
+          },
+          "maxMatches": 1,
+          "caseInsensitive": false,
+          "maxDistance": 0,
+          "normalizeText": false,
+          "type": "EQ",
+          "strict": false
+        },
+        {
+          "column1": {
+            "name": "address",
+            "table": 0
+          },
+          "dateDiffUnit": "DAY",
+          "column2": {
+            "name": "address",
+            "table": 1
+          },
+          "maxMatches": 1,
+          "caseInsensitive": false,
+          "maxDistance": 0,
+          "normalizeText": false,
+          "type": "EQ",
+          "strict": false
+        },
+        {
+          "column1": {
+            "name": "ward",
+            "table": 0
+          },
+          "dateDiffUnit": "DAY",
+          "column2": {
+            "name": "ward",
+            "table": 1
+          },
+          "maxMatches": 1,
+          "caseInsensitive": false,
+          "maxDistance": 0,
+          "normalizeText": false,
+          "type": "EQ",
+          "strict": false
+        },
+        {
+          "column1": {
+            "name": "score",
+            "table": 0
+          },
+          "dateDiffUnit": "DAY",
+          "column2": {
+            "name": "score",
+            "table": 1
+          },
+          "maxMatches": 1,
+          "caseInsensitive": false,
+          "maxDistance": 0,
+          "normalizeText": false,
+          "type": "EQ",
+          "strict": false
+        },
+        {
+          "column1": {
+            "name": "review_cnt",
+            "table": 0
+          },
+          "dateDiffUnit": "DAY",
+          "column2": {
+            "name": "review_cnt",
+            "table": 1
+          },
+          "maxMatches": 1,
+          "caseInsensitive": false,
+          "maxDistance": 0,
+          "normalizeText": false,
+          "type": "EQ",
+          "strict": false
+        }
+      ]
     }
   ],
   "selectedColumns": [
     {
       "name": "store_name",
+      "type": "string",
       "table": 0
     },
     {
       "name": "address",
+      "type": "string",
       "table": 0
     },
     {
       "name": "ward",
+      "type": "string",
       "table": 0
     },
     {
       "name": "score",
+      "type": "double",
       "table": 0
     },
     {
       "name": "review_cnt",
+      "type": "bigint",
       "table": 0
     },
     {
       "name": "review",
+      "type": "string",
       "table": 0
     },
     {
       "name": "texts_tfidf_sorted_top20",
+      "type": "string",
       "table": 0
     },
     {
       "name": "id",
+      "type": "string",
       "table": 0
+    },
+    {
+      "name": "store_name",
+      "type": "string",
+      "table": 1
+    },
+    {
+      "name": "address",
+      "type": "string",
+      "table": 1
+    },
+    {
+      "name": "ward",
+      "type": "string",
+      "table": 1
+    },
+    {
+      "name": "score",
+      "type": "double",
+      "table": 1
+    },
+    {
+      "name": "review_cnt",
+      "type": "bigint",
+      "table": 1
+    },
+    {
+      "name": "review",
+      "type": "string",
+      "table": 1
+    },
+    {
+      "name": "texts_tfidf_sorted_top20",
+      "type": "string",
+      "table": 1
+    },
+    {
+      "name": "id",
+      "type": "string",
+      "table": 1
     }
   ],
   "engineParams": {
@@ -84,6 +224,7 @@
         "enabled": false
       },
       "autoSelectColumns": false,
+      "prefix": "x",
       "index": 0,
       "computedColumns": []
     },
@@ -93,9 +234,84 @@
         "enabled": false
       },
       "autoSelectColumns": false,
+      "prefix": "y",
       "index": 0,
       "computedColumns": []
     }
   ],
+  "computedColumns": [],
+  "postFilter": {
+    "$status": {
+      "schema": {
+        "columns": [
+          {
+            "name": "x_store_name",
+            "type": "string"
+          },
+          {
+            "name": "x_address",
+            "type": "string"
+          },
+          {
+            "name": "x_ward",
+            "type": "string"
+          },
+          {
+            "name": "x_score",
+            "type": "double"
+          },
+          {
+            "name": "x_review_cnt",
+            "type": "bigint"
+          },
+          {
+            "name": "x_review",
+            "type": "string"
+          },
+          {
+            "name": "x_texts_tfidf_sorted_top20",
+            "type": "string"
+          },
+          {
+            "name": "x_id",
+            "type": "string"
+          },
+          {
+            "name": "y_store_name",
+            "type": "string"
+          },
+          {
+            "name": "y_address",
+            "type": "string"
+          },
+          {
+            "name": "y_ward",
+            "type": "string"
+          },
+          {
+            "name": "y_score",
+            "type": "double"
+          },
+          {
+            "name": "y_review_cnt",
+            "type": "bigint"
+          },
+          {
+            "name": "y_review",
+            "type": "string"
+          },
+          {
+            "name": "y_texts_tfidf_sorted_top20",
+            "type": "string"
+          },
+          {
+            "name": "y_id",
+            "type": "string"
+          }
+        ],
+        "userModified": false
+      }
+    }
+  },
   "enableAutoCastInJoinConditions": false
 }
