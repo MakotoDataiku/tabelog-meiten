@@ -59,11 +59,11 @@
     "dimensions": []
   },
   "versionTag": {
-    "versionNumber": 1,
+    "versionNumber": 2,
     "lastModifiedBy": {
       "login": "admin"
     },
-    "lastModifiedOn": 1622671294554
+    "lastModifiedOn": 1622671348549
   },
   "creationTag": {
     "versionNumber": 0,
@@ -87,35 +87,67 @@
   "schema": {
     "columns": [
       {
-        "name": "store_name",
+        "name": "x_store_name",
         "type": "string"
       },
       {
-        "name": "address",
+        "name": "x_address",
         "type": "string"
       },
       {
-        "name": "ward",
+        "name": "x_ward",
         "type": "string"
       },
       {
-        "name": "score",
+        "name": "x_score",
         "type": "double"
       },
       {
-        "name": "review_cnt",
+        "name": "x_review_cnt",
         "type": "bigint"
       },
       {
-        "name": "review",
+        "name": "x_review",
         "type": "string"
       },
       {
-        "name": "texts_tfidf_sorted_top20",
+        "name": "x_texts_tfidf_sorted_top20",
         "type": "string"
       },
       {
-        "name": "id",
+        "name": "x_id",
+        "type": "string"
+      },
+      {
+        "name": "y_store_name",
+        "type": "string"
+      },
+      {
+        "name": "y_address",
+        "type": "string"
+      },
+      {
+        "name": "y_ward",
+        "type": "string"
+      },
+      {
+        "name": "y_score",
+        "type": "double"
+      },
+      {
+        "name": "y_review_cnt",
+        "type": "bigint"
+      },
+      {
+        "name": "y_review",
+        "type": "string"
+      },
+      {
+        "name": "y_texts_tfidf_sorted_top20",
+        "type": "string"
+      },
+      {
+        "name": "y_id",
         "type": "string"
       }
     ],
