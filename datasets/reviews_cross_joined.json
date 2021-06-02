@@ -59,11 +59,11 @@
     "dimensions": []
   },
   "versionTag": {
-    "versionNumber": 2,
+    "versionNumber": 3,
     "lastModifiedBy": {
       "login": "admin"
     },
-    "lastModifiedOn": 1622671348549
+    "lastModifiedOn": 1622672574041
   },
   "creationTag": {
     "versionNumber": 0,
@@ -91,14 +91,6 @@
         "type": "string"
       },
       {
-        "name": "x_address",
-        "type": "string"
-      },
-      {
-        "name": "x_ward",
-        "type": "string"
-      },
-      {
         "name": "x_score",
         "type": "double"
       },
@@ -120,14 +112,6 @@
       },
       {
         "name": "y_store_name",
-        "type": "string"
-      },
-      {
-        "name": "y_address",
-        "type": "string"
-      },
-      {
-        "name": "y_ward",
         "type": "string"
       },
       {
