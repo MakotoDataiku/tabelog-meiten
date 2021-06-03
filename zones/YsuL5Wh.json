@@ -3,8 +3,20 @@
   "color": "#31439C",
   "items": [
     {
+      "objectId": "trip_advisor_vocabs_clustered",
+      "objectType": "DATASET"
+    },
+    {
+      "objectId": "score_trip_advisor_vocabs",
+      "objectType": "RECIPE"
+    },
+    {
       "objectId": "trip_advisor_clustered_prepared",
       "objectType": "DATASET"
+    },
+    {
+      "objectId": "compute_ramen_clusters_named_1",
+      "objectType": "RECIPE"
     },
     {
       "objectId": "trip_advisor_vocabs_by_clusters",
@@ -12,14 +24,6 @@
     },
     {
       "objectId": "compute_ramen_vocab_by_clusters_1",
-      "objectType": "RECIPE"
-    },
-    {
-      "objectId": "trip_advisor_vocabs_clustered",
-      "objectType": "DATASET"
-    },
-    {
-      "objectId": "score_trip_advisor_vocabs",
       "objectType": "RECIPE"
     }
   ],
