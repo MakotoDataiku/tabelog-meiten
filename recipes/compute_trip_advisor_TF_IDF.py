@@ -7,68 +7,66 @@ from gensim import corpora
 from gensim import models
 import MeCab
 from gensim.models import word2vec
+from gensim.models import TfidfModel
+from operator import itemgetter
 
 # -------------------------------------------------------------------------------- NOTEBOOK-CELL: CODE
 # Read recipe inputs
-your_trip_advisor = dataiku.Dataset("your_trip_advisor")
+your_trip_advisor = dataiku.Dataset("trip_advisor_clustered_prepared")
 df = your_trip_advisor.get_dataframe()
 
 # -------------------------------------------------------------------------------- NOTEBOOK-CELL: CODE
-folder_path = dataiku.Folder("m9JZdV7b").get_path()
-model_path = folder_path + "/word2vec_ramen_model.model"
-ramen_model = word2vec.Word2Vec.load(model_path)
+tfidf_path = dataiku.Folder("tMMk2S0T").get_path() + "/tf_idf"
 
 # -------------------------------------------------------------------------------- NOTEBOOK-CELL: CODE
-wakati_folder = dataiku.Folder("0kM5kXKs").get_path()
-tagger_path = '-Owakati -d ' + wakati_folder
+list_vocabs = df[df['cluster_labels'].isin(['接客などのサービス', '具材・素材・味'])]['words_concat'].values
 
 # -------------------------------------------------------------------------------- NOTEBOOK-CELL: CODE
-tagger = MeCab.Tagger(tagger_path)#タグはMeCab.Tagger（neologd辞書）を使用
-tagger.parse('')
+ramen_word = list_vocabs[0].split(",") + list_vocabs[1].split(",")
 
 # -------------------------------------------------------------------------------- NOTEBOOK-CELL: CODE
-def tokenize_ja(text, lower):
-    node = tagger.parseToNode(str(text))
-    while node:
-        if lower and node.feature.split(',')[0] in ["名詞","形容詞"]:#分かち書きで取得する品詞を指定
-            yield node.surface.lower()
-        node = node.next
-def tokenize(content, token_min_len, token_max_len, lower):
-    return [
-        str(token) for token in tokenize_ja(content, lower)
-        if token_min_len <= len(token) <= token_max_len and not token.startswith('_')
-    ]
+ramen_dictionary_path = dataiku.Folder("POe5uF4H").get_path() + "/ramen_dictionary"
+dictionary = corpora.Dictionary.load(ramen_dictionary_path)
+corpus = list(map(dictionary.doc2bow, [ramen_word]))
 
 # -------------------------------------------------------------------------------- NOTEBOOK-CELL: CODE
-wakati_ramen_text = []
-for i in df['jp']:
-    txt = tokenize(i, 2, 10000, True)
-    wakati_ramen_text.append(txt)
+tfidf_model = TfidfModel.load(tfidf_path)
 
 # -------------------------------------------------------------------------------- NOTEBOOK-CELL: CODE
-#[w for w in sublist in wakati_ramen_text]
-vocab = [w for sublist in wakati_ramen_text for w in sublist]
+corpus_tfidf = tfidf_model[corpus]
 
 # -------------------------------------------------------------------------------- NOTEBOOK-CELL: CODE
-words = []
-vectors = []
-for word in vocab:
-    try:
-        vector = ramen_model.wv[word]
-        words.append(word)
-        vectors.append(vector)
-    except KeyError:
-        None
+corpus_tfidf
 
 # -------------------------------------------------------------------------------- NOTEBOOK-CELL: CODE
-vocab_df = pd.DataFrame(vectors)
-vocab_df['words'] = words
+# id->単語へ変換
+texts_tfidf = [] # id -> 単語表示に変えた文書ごとのTF-IDF
+for doc in corpus_tfidf:
+    text_tfidf = []
+    for word in doc:
+        text_tfidf.append([dictionary[word[0]],word[1]])
+    texts_tfidf.append(text_tfidf)
 
 # -------------------------------------------------------------------------------- NOTEBOOK-CELL: CODE
-trip_advisor_tf_idf = dataiku.Dataset("trip_advisor_vocabs")
-trip_advisor_tf_idf.write_with_schema(vocab_df)
+texts_tfidf
 
 # -------------------------------------------------------------------------------- NOTEBOOK-CELL: CODE
-#ramen_dictionary_path = dataiku.Folder("POe5uF4H").get_path() + "/ramen_dictionary"
-#dictionary = corpora.Dictionary.load(ramen_dictionary_path)
-#corpus = list(map(dictionary.doc2bow, reviews_concat))
+texts_tfidf_sorted_top20 = []
+
+# TF-IDF値を高い順に並び替え上位単語20個に絞る。
+# 各ラーメン店のレビューにおいて、TF-IDF値の高い20単語だけが残る。
+for i in range(len(texts_tfidf)):
+    soted = sorted(texts_tfidf[i], key=itemgetter(1), reverse=True)
+    soted_top20 = soted[:20]
+    word_list = []
+    for k in range(len(soted_top20)):
+        word = soted_top20[k][0]
+        word_list.append(word)
+    texts_tfidf_sorted_top20.append(word_list)
+
+# -------------------------------------------------------------------------------- NOTEBOOK-CELL: CODE
+texts_tfidf_sorted_top20
+
+# -------------------------------------------------------------------------------- NOTEBOOK-CELL: CODE
+text_folder = dataiku.Folder("FXMfF0DU").get_path()
+np.savetxt(text_folder + "/TripAdvisor_top_TFIDF_words.txt", texts_tfidf_sorted_top20[0], delimiter = ',', fmt = '%s')
