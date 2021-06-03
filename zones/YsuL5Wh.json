@@ -1,7 +1,16 @@
 {
   "name": "Cluster Trip Advisor Reviews",
   "color": "#31439C",
-  "items": [],
+  "items": [
+    {
+      "objectId": "trip_advisor_vocabs_clustered",
+      "objectType": "DATASET"
+    },
+    {
+      "objectId": "score_trip_advisor_vocabs",
+      "objectType": "RECIPE"
+    }
+  ],
   "shared": [],
   "tags": [],
   "customFields": {},
