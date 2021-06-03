@@ -3,23 +3,11 @@
   "color": "#087ABF",
   "items": [
     {
-      "objectId": "POe5uF4H",
-      "objectType": "MANAGED_FOLDER"
-    },
-    {
       "objectId": "compute_trip_advisor_TF_IDF",
       "objectType": "RECIPE"
     },
     {
       "objectId": "trip_advisor_TF_IDF",
-      "objectType": "DATASET"
-    },
-    {
-      "objectId": "compute_TF_IDF_scores",
-      "objectType": "RECIPE"
-    },
-    {
-      "objectId": "reviews_TF_IDF",
       "objectType": "DATASET"
     }
   ],
