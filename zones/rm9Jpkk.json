@@ -17,6 +17,14 @@
     {
       "objectId": "trip_advisor_vocabs",
       "objectType": "DATASET"
+    },
+    {
+      "objectId": "trip_advisor_vocabs_clustered",
+      "objectType": "DATASET"
+    },
+    {
+      "objectId": "score_trip_advisor_vocabs",
+      "objectType": "RECIPE"
     }
   ],
   "shared": [],
