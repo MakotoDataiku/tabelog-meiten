@@ -9,6 +9,14 @@
     {
       "objectId": "score_trip_advisor_vocabs",
       "objectType": "RECIPE"
+    },
+    {
+      "objectId": "trip_advisor_clustered_prepared",
+      "objectType": "DATASET"
+    },
+    {
+      "objectId": "compute_ramen_clusters_named_1",
+      "objectType": "RECIPE"
     }
   ],
   "shared": [],
