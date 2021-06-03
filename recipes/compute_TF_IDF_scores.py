@@ -41,6 +41,13 @@ dictionary = corpora.Dictionary(trainings)
 dictionary.num_docs, dictionary.num_pos
 
 # -------------------------------------------------------------------------------- NOTEBOOK-CELL: CODE
+# saving the dictionary in a folder
+# for later use
+folder_path = dataiku.Folder("POe5uF4H").get_path()
+filename = folder_path + "/ramen_dictionary"
+dictionary.save(filename)
+
+# -------------------------------------------------------------------------------- NOTEBOOK-CELL: CODE
 corpus = list(map(dictionary.doc2bow, trainings))
 
 # -------------------------------------------------------------------------------- NOTEBOOK-CELL: CODE
@@ -60,7 +67,7 @@ for doc in corpus_tfidf:
 
 from operator import itemgetter
 
-texts_tfidf_sorted_top20 = [] 
+texts_tfidf_sorted_top20 = []
 
 # TF-IDF値を高い順に並び替え上位単語20個に絞る。
 # 各ラーメン店のレビューにおいて、TF-IDF値の高い20単語だけが残る。
