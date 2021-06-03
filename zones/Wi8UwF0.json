@@ -1,7 +1,16 @@
 {
   "name": "Finding similar ramens",
   "color": "#4B8021",
-  "items": [],
+  "items": [
+    {
+      "objectId": "recommendation",
+      "objectType": "DATASET"
+    },
+    {
+      "objectId": "compute_recommendation",
+      "objectType": "RECIPE"
+    }
+  ],
   "shared": [
     {
       "objectId": "FXMfF0DU",
