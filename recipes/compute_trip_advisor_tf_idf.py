@@ -19,8 +19,6 @@ model_path = folder_path + "/word2vec_ramen_model.model"
 ramen_model = word2vec.Word2Vec.load(model_path)
 
 # -------------------------------------------------------------------------------- NOTEBOOK-CELL: CODE
-w2v_folder = dataiku.Folder("m9JZdV7b").get_path()
-text_folder = dataiku.Folder("aLTWBozg").get_path()
 wakati_folder = dataiku.Folder("0kM5kXKs").get_path()
 tagger_path = '-Owakati -d ' + wakati_folder
 
