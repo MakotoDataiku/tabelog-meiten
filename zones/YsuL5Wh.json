@@ -25,14 +25,6 @@
     {
       "objectId": "compute_ramen_vocab_by_clusters_1",
       "objectType": "RECIPE"
-    },
-    {
-      "objectId": "trip_advisor_TF_IDF",
-      "objectType": "DATASET"
-    },
-    {
-      "objectId": "compute_trip_advisor_TF_IDF",
-      "objectType": "RECIPE"
     }
   ],
   "shared": [],
