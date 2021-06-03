@@ -9,6 +9,10 @@
     {
       "objectId": "trip_advisor_TF_IDF",
       "objectType": "DATASET"
+    },
+    {
+      "objectId": "FXMfF0DU",
+      "objectType": "MANAGED_FOLDER"
     }
   ],
   "shared": [
