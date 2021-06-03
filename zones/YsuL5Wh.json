@@ -29,6 +29,10 @@
     {
       "objectId": "trip_advisor_TF_IDF",
       "objectType": "DATASET"
+    },
+    {
+      "objectId": "compute_trip_advisor_TF_IDF",
+      "objectType": "RECIPE"
     }
   ],
   "shared": [],
