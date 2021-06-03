@@ -51,7 +51,13 @@ dictionary.save(filename)
 corpus = list(map(dictionary.doc2bow, trainings))
 
 # -------------------------------------------------------------------------------- NOTEBOOK-CELL: CODE
+
 test_model = models.TfidfModel(corpus) # fit tfidf model
+
+# saving tf-idf model
+tf_idf_folder_path = dataiku.Folder("tMMk2S0T").get_path()
+path_tf_idf = tf_idf_folder_path + "/tf_idf"
+test_model.save(path_tf_idf)
 
 # -------------------------------------------------------------------------------- NOTEBOOK-CELL: CODE
 corpus_tfidf = test_model[corpus] # apply model to the corpus (just like 'transform' in scikit-learn)
