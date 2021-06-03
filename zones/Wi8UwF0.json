@@ -6,6 +6,10 @@
     {
       "objectId": "FXMfF0DU",
       "objectType": "MANAGED_FOLDER"
+    },
+    {
+      "objectId": "reviews_TF_IDF",
+      "objectType": "DATASET"
     }
   ],
   "tags": [],
