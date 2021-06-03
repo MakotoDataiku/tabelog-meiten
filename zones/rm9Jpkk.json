@@ -1,7 +1,24 @@
 {
   "name": "Get Trip Advisor Reviews",
   "color": "#F9BE40",
-  "items": [],
+  "items": [
+    {
+      "objectId": "compute_your_trip_advisor",
+      "objectType": "RECIPE"
+    },
+    {
+      "objectId": "your_trip_advisor",
+      "objectType": "DATASET"
+    },
+    {
+      "objectId": "compute_trip_advisor_tf_idf",
+      "objectType": "RECIPE"
+    },
+    {
+      "objectId": "trip_advisor_vocabs",
+      "objectType": "DATASET"
+    }
+  ],
   "shared": [],
   "tags": [],
   "customFields": {},
