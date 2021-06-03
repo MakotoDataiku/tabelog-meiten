@@ -2,7 +2,12 @@
   "name": "Finding similar ramens",
   "color": "#4B8021",
   "items": [],
-  "shared": [],
+  "shared": [
+    {
+      "objectId": "FXMfF0DU",
+      "objectType": "MANAGED_FOLDER"
+    }
+  ],
   "tags": [],
   "customFields": {},
   "checklists": {
