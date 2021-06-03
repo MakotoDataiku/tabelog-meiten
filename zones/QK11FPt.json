@@ -6,6 +6,10 @@
     {
       "objectId": "trip_advisor_clustered_prepared",
       "objectType": "DATASET"
+    },
+    {
+      "objectId": "POe5uF4H",
+      "objectType": "MANAGED_FOLDER"
     }
   ],
   "tags": [],
