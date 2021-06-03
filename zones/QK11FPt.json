@@ -2,7 +2,12 @@
   "name": "Finding similar ramens",
   "color": "#087ABF",
   "items": [],
-  "shared": [],
+  "shared": [
+    {
+      "objectId": "reviews_TF_IDF",
+      "objectType": "DATASET"
+    }
+  ],
   "tags": [],
   "customFields": {},
   "checklists": {
