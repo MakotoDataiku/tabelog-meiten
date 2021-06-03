@@ -64,12 +64,9 @@ def get_translated_reviews(url, max_page = 10):
 url = 'https://www.tripadvisor.com/Restaurant_Review-g187147-d10085290-Reviews-Kodawari_Ramen_Yokocho-Paris_Ile_de_France.html'
 
 # -------------------------------------------------------------------------------- NOTEBOOK-CELL: CODE
-trip_advisor_reviews_df = get_translated_reviews(url, max_page = 2)
+trip_advisor_reviews_df = get_translated_reviews(url, max_page = 3)
 
 # -------------------------------------------------------------------------------- NOTEBOOK-CELL: CODE
 # Write recipe outputs
 your_trip_advisor = dataiku.Dataset("your_trip_advisor")
 your_trip_advisor.write_with_schema(trip_advisor_reviews_df)
-
-# -------------------------------------------------------------------------------- NOTEBOOK-CELL: CODE
-trip_advisor_reviews_df
