@@ -6,6 +6,10 @@
     {
       "objectId": "reviews_TF_IDF",
       "objectType": "DATASET"
+    },
+    {
+      "objectId": "trip_advisor_clustered_prepared",
+      "objectType": "DATASET"
     }
   ],
   "tags": [],
