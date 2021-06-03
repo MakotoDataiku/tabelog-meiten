@@ -1,0 +1,66 @@
+{
+  "script": {
+    "steps": [],
+    "maxProcessedMemTableBytes": -1,
+    "columnsSelection": {
+      "mode": "ALL"
+    },
+    "columnWidthsByName": {
+      "store_name": 127,
+      "address": 288,
+      "ward": 100,
+      "score": 100,
+      "review_cnt": 100,
+      "review": 300,
+      "texts_tfidf_sorted_top20": 300,
+      "id": 100,
+      "similarity_score": 162
+    },
+    "coloring": {
+      "scheme": "MEANING_AND_STATUS",
+      "individualColumns": [],
+      "valueColoringMode": "HASH"
+    },
+    "sorting": [
+      {
+        "column": "similarity_score",
+        "ascending": false
+      }
+    ],
+    "analysisColumnData": {},
+    "explorationSampling": {
+      "selection": {
+        "maxStoredBytes": 104857600,
+        "timeout": -1,
+        "filter": {
+          "distinct": false,
+          "enabled": false
+        },
+        "partitionSelectionMethod": "ALL",
+        "latestPartitionsN": 1,
+        "ordering": {
+          "enabled": false,
+          "rules": []
+        },
+        "samplingMethod": "HEAD_SEQUENTIAL",
+        "maxRecords": 10000,
+        "targetRatio": 0.02,
+        "withinFirstN": -1,
+        "maxReadUncompressedBytes": -1
+      },
+      "autoRefreshSample": false,
+      "_refreshTrigger": 0
+    },
+    "vizSampling": {
+      "autoRefreshSample": false,
+      "_refreshTrigger": 0
+    },
+    "exploreUIParams": {
+      "autoRefresh": true
+    },
+    "globalSearchQuery": "",
+    "explorationFilters": [],
+    "previewMode": "ALL_ROWS"
+  },
+  "charts": []
+}
