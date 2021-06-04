@@ -65,7 +65,7 @@
     "custom_has_k": false,
     "algorithm": "KMEANS"
   },
-  "generatingModelId": "A-RAMENMEITEN-AzlxIN03-4QbGOuYL-s2-pp1-m2",
+  "generatingModelId": "A-RAMENMEITEN-AzlxIN03-4QbGOuYL-s3-pp1-m2",
   "preprocessing": {
     "reduce": {
       "kept_variance": 0.0,
@@ -2692,6 +2692,7 @@
     "extractBeforePrepare": true
   },
   "script": {
+    "contextProjectKey": "RAMENMEITEN",
     "columnsSelection": {
       "mode": "ALL"
     },
