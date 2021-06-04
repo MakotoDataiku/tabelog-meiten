@@ -45,6 +45,10 @@
     {
       "objectId": "cluster_visualized",
       "objectType": "DATASET"
+    },
+    {
+      "objectId": "compute_cluster_visualized",
+      "objectType": "RECIPE"
     }
   ],
   "shared": [],
