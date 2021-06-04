@@ -8,7 +8,7 @@
     "columnWidthsByName": {
       "store_id": 106,
       "store_name": 282,
-      "address": 204,
+      "address": 514,
       "score": 100,
       "ward": 100,
       "review_cnt": 100,
@@ -177,6 +177,7 @@
           "defaultRadius": 5.0,
           "singleShape": "FILLED_CIRCLE"
         },
+        "computeMode": "NORMAL",
         "xAxisMode": "NORMAL",
         "yAxisMode": "NORMAL",
         "pieOptions": {
