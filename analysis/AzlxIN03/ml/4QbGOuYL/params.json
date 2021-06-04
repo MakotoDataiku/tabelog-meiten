@@ -4400,7 +4400,7 @@
       "withinFirstN": -1,
       "maxReadUncompressedBytes": -1
     },
-    "instanceIdRefresher": 0
+    "instanceIdRefresher": 1
   },
   "id": "4QbGOuYL",
   "initiator": "admin",
