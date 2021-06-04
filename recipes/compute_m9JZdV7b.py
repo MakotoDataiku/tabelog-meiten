@@ -51,7 +51,7 @@ np.savetxt(text_folder + "/ramen_corpus.txt", wakati_ramen_text, fmt = '%s', del
 
 # -------------------------------------------------------------------------------- NOTEBOOK-CELL: CODE
 # モデル作成
-word2vec_ramen_model = word2vec.Word2Vec(wakati_ramen_text, sg = 1, size = 100, window = 5, min_count = 5, iter = 100, workers = 3)
+word2vec_ramen_model = word2vec.Word2Vec(wakati_ramen_text, sg = 1, size = 200, window = 5, min_count = 5, iter = 100, workers = 3)
 #sg（0: CBOW, 1: skip-gram）,size（ベクトルの次元数）,window（学習に使う前後の単語数）,min_count（n回未満登場する単語を破棄）,iter（トレーニング反復回数）
 
 # -------------------------------------------------------------------------------- NOTEBOOK-CELL: CODE
