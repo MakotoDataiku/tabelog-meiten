@@ -8,7 +8,7 @@ from clear_stop_words import clean_text
 raw_ramen = dataiku.Dataset("your_trip_advisor")
 df = raw_ramen.get_dataframe()
 
-df["review"] = df["review"].apply(clean_text)
+df["review"] = df["jp"].apply(clean_text)
 
 # Write recipe outputs
 clean_ramen = dataiku.Dataset("clean_trip_advisor")
