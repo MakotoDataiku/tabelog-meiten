@@ -17,6 +17,10 @@
     {
       "objectId": "compute_raw_ramen",
       "objectType": "RECIPE"
+    },
+    {
+      "objectId": "clean_ramen",
+      "objectType": "DATASET"
     }
   ],
   "shared": [],
