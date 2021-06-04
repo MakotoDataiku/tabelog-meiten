@@ -29,6 +29,10 @@
     {
       "objectId": "lat_lon",
       "objectType": "DATASET"
+    },
+    {
+      "objectId": "compute_lat_lon",
+      "objectType": "RECIPE"
     }
   ],
   "shared": [],
