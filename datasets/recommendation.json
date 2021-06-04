@@ -59,11 +59,11 @@
     "dimensions": []
   },
   "versionTag": {
-    "versionNumber": 2,
+    "versionNumber": 3,
     "lastModifiedBy": {
       "login": "admin"
     },
-    "lastModifiedOn": 1622814829868
+    "lastModifiedOn": 1622814849381
   },
   "creationTag": {
     "versionNumber": 0,
@@ -206,7 +206,7 @@
           "level": 8
         },
         "configuration": {
-          "code": "# Define here a function that returns the metric.\ndef process(dataset, partition_id):\n    # dataset is a dataiku.Dataset object\n    df \u003d dataset.get_dataframe().sort_values(\"similarity_score\", ascending\u003dFalse)\n    recommendations \u003d df.iloc[:5, :][\"store_name\"].values\n    \n    return {\u0027recommendations\u0027 : recommendations}\n",
+          "code": "# Define here a function that returns the metric.\ndef process(dataset, partition_id):\n    # dataset is a dataiku.Dataset object\n    df \u003d dataset.get_dataframe().sort_values(\"similarity_score\", ascending\u003dFalse)\n    recommendations \u003d df.iloc[:1, :][\"store_name\"].values[0]\n    return {\u0027recommendations\u0027 : recommendations}\n",
           "envSelection": {
             "envMode": "INHERIT"
           }
