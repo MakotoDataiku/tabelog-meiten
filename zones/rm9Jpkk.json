@@ -27,7 +27,12 @@
       "objectType": "RECIPE"
     }
   ],
-  "shared": [],
+  "shared": [
+    {
+      "objectId": "m9JZdV7b",
+      "objectType": "MANAGED_FOLDER"
+    }
+  ],
   "tags": [],
   "customFields": {},
   "checklists": {
