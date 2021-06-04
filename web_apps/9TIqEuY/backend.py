@@ -9,6 +9,7 @@ from selenium.webdriver.common.by import By
 
 PATH = "/Users/mmiyazaki/chromedriver"
 driver = webdriver.Chrome(PATH)
+driver.set_window_position(-10000,0)
 driver.implicitly_wait(10) # this lets webdriver wait 10 seconds for the website to load
 driver.get("https://tabelog.com/")
 
