@@ -2,9 +2,9 @@
   "guessPolicy": "KMEANS",
   "preprocessing": {
     "reduce": {
-      "enable": false,
-      "disable": true,
-      "kept_variance": 0.0
+      "enable": true,
+      "disable": false,
+      "kept_variance": 0.9
     },
     "outliers": {
       "method": "CLUSTER",
