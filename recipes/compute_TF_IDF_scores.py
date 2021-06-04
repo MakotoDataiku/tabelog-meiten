@@ -13,6 +13,10 @@ df = dataiku.Dataset("ramen_clusters_named").get_dataframe()
 raw_ramen_df = dataiku.Dataset("raw_ramen").get_dataframe()
 
 # -------------------------------------------------------------------------------- NOTEBOOK-CELL: CODE
+client = dataiku.api_client()
+project = client.get_project(dataiku.get_custom_variables()['projectKey'])
+project_variables = project.get_variables()
+clusters_to_select = project_variables['standard']['clusters_to_select']
 list_vocabs = df[df['cluster_labels'].isin(['営業形態', '味・具材'])]['words_concat'].values
 
 # -------------------------------------------------------------------------------- NOTEBOOK-CELL: CODE
