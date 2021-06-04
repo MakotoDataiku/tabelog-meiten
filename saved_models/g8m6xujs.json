@@ -3,7 +3,7 @@
   "rebuildBehavior": "EXPLICIT",
   "name": "Clustering ramen vocabs!",
   "contentType": "clustering/py_memory",
-  "activeVersion": "initial",
+  "activeVersion": "1622800736238",
   "conditionalOutputs": [],
   "partitioning": {
     "ignoreNonMatchingFile": false,
@@ -313,11 +313,11 @@
     "labels": []
   },
   "versionTag": {
-    "versionNumber": 0,
+    "versionNumber": 1,
     "lastModifiedBy": {
       "login": "admin"
     },
-    "lastModifiedOn": 1622732890224
+    "lastModifiedOn": 1622800763125
   },
   "creationTag": {
     "versionNumber": 0,
