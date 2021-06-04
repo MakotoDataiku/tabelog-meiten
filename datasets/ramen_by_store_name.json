@@ -1,6 +1,7 @@
 {
   "type": "Filesystem",
   "managed": true,
+  "shortDesc": "Concatenate all the reviews for each restaurant(to make one long review for each restaurant)",
   "formatType": "csv",
   "checklists": {
     "checklists": []
@@ -59,11 +60,11 @@
     "dimensions": []
   },
   "versionTag": {
-    "versionNumber": 5,
+    "versionNumber": 6,
     "lastModifiedBy": {
       "login": "admin"
     },
-    "lastModifiedOn": 1622800062405
+    "lastModifiedOn": 1622800654391
   },
   "creationTag": {
     "versionNumber": 0,
