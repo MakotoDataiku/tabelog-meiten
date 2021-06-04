@@ -3,7 +3,27 @@
     {
       "id": "A1AddYi",
       "grid": {
-        "tiles": []
+        "tiles": [
+          {
+            "tileType": "INSIGHT",
+            "box": {
+              "top": -1,
+              "left": -1,
+              "width": 2,
+              "height": 2
+            },
+            "clickAction": "OPEN_INSIGHT",
+            "tileParams": {
+              "displayMode": "LAST_VALUE"
+            },
+            "autoLoad": true,
+            "showTitle": "YES",
+            "insightId": "BzQ8gNi",
+            "insightType": "metrics",
+            "displayMode": "INSIGHT",
+            "resizeImageMode": "FIT_SIZE"
+          }
+        ]
       },
       "showTitle": false
     }
@@ -13,11 +33,11 @@
   "name": "「隠れた名店」発見器\u0027s default dashboard",
   "showGrid": true,
   "versionTag": {
-    "versionNumber": 0,
+    "versionNumber": 1,
     "lastModifiedBy": {
       "login": "admin"
     },
-    "lastModifiedOn": 1622465027448
+    "lastModifiedOn": 1622814950865
   },
   "creationTag": {
     "versionNumber": 0,

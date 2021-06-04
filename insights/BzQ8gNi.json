@@ -1,0 +1,31 @@
+{
+  "type": "metrics",
+  "params": {
+    "objectSmartId": "recommendation",
+    "objectType": "DATASET",
+    "metricId": "python:recommendations:Python probe"
+  },
+  "owner": "admin",
+  "listed": false,
+  "name": "recommendations (Python probe) of recommendation",
+  "dashboardCreationId": "dZ48g8C",
+  "versionTag": {
+    "versionNumber": 0,
+    "lastModifiedBy": {
+      "login": "admin"
+    },
+    "lastModifiedOn": 1622814950863
+  },
+  "creationTag": {
+    "versionNumber": 0,
+    "lastModifiedBy": {
+      "login": "admin"
+    },
+    "lastModifiedOn": 1622814950863
+  },
+  "tags": [],
+  "customFields": {},
+  "checklists": {
+    "checklists": []
+  }
+}
