@@ -201,7 +201,12 @@
     }
   },
   "enlargeYourBits": true,
-  "outputColumnNameOverrides": {},
+  "outputColumnNameOverrides": {
+    "address_first": "address",
+    "store_id_first": "store_id",
+    "ward_first": "ward",
+    "review_concat": "review"
+  },
   "computedColumns": [],
   "postFilter": {
     "$status": {
