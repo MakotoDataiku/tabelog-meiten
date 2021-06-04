@@ -1,7 +1,9 @@
 {
   "pythonBatchSize": 100000,
-  "keptInputColumns": [],
-  "filterInputColumns": false,
+  "keptInputColumns": [
+    "words"
+  ],
+  "filterInputColumns": true,
   "backendType": "PY_MEMORY",
   "removeOutliers": false,
   "sparkParams": {
