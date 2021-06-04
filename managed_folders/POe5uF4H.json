@@ -88,11 +88,11 @@
     }
   },
   "versionTag": {
-    "versionNumber": 1,
+    "versionNumber": 2,
     "lastModifiedBy": {
       "login": "admin"
     },
-    "lastModifiedOn": 1622804676425
+    "lastModifiedOn": 1622804724050
   },
   "creationTag": {
     "versionNumber": 0,
@@ -101,7 +101,7 @@
     },
     "lastModifiedOn": 1622729972266
   },
-  "shortDesc": "Dictionary(id:word) of words in corpus",
+  "shortDesc": "Dictionary(id:word) of words in corpus in chosen clusters",
   "tags": [],
   "customFields": {},
   "checklists": {
