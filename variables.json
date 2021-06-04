@@ -5,5 +5,10 @@
     "cluster_2": "営業形態",
     "cluster_3": "味・具材",
     "cluster_outliers": "その他"
-  }
+  },
+  "cluster_0": "レビュー",
+  "cluster_1": "立地・外観",
+  "cluster_2": "営業形態",
+  "cluster_3": "味・具材",
+  "cluster_outliers": "その他"
 }
