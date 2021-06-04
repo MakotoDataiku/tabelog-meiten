@@ -13,7 +13,7 @@ import MeCab
 #df = raw_ramen.get_dataframe()
 #df_ramen = df.groupby(['store_name','score','review_cnt'])['review'].apply(list).apply(' '.join).reset_index().sort_values('score', ascending=False)
 
-df_ramen = dataiku.Dataset("ramen_by_store_name").get_dataframe().drop(["store_id_first", "address_first", "ward_first"], axis=1)
+df_ramen = dataiku.Dataset("ramen_by_store_name").get_dataframe().drop(["store_id", "address", "ward"], axis=1)
 
 w2v_folder = dataiku.Folder("m9JZdV7b").get_path()
 text_folder = dataiku.Folder("aLTWBozg").get_path()
