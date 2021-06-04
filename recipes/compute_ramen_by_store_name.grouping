@@ -27,7 +27,7 @@
       "$idx": 2,
       "sum": false,
       "concat": false,
-      "type": "string",
+      "type": "double",
       "concatDistinct": false,
       "sum2": false,
       "min": false,
@@ -48,7 +48,7 @@
       "$idx": 3,
       "sum": false,
       "concat": false,
-      "type": "string",
+      "type": "bigint",
       "concatDistinct": false,
       "sum2": false,
       "min": false,
@@ -71,7 +71,7 @@
       "$idx": 0,
       "sum": false,
       "concat": false,
-      "type": "string",
+      "type": "bigint",
       "concatDistinct": false,
       "sum2": false,
       "min": false,
@@ -218,15 +218,15 @@
           },
           {
             "name": "score",
-            "type": "string"
+            "type": "double"
           },
           {
             "name": "review_cnt",
-            "type": "string"
+            "type": "bigint"
           },
           {
             "name": "store_id_first",
-            "type": "string"
+            "type": "bigint"
           },
           {
             "name": "address_first",
