@@ -22,5 +22,5 @@ def get_lat_lon_from_address(address_l):
             lat = ret.find('lat').string
             lon = ret.find('lng').string
             latlons.append([lat,lon])
-            time.sleep(10)
+            #time.sleep(10)
     return latlons
