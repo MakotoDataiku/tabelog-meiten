@@ -13,7 +13,7 @@ df = dataiku.Dataset("ramen_clusters_named").get_dataframe()
 raw_ramen_df = dataiku.Dataset("raw_ramen").get_dataframe()
 
 # -------------------------------------------------------------------------------- NOTEBOOK-CELL: CODE
-list_vocabs = df[df['cluster_labels'].isin(['接客などのサービス', '具材・素材・味'])]['words_concat'].values
+list_vocabs = df[df['cluster_labels'].isin(['営業形態', '味・具材・'])]['words_concat'].values
 
 # -------------------------------------------------------------------------------- NOTEBOOK-CELL: CODE
 ramen_word = list_vocabs[0].split(",") + list_vocabs[1].split(",")
