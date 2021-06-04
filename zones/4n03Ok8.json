@@ -33,10 +33,6 @@
     {
       "objectId": "compute_lat_lon",
       "objectType": "RECIPE"
-    },
-    {
-      "objectId": "compute_raw_ramen_prepared",
-      "objectType": "RECIPE"
     }
   ],
   "shared": [],
