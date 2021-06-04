@@ -29,6 +29,10 @@
     {
       "objectId": "trip_advisor_vectorized",
       "objectType": "DATASET"
+    },
+    {
+      "objectId": "compute_trip_advisor_vectorized",
+      "objectType": "RECIPE"
     }
   ],
   "shared": [
