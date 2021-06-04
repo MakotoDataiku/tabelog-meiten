@@ -11,10 +11,6 @@
       "objectType": "RECIPE"
     },
     {
-      "objectId": "ramen_by_store_name",
-      "objectType": "DATASET"
-    },
-    {
       "objectId": "ramen_vocab",
       "objectType": "DATASET"
     },
@@ -25,10 +21,6 @@
     {
       "objectId": "aLTWBozg",
       "objectType": "MANAGED_FOLDER"
-    },
-    {
-      "objectId": "compute_ramen_by_store_name",
-      "objectType": "RECIPE"
     }
   ],
   "shared": [],

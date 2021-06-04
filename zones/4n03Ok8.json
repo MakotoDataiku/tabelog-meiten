@@ -3,12 +3,20 @@
   "color": "#0F786B",
   "items": [
     {
-      "objectId": "compute_raw_ramen",
+      "objectId": "raw_ramen",
+      "objectType": "DATASET"
+    },
+    {
+      "objectId": "compute_ramen_by_store_name",
       "objectType": "RECIPE"
     },
     {
-      "objectId": "raw_ramen",
+      "objectId": "ramen_by_store_name",
       "objectType": "DATASET"
+    },
+    {
+      "objectId": "compute_raw_ramen",
+      "objectType": "RECIPE"
     }
   ],
   "shared": [],
