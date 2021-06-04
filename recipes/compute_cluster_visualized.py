@@ -20,14 +20,23 @@ for cluster in df['cluster_labels'].unique():
 
 # -------------------------------------------------------------------------------- NOTEBOOK-CELL: CODE
 labels = {
-    "cluster_0":"立地",
-    "cluster_1":"外観",
-    "cluster_2":"原材料",
-    "cluster_3":"味・風味",
-    "cluster_4":"交通手段",
-    "cluster_5":"営業形態",
-    "cluster_6":"具材",
+    "cluster_0":"レビュー",
+    "cluster_1":"立地・外観",
+    "cluster_2":"営業形態",
+    "cluster_3":"味・具材",
+    #"cluster_4":"交通手段",
+    #"cluster_5":"営業形態",
+    #"cluster_6":"具材",
+    "cluster_outliers":"その他",
 }
+
+# -------------------------------------------------------------------------------- NOTEBOOK-CELL: CODE
+client = dataiku.api_client()
+
+project = client.get_project(dataiku.get_custom_variables()['projectKey'])
+project_variables = project.get_variables()
+project_variables['standard']['labels'] = labels
+project_variables = project.set_variables(project_variables)
 
 # -------------------------------------------------------------------------------- NOTEBOOK-CELL: CODE
 # Compute recipe outputs from inputs
