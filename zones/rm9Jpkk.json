@@ -15,10 +15,6 @@
       "objectType": "RECIPE"
     },
     {
-      "objectId": "trip_advisor_vocabs",
-      "objectType": "DATASET"
-    },
-    {
       "objectId": "clean_trip_advisor",
       "objectType": "DATASET"
     },
