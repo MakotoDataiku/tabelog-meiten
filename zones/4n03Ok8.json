@@ -25,6 +25,10 @@
     {
       "objectId": "compute_clean_ramen",
       "objectType": "RECIPE"
+    },
+    {
+      "objectId": "lat_lon",
+      "objectType": "DATASET"
     }
   ],
   "shared": [],
