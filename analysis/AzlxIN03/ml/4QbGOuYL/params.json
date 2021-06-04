@@ -2112,30 +2112,6 @@
         "customProcessorWantsMatrix": false,
         "sendToInput": "main"
       },
-      "words": {
-        "category_handling": "DUMMIFY",
-        "missing_handling": "NONE",
-        "missing_impute_with": "MODE",
-        "dummy_clip": "MAX_NB_CATEGORIES",
-        "cumulative_proportion": 0.95,
-        "min_samples": 10,
-        "max_nb_categories": 100,
-        "max_cat_safety": 200,
-        "nb_bins_hashing": 1048576,
-        "hash_whole_categories": true,
-        "dummy_drop": "NONE",
-        "role": "PROFILING",
-        "type": "CATEGORY",
-        "state": {
-          "userModified": true,
-          "autoModifiedByDSS": false,
-          "recordedMeaning": "Text"
-        },
-        "autoReason": "REJECT_IDENTIFIER",
-        "customHandlingCode": "",
-        "customProcessorWantsMatrix": false,
-        "sendToInput": "main"
-      },
       "100": {
         "generate_derivative": false,
         "numerical_handling": "REGULAR",
@@ -4232,6 +4208,30 @@
           "autoModifiedByDSS": false,
           "recordedMeaning": "DoubleMeaning"
         },
+        "customHandlingCode": "",
+        "customProcessorWantsMatrix": false,
+        "sendToInput": "main"
+      },
+      "words": {
+        "category_handling": "DUMMIFY",
+        "missing_handling": "NONE",
+        "missing_impute_with": "MODE",
+        "dummy_clip": "MAX_NB_CATEGORIES",
+        "cumulative_proportion": 0.95,
+        "min_samples": 10,
+        "max_nb_categories": 100,
+        "max_cat_safety": 200,
+        "nb_bins_hashing": 1048576,
+        "hash_whole_categories": true,
+        "dummy_drop": "NONE",
+        "role": "PROFILING",
+        "type": "CATEGORY",
+        "state": {
+          "userModified": true,
+          "autoModifiedByDSS": false,
+          "recordedMeaning": "Text"
+        },
+        "autoReason": "REJECT_IDENTIFIER",
         "customHandlingCode": "",
         "customProcessorWantsMatrix": false,
         "sendToInput": "main"
