@@ -32,9 +32,9 @@
   },
   "steps": [
     {
-      "preview": true,
+      "preview": false,
       "metaType": "PROCESSOR",
-      "disabled": false,
+      "disabled": true,
       "type": "FindReplace",
       "params": {
         "output": "",
@@ -62,6 +62,45 @@
           {
             "from": "cluster_5",
             "to": "値段"
+          }
+        ],
+        "normalization": "EXACT",
+        "columns": [
+          "cluster_labels"
+        ],
+        "appliesTo": "SINGLE_COLUMN",
+        "stopAfterFirstMatch": false,
+        "matching": "SUBSTRING"
+      },
+      "alwaysShowComment": false
+    },
+    {
+      "preview": false,
+      "metaType": "PROCESSOR",
+      "disabled": false,
+      "type": "FindReplace",
+      "params": {
+        "output": "",
+        "mapping": [
+          {
+            "from": "cluster_0",
+            "to": "レビュー"
+          },
+          {
+            "from": "cluster_1",
+            "to": "立地・外観"
+          },
+          {
+            "from": "cluster_2",
+            "to": "営業形態"
+          },
+          {
+            "from": "cluster_3",
+            "to": "味・具材"
+          },
+          {
+            "from": "cluster_outliers",
+            "to": "その他"
           }
         ],
         "normalization": "EXACT",
