@@ -88,11 +88,11 @@
     }
   },
   "versionTag": {
-    "versionNumber": 0,
+    "versionNumber": 1,
     "lastModifiedBy": {
       "login": "admin"
     },
-    "lastModifiedOn": 1622485954167
+    "lastModifiedOn": 1622800606075
   },
   "creationTag": {
     "versionNumber": 0,
@@ -101,6 +101,7 @@
     },
     "lastModifiedOn": 1622485954167
   },
+  "shortDesc": "corpus of words in reviews",
   "tags": [],
   "customFields": {},
   "checklists": {
