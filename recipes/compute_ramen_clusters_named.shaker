@@ -32,7 +32,7 @@
   },
   "steps": [
     {
-      "preview": true,
+      "preview": false,
       "metaType": "PROCESSOR",
       "disabled": false,
       "type": "FindReplace",
@@ -41,27 +41,23 @@
         "mapping": [
           {
             "from": "cluster_0",
-            "to": "接客などのサービス"
+            "to": "レビュー"
           },
           {
             "from": "cluster_1",
-            "to": "地理的な情報・営業時間"
+            "to": "立地・外観"
           },
           {
             "from": "cluster_2",
-            "to": "ウェブサイト"
+            "to": "営業形態"
           },
           {
             "from": "cluster_3",
-            "to": "口コミ"
+            "to": "味・具材"
           },
           {
-            "from": "cluster_4",
-            "to": "具材・素材・味"
-          },
-          {
-            "from": "cluster_5",
-            "to": "値段"
+            "from": "cluster_outliers",
+            "to": "その他"
           }
         ],
         "normalization": "EXACT",
@@ -71,6 +67,17 @@
         "appliesTo": "SINGLE_COLUMN",
         "stopAfterFirstMatch": false,
         "matching": "SUBSTRING"
+      },
+      "alwaysShowComment": false
+    },
+    {
+      "preview": false,
+      "metaType": "PROCESSOR",
+      "disabled": true,
+      "type": "CreateColumnWithGREL",
+      "params": {
+        "expression": "${cluster_0}",
+        "column": "new_label"
       },
       "alwaysShowComment": false
     }
@@ -85,7 +92,8 @@
   "columnWidthsByName": {
     "cluster_labels": 148,
     "count": 100,
-    "words_concat": 300
+    "words_concat": 300,
+    "new_label": 100
   },
   "sorting": [],
   "globalSearchQuery": "",
