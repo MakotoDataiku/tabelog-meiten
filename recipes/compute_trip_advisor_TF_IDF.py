@@ -19,7 +19,11 @@ df = your_trip_advisor.get_dataframe()
 tfidf_path = dataiku.Folder("tMMk2S0T").get_path() + "/tf_idf"
 
 # -------------------------------------------------------------------------------- NOTEBOOK-CELL: CODE
-list_vocabs = df[df['cluster_labels'].isin(['接客などのサービス', '具材・素材・味'])]['words_concat'].values
+client = dataiku.api_client()
+project = client.get_project(dataiku.get_custom_variables()['projectKey'])
+project_variables = project.get_variables()
+clusters_to_select = project_variables['standard']['clusters_to_select']
+list_vocabs = df[df['cluster_labels'].isin(clusters_to_select)]['words_concat'].values
 
 # -------------------------------------------------------------------------------- NOTEBOOK-CELL: CODE
 ramen_word = list_vocabs[0].split(",") + list_vocabs[1].split(",")
