@@ -1,7 +1,40 @@
 {
   "name": "Clustering ramen",
   "color": "#C82423",
-  "items": [],
+  "items": [
+    {
+      "objectId": "train_Clustering_ramen_vocabs_",
+      "objectType": "RECIPE"
+    },
+    {
+      "objectId": "g8m6xujs",
+      "objectType": "SAVED_MODEL"
+    },
+    {
+      "objectId": "score_ramen_vocab",
+      "objectType": "RECIPE"
+    },
+    {
+      "objectId": "ramen_vocab_clustered",
+      "objectType": "DATASET"
+    },
+    {
+      "objectId": "compute_ramen_vocab_by_clusters",
+      "objectType": "RECIPE"
+    },
+    {
+      "objectId": "ramen_vocab_by_clusters",
+      "objectType": "DATASET"
+    },
+    {
+      "objectId": "compute_ramen_clusters_named",
+      "objectType": "RECIPE"
+    },
+    {
+      "objectId": "ramen_clusters_named",
+      "objectType": "DATASET"
+    }
+  ],
   "shared": [],
   "tags": [],
   "customFields": {},
