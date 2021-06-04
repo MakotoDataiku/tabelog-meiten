@@ -1,7 +1,36 @@
 {
   "name": "Modeling ramen",
   "color": "#0F786B",
-  "items": [],
+  "items": [
+    {
+      "objectId": "0kM5kXKs",
+      "objectType": "MANAGED_FOLDER"
+    },
+    {
+      "objectId": "compute_m9JZdV7b",
+      "objectType": "RECIPE"
+    },
+    {
+      "objectId": "ramen_by_store_name",
+      "objectType": "DATASET"
+    },
+    {
+      "objectId": "ramen_vocab",
+      "objectType": "DATASET"
+    },
+    {
+      "objectId": "m9JZdV7b",
+      "objectType": "MANAGED_FOLDER"
+    },
+    {
+      "objectId": "aLTWBozg",
+      "objectType": "MANAGED_FOLDER"
+    },
+    {
+      "objectId": "compute_ramen_by_store_name",
+      "objectType": "RECIPE"
+    }
+  ],
   "shared": [],
   "tags": [],
   "customFields": {},

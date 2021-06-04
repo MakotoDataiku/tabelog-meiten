@@ -9,14 +9,6 @@
     {
       "objectId": "raw_ramen",
       "objectType": "DATASET"
-    },
-    {
-      "objectId": "compute_ramen_by_store_name",
-      "objectType": "RECIPE"
-    },
-    {
-      "objectId": "ramen_by_store_name",
-      "objectType": "DATASET"
     }
   ],
   "shared": [],
