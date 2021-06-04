@@ -21,6 +21,10 @@
     {
       "objectId": "clean_trip_advisor",
       "objectType": "DATASET"
+    },
+    {
+      "objectId": "compute_clean_trip_advisor",
+      "objectType": "RECIPE"
     }
   ],
   "shared": [],
