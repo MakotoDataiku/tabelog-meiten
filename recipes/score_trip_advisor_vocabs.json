@@ -26,7 +26,7 @@
     "main": {
       "items": [
         {
-          "ref": "trip_advisor_vocabs",
+          "ref": "trip_advisor_vectorized",
           "deps": []
         }
       ]
@@ -44,11 +44,11 @@
   },
   "labels": [],
   "versionTag": {
-    "versionNumber": 1,
+    "versionNumber": 2,
     "lastModifiedBy": {
       "login": "admin"
     },
-    "lastModifiedOn": 1622733053786
+    "lastModifiedOn": 1622807514948
   },
   "creationTag": {
     "versionNumber": 0,
