@@ -41,7 +41,7 @@
     "coef0": 0.0,
     "seed": 1337,
     "n_jobs": 1,
-    "k": 6,
+    "k": 7,
     "isolation_forest": {
       "max_samples": 0.5,
       "max_features": 1.0,
@@ -65,7 +65,7 @@
     "custom_has_k": false,
     "algorithm": "KMEANS"
   },
-  "generatingModelId": "A-RAMENMEITEN-AzlxIN03-4QbGOuYL-s3-pp1-m2",
+  "generatingModelId": "A-RAMENMEITEN-AzlxIN03-4QbGOuYL-s3-pp1-m3",
   "preprocessing": {
     "reduce": {
       "kept_variance": 0.0,
