@@ -7,10 +7,10 @@
           {
             "tileType": "INSIGHT",
             "box": {
-              "top": -1,
-              "left": -1,
+              "top": 0,
+              "left": 0,
               "width": 2,
-              "height": 2
+              "height": 1
             },
             "clickAction": "OPEN_INSIGHT",
             "tileParams": {
@@ -33,11 +33,11 @@
   "name": "「隠れた名店」発見器\u0027s default dashboard",
   "showGrid": true,
   "versionTag": {
-    "versionNumber": 2,
+    "versionNumber": 3,
     "lastModifiedBy": {
       "login": "admin"
     },
-    "lastModifiedOn": 1622814951388
+    "lastModifiedOn": 1622814957085
   },
   "creationTag": {
     "versionNumber": 0,
