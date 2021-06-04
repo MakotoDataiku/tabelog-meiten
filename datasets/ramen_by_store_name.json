@@ -59,11 +59,11 @@
     "dimensions": []
   },
   "versionTag": {
-    "versionNumber": 4,
+    "versionNumber": 5,
     "lastModifiedBy": {
       "login": "admin"
     },
-    "lastModifiedOn": 1622799566670
+    "lastModifiedOn": 1622800062405
   },
   "creationTag": {
     "versionNumber": 0,
@@ -99,19 +99,19 @@
         "type": "string"
       },
       {
-        "name": "store_id_first",
+        "name": "store_id",
         "type": "string"
       },
       {
-        "name": "address_first",
+        "name": "address",
         "type": "string"
       },
       {
-        "name": "ward_first",
+        "name": "ward",
         "type": "string"
       },
       {
-        "name": "review_concat",
+        "name": "review",
         "type": "string"
       }
     ],
