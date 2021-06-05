@@ -46,4 +46,5 @@ app.layout = html.Div(children=[
 def update_output(n_clicks, value):
     if n_clicks > 0:
         ramen_similar = ramen_model.most_similar(value)
+        print(ramen_similar)
         return ramen_similar
