@@ -44,7 +44,7 @@ app.layout = html.Div(children=[
     html.Div(children = [
         html.Div(children = [
             html.Div("Ramen model"),
-            #html.Div(id='ramen-similar-words'),
+            html.Div(id='ramen-similar-words'),
             html.Div(ramen_table)
         ], style={'width': '40%', 'display': 'inline-block'}),
         html.Div(children = [
