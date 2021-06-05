@@ -54,9 +54,26 @@ app.layout = html.Div(children=[
     Input('word-button', 'n_clicks'),
     State('word', 'value'),
 )
-def update_output(n_clicks, value):
+def update_ramen_output(n_clicks, value):
     if n_clicks > 0:
         similar_words = ramen_model.wv.most_similar(value)
+        text = ""
+        for w in similar_words:
+            #print(w)
+            # text.join(str(w)+"\n")
+            text = text + str(w) + "\n"
+            print(text)
+        md = dcc.Markdown(text)
+        return md
+
+@app.callback(
+    Output('wiki-similar-words', 'children'),
+    Input('word-button', 'n_clicks'),
+    State('word', 'value'),
+)
+def update_wiki_output(n_clicks, value):
+    if n_clicks > 0:
+        similar_words = wiki_model.wv.most_similar(value)
         text = ""
         for w in similar_words:
             #print(w)
