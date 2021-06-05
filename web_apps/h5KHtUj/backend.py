@@ -35,7 +35,7 @@ app.layout = html.Div(children=[
     html.H1(children='Hello Dash'),
     html.Div(textbox),
     html.Button('Submit', id='word-button', n_clicks=0),
-    html.Markdown(id='ramen-similar-words', style={'whiteSpace': 'pre-line'})
+    html.Div(id='ramen-similar-words', style={'whiteSpace': 'pre-line'})
 ])
 
 # Callbacks
@@ -50,6 +50,8 @@ def update_output(n_clicks, value):
         text = ""
         for w in similar_words:
             #print(w)
-            text.join(str(w)+"\n")
+            # text.join(str(w)+"\n")
+            text = text + str(w) + "\n"
             print(text)
-        return str(text)
+        md = dcc.Markdown(text)
+        return md
