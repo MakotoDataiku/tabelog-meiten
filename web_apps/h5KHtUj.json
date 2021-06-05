@@ -4,7 +4,8 @@
   "params": {
     "autoStartBackend": false,
     "envSelection": {
-      "envMode": "INHERIT"
+      "envMode": "EXPLICIT_ENV",
+      "envName": "dash-py36"
     },
     "nbProcesses": 1,
     "serveLocally": true,
@@ -33,11 +34,11 @@
   "config": {},
   "name": "Play with the ramen model!",
   "versionTag": {
-    "versionNumber": 0,
+    "versionNumber": 1,
     "lastModifiedBy": {
       "login": "admin"
     },
-    "lastModifiedOn": 1622898039424
+    "lastModifiedOn": 1622898057272
   },
   "creationTag": {
     "versionNumber": 0,
