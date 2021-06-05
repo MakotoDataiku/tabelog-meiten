@@ -5,11 +5,11 @@
   "name": "Get best ramen",
   "active": false,
   "versionTag": {
-    "versionNumber": 1,
+    "versionNumber": 2,
     "lastModifiedBy": {
       "login": "admin"
     },
-    "lastModifiedOn": 1622888094971
+    "lastModifiedOn": 1622888109256
   },
   "checklists": {
     "checklists": []
@@ -27,7 +27,7 @@
       {
         "id": "build_0_true_d_your_trip_advisor",
         "type": "build_flowitem",
-        "name": "build dataset your_trip_advisor",
+        "name": "your_trip_advisor",
         "runConditionType": "RUN_IF_STATUS_MATCH",
         "runConditionStatuses": [
           "SUCCESS",
