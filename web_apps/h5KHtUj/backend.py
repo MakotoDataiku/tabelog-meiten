@@ -7,6 +7,7 @@ from dataiku import pandasutils as pdu
 from gensim.models import word2vec
 from dash.dependencies import Input, Output, State
 import dash_table as dt
+from googletrans import Translator
 
 # Loading ramen model
 folder_path = dataiku.Folder("m9JZdV7b").get_path()
@@ -18,10 +19,8 @@ ramen_model = word2vec.Word2Vec.load(model_path)
 wiki_model_path = "/Users/mmiyazaki/dataiku/Design/DATA_DIR/managed_folders/WIKIPEDIAJP/jU2z0VpV/word2vec_model.model"
 wiki_model = word2vec.Word2Vec.load(wiki_model_path)
 
-
-# This loads dummy data into a dataframe
-
-
+# Some functions
+translator = Translator(service_urls=['translate.googleapis.com'])
 
 # Components
 
@@ -67,6 +66,7 @@ def update_ramen_output(n_clicks, value):
         for w in similar_words:
             y = list(w)
             y[1] = round(y[1], 4)
+            y[0] = translator.translate(y[0], dest='en').text
             w = tuple(y)
             textarea.append(str(w))
             textarea.append(html.Br())      
