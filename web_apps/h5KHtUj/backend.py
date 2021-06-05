@@ -64,7 +64,7 @@ app.layout = html.Div(children=[
 def update_ramen_output(n_clicks, value):
     if n_clicks > 0:
         similar_words = ramen_model.wv.most_similar(value)
-        df = pd.DataFrame(simliar_words, columns=["words", "score"])
+        df = pd.DataFrame(similar_words, columns=["words", "score"])
         text = ""
         for w in similar_words:
             #print(w)
@@ -91,13 +91,3 @@ def update_wiki_output(n_clicks, value):
         print(text)
         md = dcc.Markdown(text)
         return md
-    
-@app.callback(
-    Output('ramen-similar-words', 'children'),
-    Input('word-button', 'n_clicks'),
-    State('word', 'value'),
-)
-def update_ramen_table(n_clicks, value):
-    df.iloc[
-        page_current*page_size:(page_current+ 1)*page_size
-    ].to_dict('records')
