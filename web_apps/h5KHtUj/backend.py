@@ -5,6 +5,7 @@ import dash_html_components as html
 import pandas as pd
 from dataiku import pandasutils as pdu
 from gensim.models import word2vec
+from dash.dependencies import Input, Output
 
 # Loading ramen model
 folder_path = dataiku.Folder("m9JZdV7b").get_path()
