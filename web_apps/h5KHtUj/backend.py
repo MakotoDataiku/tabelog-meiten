@@ -35,7 +35,7 @@ app.layout = html.Div(children=[
     html.H1(children='Hello Dash'),
     html.Div(textbox),
     html.Button('Submit', id='word-button', n_clicks=0),
-    html.Div(id='ramen-similar-words', style={'whiteSpace': 'pre-line'})
+    html.Markdown(id='ramen-similar-words', style={'whiteSpace': 'pre-line'})
 ])
 
 # Callbacks
