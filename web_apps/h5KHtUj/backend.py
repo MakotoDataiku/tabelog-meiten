@@ -138,3 +138,30 @@ def update_ramen_output(n_clicks, value_pos, value_neg):
             textarea.append(str(w))
             textarea.append(html.Br())      
         return html.P(textarea)
+
+@app.callback(
+    Output('wiki-wordplay', 'children'),
+    Input('word-button2', 'n_clicks'),
+    State('text-pos', 'value'),
+    State('text-neg', 'value'),
+)
+def update_ramen_output(n_clicks, value_pos, value_neg):
+    if n_clicks > 0:
+        print(value_pos, value_neg)
+        list_pos = value_pos.replace(" ", ",").replace("　", ",").replace("、", ",").split(",")
+        list_neg = value_neg.replace(" ", ",").replace("　", ",").replace("、", ",").split(",")
+        print(list_pos, list_neg)
+        if len(list_neg) == 1 and len(list_neg[0]) == 0:
+            similar_words = wiki_model.most_similar(positive=list_pos)
+        else:
+            similar_words = wiki_model.most_similar(positive=list_pos, negative=list_neg)
+        print(similar_words)
+        textarea = []
+        for w in similar_words:
+            y = list(w)
+            y[1] = round(y[1], 4)
+            y[0] = translator.translate(y[0], dest='en').text
+            w = tuple(y)
+            textarea.append(str(w))
+            textarea.append(html.Br())      
+        return html.P(textarea)
