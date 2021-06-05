@@ -7,6 +7,7 @@ from dataiku import pandasutils as pdu
 from gensim.models import word2vec
 from dash.dependencies import Input, Output, State
 import dash_table
+import dash_table_experiments as dt
 
 # Loading ramen model
 folder_path = dataiku.Folder("m9JZdV7b").get_path()
@@ -56,8 +57,8 @@ app.layout = html.Div(children=[
 
 # Callbacks
 @app.callback(
-    #Output('ramen-similar-words', 'children'),
-    Output('ramen-table', 'data'),
+    Output('ramen-similar-words', 'children'),
+    #Output('ramen-table', 'data'),
     Input('word-button', 'n_clicks'),
     State('word', 'value'),
 )
@@ -73,7 +74,17 @@ def update_ramen_output(n_clicks, value):
         #print(text)
         md = dcc.Markdown(text)
         print(df.to_dict('records'))
-        return df.to_dict('records')
+        table = [
+        dt.DataTable(
+            rows=df.to_dict('rows'),
+            columns=df.columns,
+            row_selectable=True,
+            filterable=True,
+            sortable=True,
+            selected_row_indices=list(df.index),  # all rows selected by default
+        )
+    ]
+        return table
 
 @app.callback(
     Output('wiki-similar-words', 'children'),
