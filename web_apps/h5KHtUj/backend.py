@@ -72,6 +72,7 @@ def update_ramen_output(n_clicks, value):
             text = text + str(w) + "\n"
         print(text)
         md = dcc.Markdown(text)
+        print(df.to_dict('records'))
         return df.to_dict('records')
 
 @app.callback(
