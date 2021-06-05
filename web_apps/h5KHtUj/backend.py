@@ -73,16 +73,7 @@ def update_ramen_output(n_clicks, value):
         #print(text)
         md = dcc.Markdown(text)
         print(df.to_dict('records'))
-        table = [
-        dt.DataTable(
-            rows=df.to_dict('rows'),
-            columns=df.columns,
-            row_selectable=True,
-            filterable=True,
-            sortable=True,
-            selected_row_indices=list(df.index),  # all rows selected by default
-        )
-    ]
+
         return df.to_dict('rows')
 
 @app.callback(
