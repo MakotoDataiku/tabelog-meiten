@@ -30,6 +30,12 @@ textbox = dcc.Textarea(
     style={'width': '100%', 'height': 40},
     )
 
+textbox2 = dcc.Textarea(
+    id='add-subtract',
+    value = 'ラーメン + 塩',
+    style={'width': '100%', 'height': 40},
+    )
+
 
 # Layouts
 app.layout = html.Div(children=[
@@ -45,8 +51,9 @@ app.layout = html.Div(children=[
             html.Div("Generic model(Wikipedia) model"),
             html.Div(id='wiki-similar-words')
         ], style={'width': '40%', 'display': 'inline-block'})
-    ])
-    #html.Div(, style={'whiteSpace': 'pre-line'})
+    ]),
+    html.Div(textbox2),
+    html.Button('Submit', id='word-button2', n_clicks=0),
 ])
 
 # Callbacks
