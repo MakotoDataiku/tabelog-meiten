@@ -15,27 +15,23 @@ ramen_model = word2vec.Word2Vec.load(model_path)
 # Loading generic model
 wiki_model_path = "/Users/mmiyazaki/dataiku/Design/DATA_DIR/managed_folders/WIKIPEDIAJP/jU2z0VpV/word2vec_model.model"
 wiki_model = word2vec.Word2Vec.load(wiki_model_path)
-
 print(ramen_model.most_similar("山岸"))
 
 # This loads dummy data into a dataframe
-df = pd.DataFrame({
-    "Fruit": ["Apples", "Oranges", "Bananas", "Apples", "Oranges", "Bananas"],
-    "Amount": [4, 1, 2, 2, 4, 5],
-    "City": ["SF", "SF", "SF", "Montreal", "Montreal", "Montreal"]
-}) \
- \
-# Uncomment the following to read your own dataset
-#dataset = dataiku.Dataset("YOUR_DATASET_NAME_HERE")
-#df = dataset.get_dataframe()
 
-fig = px.bar(df, x="Fruit", y="Amount", color="City", barmode="group")
+
+
+# Components
+
+textbox = dcc.Textarea(
+        id='textarea',
+        value='Textarea content initialized\nwith multiple lines of text',
+        style={'width': '100%', 'height': 300},
+    )
+    
 
 app.layout = html.Div(children=[
     html.H1(children='Hello Dash'),
-
-    dcc.Graph(
-        id='example-graph',
-        figure=fig
-    )
+    html.Div(textbox),
+    html.Div(id='textarea-output', style={'whiteSpace': 'pre-line'})
 ])
