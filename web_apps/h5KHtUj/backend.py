@@ -15,7 +15,7 @@ ramen_model = word2vec.Word2Vec.load(model_path)
 # Loading generic model
 wiki_model_path = "/Users/mmiyazaki/dataiku/Design/DATA_DIR/managed_folders/WIKIPEDIAJP/jU2z0VpV/word2vec_model.model"
 wiki_model = word2vec.Word2Vec.load(wiki_model_path)
-print(ramen_model.most_similar("山岸"))
+
 
 # This loads dummy data into a dataframe
 
@@ -24,7 +24,7 @@ print(ramen_model.most_similar("山岸"))
 # Components
 
 textbox = dcc.Textarea(
-        id='textarea',
+        id='word',
         style={'width': '100%', 'height': 40},
     )
     
@@ -32,5 +32,14 @@ textbox = dcc.Textarea(
 app.layout = html.Div(children=[
     html.H1(children='Hello Dash'),
     html.Div(textbox),
-    html.Div(id='textarea-output', style={'whiteSpace': 'pre-line'})
+    html.Div(id='ramen-similar-words', style={'whiteSpace': 'pre-line'})
 ])
+
+# Callbacks
+@app.callback(
+    Output('ramen-similar-words', 'children'),
+    Input('word', 'value')
+)
+def update_output(value):
+    ramen_similar = ramen_model.most_similar(value)
+    return ramen_similar
