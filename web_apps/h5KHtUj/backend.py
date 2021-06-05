@@ -89,7 +89,7 @@ def update_wiki_output(n_clicks, value):
         for w in similar_words:
             #print(w)
             # text.join(str(w)+"\n")
-            text = text + str(w) + "\n"
+            text = text + "<br>" + str(w) + "</br>"
         print(text)
         md = dcc.Markdown(text)
         return md
