@@ -56,25 +56,18 @@ app.layout = html.Div(children=[
 
 # Callbacks
 @app.callback(
-    #Output('ramen-similar-words', 'children'),
-    Output('ramen-table', 'data'),
+    Output('ramen-similar-words', 'children'),
     Input('word-button', 'n_clicks'),
     State('word', 'value'),
 )
 def update_ramen_output(n_clicks, value):
     if n_clicks > 0:
         similar_words = ramen_model.wv.most_similar(value)
-        df = pd.DataFrame(similar_words, columns=["words", "score"])
-        text = ""
+        textarea = []
         for w in similar_words:
-            #print(w)
-            # text.join(str(w)+"\n")
-            text = text + str(w) + "\n"
-        #print(text)
-        md = dcc.Markdown(text)
-        print(df.to_dict('records'))
-
-        return df.to_dict('rows')
+            textarea.append(str(w))
+            textarea.append(html.Br())      
+        return html.P(textarea)
 
 @app.callback(
     Output('wiki-similar-words', 'children'),
@@ -84,13 +77,8 @@ def update_ramen_output(n_clicks, value):
 def update_wiki_output(n_clicks, value):
     if n_clicks > 0:
         similar_words = wiki_model.wv.most_similar(value)
-        
-        text = ""
         textarea = []
         for w in similar_words:
-            # text = text + "<br>" + str(w) + "</br>"
             textarea.append(str(w))
-            textarea.append(html.Br())
-        md = dcc.Markdown(text)
-        
+            textarea.append(html.Br())      
         return html.P(textarea)
