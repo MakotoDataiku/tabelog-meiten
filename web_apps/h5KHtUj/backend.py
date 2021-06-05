@@ -49,7 +49,7 @@ def update_output(n_clicks, value):
         similar_words = ramen_model.wv.most_similar(value)
         text = ""
         for w in similar_words:
-            print(w)
+            #print(w)
             text.join(str(w)+"\n")
             print(text)
         return str(text)
