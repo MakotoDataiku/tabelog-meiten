@@ -124,7 +124,7 @@ def update_ramen_output(n_clicks, value_pos, value_neg):
         list_pos = value_pos.replace(" ", ",").replace("　", ",").replace("、", ",").split(",")
         list_neg = value_neg.replace(" ", ",").replace("　", ",").replace("、", ",").split(",")
         print(list_pos, list_neg)
-        if len(list_neg) == 1 and if len(list_neg[0]) == 0:
+        if len(list_neg) == 1 and len(list_neg[0]) == 0:
             similar_words = ramen_model.most_similar(positive=list_pos)
         else:
             similar_words = ramen_model.most_similar(positive=list_pos, negative=list_neg)
