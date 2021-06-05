@@ -86,10 +86,11 @@ def update_wiki_output(n_clicks, value):
         similar_words = wiki_model.wv.most_similar(value)
         
         text = ""
+        textarea = []
         for w in similar_words:
-            #print(w)
-            # text.join(str(w)+"\n")
-            text = text + "<br>" + str(w) + "</br>"
-        print(text)
+            # text = text + "<br>" + str(w) + "</br>"
+            textarea.append(str(w))
+            textarea.append(html.Br())
         md = dcc.Markdown(text)
-        return md
+        
+        return html.P(textarea)
