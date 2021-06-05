@@ -31,7 +31,7 @@ textbox = dcc.Textarea(
     style={'width': '100%', 'height': 40},
     )
 
-ramen_table = dash_table.DataTable(
+ramen_table = dt.DataTable(
     id='ramen-table',
 )
 
