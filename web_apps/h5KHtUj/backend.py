@@ -3,6 +3,11 @@ import dataiku
 import dash_core_components as dcc
 import dash_html_components as html
 import pandas as pd
+from dataiku import pandasutils as pdu
+from gensim.models import word2vec
+
+folder_path = dataiku.Folder("m9JZdV7b").get_path()
+model_path = folder_path + "/word2vec_ramen_model.model"
 
 # This loads dummy data into a dataframe
 df = pd.DataFrame({
