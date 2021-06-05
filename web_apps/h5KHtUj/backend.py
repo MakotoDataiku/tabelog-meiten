@@ -30,10 +30,16 @@ textbox = dcc.Textarea(
     style={'width': '100%', 'height': 40},
     )
 
-textbox2 = dcc.Textarea(
-    id='add-subtract',
+textbox_pos = dcc.Textarea(
+    id='text-pos',
     value = 'ラーメン + 塩',
-    style={'width': '100%', 'height': 40},
+    style={'width': '100%', 'height': 40, 'display': 'inline-block'},
+    )
+
+textbox_neg = dcc.Textarea(
+    id='text-neg',
+    value = 'ラーメン + 塩',
+    style={'width': '100%', 'height': 40, 'display': 'inline-block'},
     )
 
 
@@ -52,8 +58,21 @@ app.layout = html.Div(children=[
             html.Div(id='wiki-similar-words')
         ], style={'width': '40%', 'display': 'inline-block'})
     ]),
-    html.Div(textbox2),
+    html.Div(children=[
+        html.Div(textbox_pos),
+        html.Div(textbox_neg)
+    ]),
     html.Button('Submit', id='word-button2', n_clicks=0),
+    html.Div(children = [
+        html.Div(children = [
+            html.Div("Ramen model"),
+            html.Div(id='ramen-wordplay'),
+        ], style={'width': '40%', 'display': 'inline-block'}),
+        html.Div(children = [
+            html.Div("Generic model(Wikipedia) model"),
+            html.Div(id='wiki-wordplay')
+        ], style={'width': '40%', 'display': 'inline-block'})
+    ]),
 ])
 
 # Callbacks
@@ -83,6 +102,25 @@ def update_ramen_output(n_clicks, value):
 def update_wiki_output(n_clicks, value):
     if n_clicks > 0:
         similar_words = wiki_model.wv.most_similar(value)
+        textarea = []
+        for w in similar_words:
+            y = list(w)
+            y[1] = round(y[1], 4)
+            y[0] = translator.translate(y[0], dest='en').text
+            w = tuple(y)
+            textarea.append(str(w))
+            textarea.append(html.Br())      
+        return html.P(textarea)
+    
+@app.callback(
+    Output('ramen-wordplay', 'children'),
+    Input('word-button2', 'n_clicks'),
+    State('text-wordplay', 'value'),
+)
+def update_ramen_output(n_clicks, value):
+    if n_clicks > 0:
+        value.split("+")
+        similar_words = ramen_model.wv.most_similar(value)
         textarea = []
         for w in similar_words:
             y = list(w)
