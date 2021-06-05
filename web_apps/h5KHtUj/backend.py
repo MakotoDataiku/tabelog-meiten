@@ -33,14 +33,17 @@ textbox = dcc.Textarea(
 app.layout = html.Div(children=[
     html.H1(children='Hello Dash'),
     html.Div(textbox),
+    html.Button('Submit', id='word-button', n_clicks=0),
     html.Div(id='ramen-similar-words', style={'whiteSpace': 'pre-line'})
 ])
 
 # Callbacks
 @app.callback(
     Output('ramen-similar-words', 'children'),
-    Input('word', 'value')
+    Input('word-button', 'n_clicks'),
+    State('word', 'value'),
 )
-def update_output(value):
-    ramen_similar = ramen_model.most_similar(value)
-    return ramen_similar
+def update_output(n_clicks, value):
+    if n_clicks > 0:
+        ramen_similar = ramen_model.most_similar(value)
+        return ramen_similar
