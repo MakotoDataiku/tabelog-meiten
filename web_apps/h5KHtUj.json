@@ -34,11 +34,11 @@
   "config": {},
   "name": "Play with the ramen model!",
   "versionTag": {
-    "versionNumber": 59,
+    "versionNumber": 60,
     "lastModifiedBy": {
       "login": "admin"
     },
-    "lastModifiedOn": 1622912917703
+    "lastModifiedOn": 1622912953056
   },
   "creationTag": {
     "versionNumber": 0,

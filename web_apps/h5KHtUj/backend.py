@@ -33,13 +33,13 @@ textbox = dcc.Textarea(
 textbox_pos = dcc.Textarea(
     id='text-pos',
     value = 'ラーメン + 塩',
-    style={'width': '100%', 'height': 40, 'display': 'inline-block'},
+    style={'width': '100%', 'height': 40},
     )
 
 textbox_neg = dcc.Textarea(
     id='text-neg',
     value = 'ラーメン + 塩',
-    style={'width': '100%', 'height': 40, 'display': 'inline-block'},
+    style={'width': '100%', 'height': 40},
     )
 
 
@@ -59,8 +59,8 @@ app.layout = html.Div(children=[
         ], style={'width': '40%', 'display': 'inline-block'})
     ]),
     html.Div(children=[
-        html.Div(textbox_pos),
-        html.Div(textbox_neg)
+        html.Div(textbox_pos, style={'width': '40%', 'display': 'inline-block'}),
+        html.Div(textbox_neg, style={'width': '40%', 'display': 'inline-block'})
     ]),
     html.Button('Submit', id='word-button2', n_clicks=0),
     html.Div(children = [
