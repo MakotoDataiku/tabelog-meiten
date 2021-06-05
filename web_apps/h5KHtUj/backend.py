@@ -62,7 +62,7 @@ def update_ramen_output(n_clicks, value):
             #print(w)
             # text.join(str(w)+"\n")
             text = text + str(w) + "\n"
-            print(text)
+        print(text)
         md = dcc.Markdown(text)
         return md
 
@@ -79,6 +79,6 @@ def update_wiki_output(n_clicks, value):
             #print(w)
             # text.join(str(w)+"\n")
             text = text + str(w) + "\n"
-            print(text)
+        print(text)
         md = dcc.Markdown(text)
         return md
