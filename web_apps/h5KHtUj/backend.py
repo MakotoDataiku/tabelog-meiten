@@ -45,6 +45,9 @@ app.layout = html.Div(children=[
 )
 def update_output(n_clicks, value):
     if n_clicks > 0:
-        ramen_similar = ramen_model.most_similar(value)
-        print(ramen_similar)
-        return ramen_similar
+        similar_words = ramen_model.most_similar(value)
+        print(similar_words)
+        text = ''
+        for w in similar_words:
+            text.join(w + '\n')
+        return text
