@@ -82,6 +82,9 @@ def update_wiki_output(n_clicks, value):
         similar_words = wiki_model.wv.most_similar(value)
         textarea = []
         for w in similar_words:
+            y = list(w)
+            y[1] = round(y[1], 4)
+            w = tuple(y)
             textarea.append(str(w))
             textarea.append(html.Br())      
         return html.P(textarea)
