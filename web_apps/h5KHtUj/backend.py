@@ -30,9 +30,6 @@ textbox = dcc.Textarea(
     style={'width': '100%', 'height': 40},
     )
 
-ramen_table = dt.DataTable(
-    id='ramen-table',
-)
 
 # Layouts
 app.layout = html.Div(children=[
@@ -43,7 +40,6 @@ app.layout = html.Div(children=[
         html.Div(children = [
             html.Div("Ramen model"),
             html.Div(id='ramen-similar-words'),
-            html.Div(ramen_table)
         ], style={'width': '40%', 'display': 'inline-block'}),
         html.Div(children = [
             html.Div("Generic model(Wikipedia) model"),
