@@ -56,8 +56,8 @@ app.layout = html.Div(children=[
 
 # Callbacks
 @app.callback(
-    Output('ramen-similar-words', 'children'),
-    #Output('ramen-table', 'data'),
+    #Output('ramen-similar-words', 'children'),
+    Output('ramen-table', 'data'),
     Input('word-button', 'n_clicks'),
     State('word', 'value'),
 )
