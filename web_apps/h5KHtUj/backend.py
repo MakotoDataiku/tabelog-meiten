@@ -9,14 +9,14 @@ from gensim.models import word2vec
 # Loading ramen model
 folder_path = dataiku.Folder("m9JZdV7b").get_path()
 model_path = folder_path + "/word2vec_ramen_model.model"
-print("model_path")
+print(model_path)
 ramen_model = word2vec.Word2Vec.load(model_path)
 
 # Loading generic model
 
 
 
-ramen_model.most_similar("山岸")
+#ramen_model.most_similar("山岸")
 
 # This loads dummy data into a dataframe
 df = pd.DataFrame({
