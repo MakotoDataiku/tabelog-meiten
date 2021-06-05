@@ -25,8 +25,9 @@ wiki_model = word2vec.Word2Vec.load(wiki_model_path)
 # Components
 
 textbox = dcc.Textarea(
-        id='word',
-        style={'width': '100%', 'height': 40},
+    id='word',
+    value = 'ラーメン',
+    style={'width': '100%', 'height': 40},
     )
     
 
