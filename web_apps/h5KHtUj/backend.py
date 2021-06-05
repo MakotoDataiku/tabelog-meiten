@@ -56,7 +56,8 @@ app.layout = html.Div(children=[
 
 # Callbacks
 @app.callback(
-    Output('ramen-similar-words', 'children'),
+    #Output('ramen-similar-words', 'children'),
+    Output('ramen-table', 'data'),
     Input('word-button', 'n_clicks'),
     State('word', 'value'),
 )
@@ -92,8 +93,11 @@ def update_wiki_output(n_clicks, value):
         return md
     
 @app.callback(
+    Output('ramen-similar-words', 'children'),
+    Input('word-button', 'n_clicks'),
+    State('word', 'value'),
 )
-def update_ramen_table():
+def update_ramen_table(n_clicks, value):
     df.iloc[
         page_current*page_size:(page_current+ 1)*page_size
     ].to_dict('records')
