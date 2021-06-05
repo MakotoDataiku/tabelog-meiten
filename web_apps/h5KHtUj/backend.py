@@ -35,7 +35,17 @@ app.layout = html.Div(children=[
     html.H1(children='Hello Dash'),
     html.Div(textbox),
     html.Button('Submit', id='word-button', n_clicks=0),
-    html.Div(id='ramen-similar-words', style={'whiteSpace': 'pre-line'})
+    html.Div(children = [
+        html.Div(children = [
+            html.Div("Ramen model"),
+            html.Div(id='ramen-similar-words')
+        ], style={'width': '40%', 'display': 'inline-block'}),
+        html.Div(children = [
+            html.Div("Generic model(Wikipedia) model"),
+            html.Div(id='wiki-similar-words')
+        ], style={'width': '40%', 'display': 'inline-block'})
+    ])
+    #html.Div(, style={'whiteSpace': 'pre-line'})
 ])
 
 # Callbacks
