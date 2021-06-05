@@ -16,7 +16,7 @@ ramen_model = word2vec.Word2Vec.load(model_path)
 wiki_model_path = "/Users/mmiyazaki/dataiku/Design/DATA_DIR/managed_folders/WIKIPEDIAJP/jU2z0VpV/word2vec_model.model"
 wiki_model = word2vec.Word2Vec.load(wiki_model_path)
 
-#ramen_model.most_similar("山岸")
+print(ramen_model.most_similar("山岸"))
 
 # This loads dummy data into a dataframe
 df = pd.DataFrame({
