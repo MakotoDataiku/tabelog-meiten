@@ -38,7 +38,7 @@ textbox_pos = dcc.Textarea(
 
 textbox_neg = dcc.Textarea(
     id='text-neg',
-    value = 'ラーメン + 塩',
+    value = 'ラーメン 塩',
     style={'width': '100%', 'height': 40},
     )
 
@@ -124,6 +124,7 @@ def update_ramen_output(n_clicks, value_pos, value_neg):
         list_pos = value_pos.split(" ").split("　").split(",").split("、")
         list_neg = value_neg.split(" ").split("　").split(",").split("、")
         similar_words = ramen_model.most_similar(positive=list_pos, negative=list_neg)
+        print(similar_words)
         textarea = []
         for w in similar_words:
             y = list(w)
