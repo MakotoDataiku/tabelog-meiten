@@ -32,7 +32,7 @@ textbox = dcc.Textarea(
 
 textbox_pos = dcc.Textarea(
     id='text-pos',
-    value = 'ラーメン 塩',
+    value = 'ラーメン 北海道',
     style={'width': '100%', 'height': 40},
     )
 
