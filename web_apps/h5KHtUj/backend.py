@@ -6,8 +6,7 @@ import pandas as pd
 from dataiku import pandasutils as pdu
 from gensim.models import word2vec
 from dash.dependencies import Input, Output, State
-import dash_table
-import dash_table_experiments as dt
+import dash_table as dt
 
 # Loading ramen model
 folder_path = dataiku.Folder("m9JZdV7b").get_path()
