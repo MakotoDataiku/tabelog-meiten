@@ -121,8 +121,9 @@ def update_wiki_output(n_clicks, value):
 def update_ramen_output(n_clicks, value_pos, value_neg):
     if n_clicks > 0:
         print(value_pos, value_neg)
-        list_pos = value_pos.split(" ").split("　").split(",").split("、")
-        list_neg = value_neg.split(" ").split("　").split(",").split("、")
+        list_pos = value_pos.replace(" ", ",").replace("　", ",").replace("、", ",").split(",")
+        list_neg = value_neg.replace(" ", ",").replace("　", ",").replace("、", ",").split(",")
+        print(list_pos, list_neg)
         similar_words = ramen_model.most_similar(positive=list_pos, negative=list_neg)
         print(similar_words)
         textarea = []
