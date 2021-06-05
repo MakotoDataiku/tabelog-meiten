@@ -26,7 +26,7 @@ print(ramen_model.most_similar("山岸"))
 textbox = dcc.Textarea(
         id='textarea',
         value='Textarea content initialized\nwith multiple lines of text',
-        style={'width': '100%', 'height': 300},
+        style={'width': '100%', 'height': 40},
     )
     
 
