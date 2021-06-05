@@ -45,7 +45,7 @@ textbox_neg = dcc.Textarea(
 
 # Layouts
 app.layout = html.Div(children=[
-    html.H1(children='Hello Dash'),
+    html.H1(children='Lost in the Ramen Universe'),
     html.Div(textbox),
     html.Button('Submit', id='word-button', n_clicks=0),
     html.Div(children = [
