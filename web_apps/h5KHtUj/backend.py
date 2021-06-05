@@ -6,6 +6,7 @@ import pandas as pd
 from dataiku import pandasutils as pdu
 from gensim.models import word2vec
 from dash.dependencies import Input, Output, State
+import dash_table
 
 # Loading ramen model
 folder_path = dataiku.Folder("m9JZdV7b").get_path()
@@ -29,8 +30,12 @@ textbox = dcc.Textarea(
     value = 'ラーメン',
     style={'width': '100%', 'height': 40},
     )
-    
 
+ramen_table = dash_table.DataTable(
+    id='ramen-table',
+)
+
+# Layouts
 app.layout = html.Div(children=[
     html.H1(children='Hello Dash'),
     html.Div(textbox),
@@ -38,7 +43,8 @@ app.layout = html.Div(children=[
     html.Div(children = [
         html.Div(children = [
             html.Div("Ramen model"),
-            html.Div(id='ramen-similar-words')
+            #html.Div(id='ramen-similar-words'),
+            html.Div(ramen_table)
         ], style={'width': '40%', 'display': 'inline-block'}),
         html.Div(children = [
             html.Div("Generic model(Wikipedia) model"),
@@ -57,6 +63,7 @@ app.layout = html.Div(children=[
 def update_ramen_output(n_clicks, value):
     if n_clicks > 0:
         similar_words = ramen_model.wv.most_similar(value)
+        df = pd.DataFrame(simliar_words, columns=["words", "score"])
         text = ""
         for w in similar_words:
             #print(w)
@@ -64,7 +71,7 @@ def update_ramen_output(n_clicks, value):
             text = text + str(w) + "\n"
         print(text)
         md = dcc.Markdown(text)
-        return md
+        return df.to_dict('records')
 
 @app.callback(
     Output('wiki-similar-words', 'children'),
@@ -74,6 +81,7 @@ def update_ramen_output(n_clicks, value):
 def update_wiki_output(n_clicks, value):
     if n_clicks > 0:
         similar_words = wiki_model.wv.most_similar(value)
+        
         text = ""
         for w in similar_words:
             #print(w)
@@ -82,3 +90,10 @@ def update_wiki_output(n_clicks, value):
         print(text)
         md = dcc.Markdown(text)
         return md
+    
+@app.callback(
+)
+def update_ramen_table():
+    df.iloc[
+        page_current*page_size:(page_current+ 1)*page_size
+    ].to_dict('records')
