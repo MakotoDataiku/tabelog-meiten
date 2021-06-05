@@ -51,4 +51,4 @@ def update_output(n_clicks, value):
         for w in similar_words:
             text.join(str(w)+"\n")
         print(text)
-        return str(w)
+        return str(text)
