@@ -83,7 +83,7 @@ def update_ramen_output(n_clicks, value):
             selected_row_indices=list(df.index),  # all rows selected by default
         )
     ]
-        return table
+        return df.to_dict('rows')
 
 @app.callback(
     Output('wiki-similar-words', 'children'),
