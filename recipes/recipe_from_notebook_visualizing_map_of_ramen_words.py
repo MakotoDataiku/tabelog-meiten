@@ -30,7 +30,7 @@ tsne = TSNE(n_components=3)
 X_tsne = tsne.fit_transform(X)
 
 # -------------------------------------------------------------------------------- NOTEBOOK-CELL: CODE
-df = pd.DataFrame(X_tsne, index=vocabs, columns=['x', 'y'])
+df = pd.DataFrame(X_tsne, index=vocabs, columns=['x', 'y', 'z'])
 df['vocabs'] = df.index
 
 # -------------------------------------------------------------------------------- NOTEBOOK-CELL: CODE
