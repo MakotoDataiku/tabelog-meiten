@@ -27,7 +27,7 @@ translator = Translator(service_urls=['translate.googleapis.com'])
 textbox = dcc.Textarea(
     id='word',
     value = 'ラーメン',
-    style={'width': '60%', 'height': 40},
+    style={'width': '30%', 'height': 40},
     )
 
 textbox_pos = dcc.Textarea(
