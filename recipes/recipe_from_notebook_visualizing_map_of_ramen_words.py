@@ -26,7 +26,7 @@ vocabs = list(ramen_model.wv.vocab.keys())
 X = ramen_model.wv[vocabs]
 
 # -------------------------------------------------------------------------------- NOTEBOOK-CELL: CODE
-tsne = TSNE(n_components=2)
+tsne = TSNE(n_components=3)
 X_tsne = tsne.fit_transform(X)
 
 # -------------------------------------------------------------------------------- NOTEBOOK-CELL: CODE
