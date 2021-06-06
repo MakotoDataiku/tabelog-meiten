@@ -59,11 +59,11 @@
     "dimensions": []
   },
   "versionTag": {
-    "versionNumber": 1,
+    "versionNumber": 2,
     "lastModifiedBy": {
       "login": "admin"
     },
-    "lastModifiedOn": 1623015021455
+    "lastModifiedOn": 1623015260110
   },
   "creationTag": {
     "versionNumber": 0,
@@ -93,6 +93,10 @@
       {
         "name": "y",
         "type": "float"
+      },
+      {
+        "name": "vocabs",
+        "type": "string"
       }
     ],
     "userModified": false
