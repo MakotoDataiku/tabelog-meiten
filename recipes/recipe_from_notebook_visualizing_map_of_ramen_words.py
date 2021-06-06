@@ -13,10 +13,6 @@ from sklearn.manifold import TSNE
 import re
 import matplotlib.pyplot as plt
 
-# -------------------------------------------------------------------------------- NOTEBOOK-CELL: CODE
-# Example: load a DSS dataset as a Pandas dataframe
-mydataset = dataiku.Dataset("ramen_vocab")
-df = mydataset.get_dataframe()
 
 # -------------------------------------------------------------------------------- NOTEBOOK-CELL: CODE
 folder_path = dataiku.Folder("m9JZdV7b").get_path()
@@ -24,8 +20,6 @@ model_path = folder_path + "/word2vec_ramen_model.model"
 print(model_path)
 ramen_model = word2vec.Word2Vec.load(model_path)
 
-# -------------------------------------------------------------------------------- NOTEBOOK-CELL: CODE
-df.head()
 
 # -------------------------------------------------------------------------------- NOTEBOOK-CELL: CODE
 vocabs = list(ramen_model.wv.vocab.keys())
@@ -52,8 +46,3 @@ plt.show()
 # -------------------------------------------------------------------------------- NOTEBOOK-CELL: CODE
 py_recipe_output = dataiku.Dataset("w2v_for_viz")
 py_recipe_output.write_with_schema(df)
-
-# -------------------------------------------------------------------------------- NOTEBOOK-CELL: CODE
-# Recipe outputs
-w2v_for_viz = dataiku.Dataset("w2v_for_viz")
-w2v_for_viz.write_with_schema(pandas_dataframe)
