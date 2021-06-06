@@ -90,8 +90,9 @@ def update_ramen_output(n_clicks, value):
             print(y)
             # y[1] = round(y[1], 4)
             y[1] = translator.translate(y[0], dest='en').text
+            print(y)
             w = tuple(y)
-            print(w)
+            #print(w)
             textarea.append(str(w))
             textarea.append(html.Br())      
         return html.P(textarea)
