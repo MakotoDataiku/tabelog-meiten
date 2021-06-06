@@ -87,8 +87,8 @@ def update_ramen_output(n_clicks, value):
         textarea = []
         for w in similar_words:
             y = list(w)
-            y[1] = round(y[1], 4)
-            y[0] = translator.translate(y[0], dest='en').text
+            # y[1] = round(y[1], 4)
+            y[1] = translator.translate(y[0], dest='en').text
             w = tuple(y)
             textarea.append(str(w))
             textarea.append(html.Br())      
@@ -105,8 +105,8 @@ def update_wiki_output(n_clicks, value):
         textarea = []
         for w in similar_words:
             y = list(w)
-            y[1] = round(y[1], 4)
-            y[0] = translator.translate(y[0], dest='en').text
+            # y[1] = round(y[1], 4)
+            y[1] = translator.translate(y[0], dest='en').text
             w = tuple(y)
             textarea.append(str(w))
             textarea.append(html.Br())      
