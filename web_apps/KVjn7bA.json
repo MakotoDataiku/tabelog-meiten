@@ -4,7 +4,8 @@
   "params": {
     "autoStartBackend": false,
     "envSelection": {
-      "envMode": "INHERIT"
+      "envMode": "EXPLICIT_ENV",
+      "envName": "dash-py36"
     },
     "nbProcesses": 1,
     "serveLocally": true,
@@ -33,11 +34,11 @@
   "config": {},
   "name": "Vizualising ramen word map",
   "versionTag": {
-    "versionNumber": 0,
+    "versionNumber": 1,
     "lastModifiedBy": {
       "login": "admin"
     },
-    "lastModifiedOn": 1623021697438
+    "lastModifiedOn": 1623021708290
   },
   "creationTag": {
     "versionNumber": 0,
