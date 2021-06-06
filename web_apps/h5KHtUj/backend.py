@@ -87,6 +87,7 @@ def update_ramen_output(n_clicks, value):
         textarea = []
         for w in similar_words:
             y = list(w)
+            print(y)
             # y[1] = round(y[1], 4)
             y[1] = translator.translate(y[0], dest='en').text
             w = tuple(y)
