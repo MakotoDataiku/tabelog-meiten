@@ -43,7 +43,8 @@ fig.update_layout(
         x=0.01,
         font_color='white',
         title_font_color='white',
-        orientation="h"
+        orientation="h",
+        font_size ='20'
     ),
     scene = dict(
         xaxis = dict(
