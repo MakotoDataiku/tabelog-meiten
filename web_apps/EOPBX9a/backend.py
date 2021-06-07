@@ -27,15 +27,16 @@ df['size'] = 3
 x = df['x'].values
 y = df['y'].values
 z = df['z'].values
-color = df['cluster_labels'].values
+clusters = df['cluster_labels'].values
 
 # colors
 gridcolor = 'rgb(204, 204, 0)'
 titlecolor = 'rgb(230, 230, 0)'
 palette = px.colors.qualitative.Light24
-clusters = df['cluster_labels'].unique()
-color = zip(clusters, palette)
-print(color)
+clusters_unique = df['cluster_labels'].unique()
+color = dict(zip(clusters_unique, palette))
+cluster_color = [color(c) for c in clusters]
+
 
 # others
 # translator = Translator(service_urls=['translate.googleapis.com'])
@@ -48,7 +49,7 @@ fig = go.Figure(
         mode='markers',
         marker=dict(
             size=3,
-            color=color,                # set color to an array/list of desired values
+            color=cluster_color,                # set color to an array/list of desired values
             # colorscale='Viridis',   # choose a colorscale
             opacity=0.8
         )
