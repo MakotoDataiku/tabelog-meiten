@@ -20,6 +20,7 @@ app.layout = html.Div(children=[
 
     dcc.Graph(
         id='example-graph',
-        figure=fig
+        figure=fig,
+        style={'height':'100%'}
     )
 ])
