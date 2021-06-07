@@ -43,7 +43,7 @@ fig.update_layout(
         y=1.04,
         xanchor="left",
         x=0.01,
-        font_color='white',
+        font_color='yellow',
     ),
     scene = dict(
         xaxis = dict(
