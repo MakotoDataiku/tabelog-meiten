@@ -108,7 +108,7 @@ fig.update_traces(marker=dict(
                  )
 
 fig.update_traces(
-    x=0, y=0, z=0, marker=dict(size=100)
+    x=[0], y=[0], z=[0], marker=dict(size=100)
     
 )
 
