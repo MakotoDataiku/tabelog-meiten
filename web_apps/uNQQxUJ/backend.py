@@ -209,20 +209,20 @@ def update_wiki_output(n_clicks, value):
 )
 def update_plot(n_clicks, value):
     if n_clicks > 0:
-    similar_words = ramen_model.wv.most_similar(value)
-    list_words = [w[0] for w in simliar_words]
-    fig = px.scatter_3d(df, x='x', y='y', z='z', 
-                    opacity=0.8, 
-                    color='cluster_labels',
-                    size = pd.Series([3]*df.shape[0]),
-                    size[df["words"].isin(list_words)] = 15
-                   
-                    hover_data={
-                       'x':False,
-                       'y':False,
-                       'z':False,
-                       'words':True,
-                       'cluster_labels':False
-                   }
-                   )
-        return fig
+        similar_words = ramen_model.wv.most_similar(value)
+        list_words = [w[0] for w in simliar_words]
+        fig = px.scatter_3d(df, x='x', y='y', z='z', 
+                        opacity=0.8, 
+                        color='cluster_labels',
+                        size = pd.Series([3]*df.shape[0]),
+                        size[df["words"].isin(list_words)] = 15
+
+                        hover_data={
+                           'x':False,
+                           'y':False,
+                           'z':False,
+                           'words':True,
+                           'cluster_labels':False
+                       }
+                       )
+            return fig
