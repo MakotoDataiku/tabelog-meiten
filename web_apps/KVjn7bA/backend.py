@@ -12,7 +12,9 @@ import pandas as pd
 dataset = dataiku.Dataset("w2v_for_viz")
 df = dataset.get_dataframe()
 
-fig = px.scatter_3d(df, x='x', y='y', z='z', opacity=0.4, hover_data=["vocabs"])
+fig = px.scatter_3d(df, x='x', y='y', z='z', 
+                    opacity=0.4, 
+                    hover_data=["vocabs"])
 
 
 app.layout = html.Div(children=[
@@ -21,6 +23,6 @@ app.layout = html.Div(children=[
     dcc.Graph(
         id='example-graph',
         figure=fig,
-        style={'height':1300, 'width':'100%'}
+        style={'height':1000, 'width':'100%'}
     )
 ])
