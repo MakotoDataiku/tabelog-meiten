@@ -123,7 +123,8 @@ app.layout = html.Div(
                     style={
                         'backgroundColor':'black', 
                         'width': '80%',
-                        'display': 'inline-block'
+                        'display': 'inline-block',
+                        'vertical-align': 'middle'
                     }),
                 html.Div(
                     textbox,
