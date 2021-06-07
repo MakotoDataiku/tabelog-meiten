@@ -59,11 +59,11 @@
     "dimensions": []
   },
   "versionTag": {
-    "versionNumber": 3,
+    "versionNumber": 4,
     "lastModifiedBy": {
       "login": "admin"
     },
-    "lastModifiedOn": 1623058347053
+    "lastModifiedOn": 1623058814794
   },
   "creationTag": {
     "versionNumber": 0,
@@ -97,6 +97,10 @@
       {
         "name": "z",
         "type": "float"
+      },
+      {
+        "name": "words",
+        "type": "string"
       },
       {
         "name": "cluster_labels",
