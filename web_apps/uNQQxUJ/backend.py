@@ -205,17 +205,4 @@ def update_wiki_output(n_clicks, value):
 def update_plot(n_clicks, value):
     if n_clicks > 0:
         similar_words = ramen_model.wv.most_similar(value)
-        for w in similar_words:
-            word = w[0]
-            df_sliced = df[df['words']==word]
-            x = df_sliced.x.values[0]
-            y = df_sliced.y.values[0]
-            x = df_sliced.z.values[0]
-            print(x, y, z)
-            """
-            fig.add_scatter(
-                x=x, y= y, z=z, 
-                mode="markers",
-                marker=dict(size=20, color="MediumPurple"))
-            """
         return html.Div()
