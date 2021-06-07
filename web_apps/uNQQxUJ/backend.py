@@ -108,7 +108,7 @@ fig.update_traces(marker=dict(
                  )
 
 fig.add_trace(
-    x=[0], y=[0], z=[0], marker=dict(size=10), overwrite=True
+    data=[px.scatter_3d(x=0, y=0, z=0)], marker=dict(size=10), overwrite=True
     
 )
 
