@@ -17,7 +17,7 @@ fig = px.scatter_3d(df, x='x', y='y', z='z',
                     color='cluster_labels',
                     size = [10]*df.shape[0],
                     #hover_data=["words"],
-                    hover_data='{cluster_labels}'
+                    hover_data='cluster_labels'
                    """
                     hover_data={
                        'x':False,
