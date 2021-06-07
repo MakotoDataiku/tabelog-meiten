@@ -7,6 +7,7 @@ from gensim.models import word2vec
 from googletrans import Translator
 from dash.dependencies import Input, Output, State
 from deep_translator import GoogleTranslator
+import plotly.graph_objects as go
 
 
 # Loading ramen model
@@ -19,12 +20,13 @@ ramen_model = word2vec.Word2Vec.load(model_path)
 wiki_model_path = "/Users/mmiyazaki/dataiku/Design/DATA_DIR/managed_folders/WIKIPEDIAJP/jU2z0VpV/word2vec_model.model"
 wiki_model = word2vec.Word2Vec.load(wiki_model_path)
 
-
-
 # Loading dataset
 dataset = dataiku.Dataset("w2v_for_viz_clustered_prepared")
 df = dataset.get_dataframe()
 df['size'] = 3
+x = df['x'].values
+y = df['y'].values
+z = df['z'].values
 
 # colors
 gridcolor = 'rgb(204, 204, 0)'
@@ -35,22 +37,10 @@ titlecolor = 'rgb(230, 230, 0)'
 translator = GoogleTranslator(source='japanese', target='english')  # output -> Weiter so, du bist großartig
 
 # Components
-fig = px.scatter_3d(df, x='x', y='y', z='z', 
-                    opacity=0.8, 
-                    color='cluster_labels',
-                    # size = pd.Series([3]*df.shape[0]),
-                    size = 'size',
-                    #hover_data=["words"],
-                    # hover_data='cluster_labels'
-                   
-                    hover_data={
-                       'x':False,
-                       'y':False,
-                       'z':False,
-                       'words':True,
-                       'cluster_labels':False
-                   }
-                   )
+fig = go.Scatter3d(
+    x=x, y=y, z=z,
+    mode='markers')
+
 
 fig.update_layout(
     plot_bgcolor='black',
