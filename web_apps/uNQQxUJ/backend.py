@@ -173,4 +173,4 @@ def update_ramen_output(n_clicks, value):
             #print(w)
             textarea.append(str(w))
             textarea.append(html.Br())      
-        return html.P(textarea)
+        return html.P(textarea, style = {'color':'white'})
