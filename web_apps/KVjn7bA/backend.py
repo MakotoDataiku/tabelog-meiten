@@ -13,7 +13,7 @@ dataset = dataiku.Dataset("w2v_for_viz_clustered_prepared")
 df = dataset.get_dataframe()
 
 fig = px.scatter_3d(df, x='x', y='y', z='z', 
-                    opacity=0.4, 
+                    opacity=0.6, 
                     color='cluster_labels',
                     hover_data=["words"])
 
