@@ -41,7 +41,7 @@ fig = go.Scatter3d(
     x=x, y=y, z=z,
     mode='markers')
 
-
+"""
 fig.update_layout(
     plot_bgcolor='black',
     paper_bgcolor="black",
@@ -77,6 +77,8 @@ fig.update_layout(
             showbackground=True,
             zerolinecolor=gridcolor,
         )))
+"""
+
 """
 list_words = ["豚骨", "醤油"]
 df_points = df[df['words'].isin(list_words)]
