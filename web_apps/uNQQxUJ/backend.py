@@ -26,7 +26,7 @@ df = dataset.get_dataframe()
 gridcolor = 'rgb(204, 204, 0)'
 titlecolor = 'rgb(230, 230, 0)'
 
-
+# Components
 fig = px.scatter_3d(df, x='x', y='y', z='z', 
                     opacity=0.8, 
                     color='cluster_labels',
@@ -87,17 +87,7 @@ fig.update_traces(marker=dict(size=2,
                   # selector=dict(mode='markers')
                  )
 
-
-app.layout = html.Div(children=[
-    html.H1(
-        children='Vizualizing the ramen universe',
-        style={
-            'backgroundColor':'black', 
-            'color': titlecolor,
-            'text-align': 'center'
-        }),
-
-    html.Div(dcc.Graph(
+scatterPlot = dcc.Graph(
         id='example-graph',
         figure=fig,
         style={
@@ -105,5 +95,44 @@ app.layout = html.Div(children=[
             'width':'100%', 
             'backgroundColor':'black'
         }
-    ), style={'backgroundColor':'black'})
-], style={'backgroundColor':'black'})
+    )
+
+
+textbox = dcc.Textarea(
+    id='word',
+    value = 'ラーメン',
+    style={'width': '30%', 'height': 40},
+    )
+
+
+# Layouts
+app.layout = html.Div(
+    children=[
+        html.H1(
+            children='Vizualizing the ramen universe',
+            style={
+                'backgroundColor':'black', 
+                'color': titlecolor,
+                'text-align': 'center'
+            }
+        ),
+        html.Div(
+            children=[
+                html.Div(
+                    scatterPlot, 
+                    style={
+                        'backgroundColor':'black', 
+                        'display': 'inline-block'
+                    }),
+                html.Div(
+                    textbox,
+                    style={
+                        'backgroundColor':'black', 
+                        'display': 'inline-block'
+                    }
+                )
+            ],
+            
+        )
+    ], 
+    style={'backgroundColor':'black'})
