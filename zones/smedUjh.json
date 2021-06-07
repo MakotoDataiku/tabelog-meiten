@@ -29,6 +29,14 @@
     {
       "objectId": "aLTWBozg",
       "objectType": "MANAGED_FOLDER"
+    },
+    {
+      "objectId": "compute_w2v_for_viz_clustered",
+      "objectType": "RECIPE"
+    },
+    {
+      "objectId": "w2v_for_viz_clustered",
+      "objectType": "DATASET"
     }
   ],
   "shared": [],
