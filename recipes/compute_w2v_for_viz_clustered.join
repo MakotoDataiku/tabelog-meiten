@@ -44,6 +44,11 @@
       "table": 0
     },
     {
+      "name": "words",
+      "type": "string",
+      "table": 0
+    },
+    {
       "name": "cluster_labels",
       "type": "string",
       "table": 1
@@ -119,6 +124,10 @@
           {
             "name": "z",
             "type": "float"
+          },
+          {
+            "name": "words",
+            "type": "string"
           },
           {
             "name": "cluster_labels",
