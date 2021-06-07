@@ -109,7 +109,7 @@ fig.update_traces(marker=dict(
                  )
 
 fig.add_traces(
-    data=[px.scatter_3d(df_points, x='x', y='y', z='z', size = [50]*df_points.shape[0])]
+    data=[px.scatter_3d(df_points, x='x', y='y', z='z')]
     
 )
 
