@@ -183,7 +183,7 @@ def update_ramen_output(n_clicks, value):
 def update_wiki_output(n_clicks, value):
     if n_clicks > 0:
         similar_words = wiki_model.wv.most_similar(value)
-        textarea = ["Wikipedia model", html.Br()]
+        textarea = []
         for w in similar_words:
             translator = Translator()
             w_en = translator.translate(w[0], dest='en').text
