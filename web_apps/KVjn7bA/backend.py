@@ -64,7 +64,7 @@ app.layout = html.Div(children=[
         children='Vizualizing the ramen universe',
         style={
             'backgroundColor':'black', 
-            'color': 'rgb(230, 230, 0)',
+            'color': 'rgb(204, 204, 0)',
             'text-align': 'center'
         }),
 
