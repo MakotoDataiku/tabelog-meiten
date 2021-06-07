@@ -21,6 +21,6 @@ app.layout = html.Div(children=[
     dcc.Graph(
         id='example-graph',
         figure=fig,
-        style={'height':1500, 'width':'100%'}
+        style={'height':1300, 'width':'100%'}
     )
 ])
