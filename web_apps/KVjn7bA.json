@@ -34,11 +34,11 @@
   "config": {},
   "name": "Vizualising ramen word map",
   "versionTag": {
-    "versionNumber": 23,
+    "versionNumber": 24,
     "lastModifiedBy": {
       "login": "admin"
     },
-    "lastModifiedOn": 1623058771300
+    "lastModifiedOn": 1623058789179
   },
   "creationTag": {
     "versionNumber": 0,

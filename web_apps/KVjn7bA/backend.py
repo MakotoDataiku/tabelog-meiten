@@ -14,7 +14,7 @@ df = dataset.get_dataframe()
 
 fig = px.scatter_3d(df, x='x', y='y', z='z', 
                     opacity=0.4, 
-                    hover_data=["words"])
+                    hover_data=["cluster_labels"])
 
 fig.update_layout(plot_bgcolor='black',
                   scene= {'bgcolor': "black"})
