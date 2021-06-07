@@ -90,10 +90,7 @@ sizes = pd.Series([3]*df.shape[0])
 sizes[0] = 15
 # colors = ['blue',]*10
 # colors[point["pointNumber"]] = 'red'
-fig.update_traces(
-    marker_size=sizes, 
-    #marker_color=colors
-)
+
         
         
 fig.update_traces(marker=dict(
