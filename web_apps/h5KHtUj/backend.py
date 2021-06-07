@@ -39,7 +39,7 @@ textbox_pos = dcc.Textarea(
 textbox_neg = dcc.Textarea(
     id='text-neg',
     value = '',
-    style={'width': '100%', 'height': 40},
+    style={'width': '80%', 'height': 20},
     )
 
 
