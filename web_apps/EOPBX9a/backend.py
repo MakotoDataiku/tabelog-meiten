@@ -37,9 +37,11 @@ titlecolor = 'rgb(230, 230, 0)'
 translator = GoogleTranslator(source='japanese', target='english')  # output -> Weiter so, du bist großartig
 
 # Components
-fig = go.Scatter3d(
+fig = go.Figure(
+    go.Scatter3d(
     x=x, y=y, z=z,
     mode='markers')
+)
 
 """
 fig.update_layout(
