@@ -18,11 +18,17 @@ fig = px.scatter_3d(df, x='x', y='y', z='z',
 
 
 app.layout = html.Div(children=[
-    html.H1(children='Vizualizing the ramen universe'),
+    html.H1(
+        children='Vizualizing the ramen universe',
+        style={'backgroundColor':'black'}),
 
     dcc.Graph(
         id='example-graph',
         figure=fig,
-        style={'height':1000, 'width':'100%'}
+        style={
+            'height':1000, 
+            'width':'100%', 
+            'backgroundColor':'black'
+        }
     )
 ])
