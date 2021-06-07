@@ -216,13 +216,12 @@ def update_plot(n_clicks, value):
                         color='cluster_labels',
                         size = pd.Series([3]*df.shape[0]),
                         size[df["words"].isin(list_words)] = 15,
-
                         hover_data={
                            'x':False,
                            'y':False,
                            'z':False,
                            'words':True,
                            'cluster_labels':False
-                       }
-                       )
-            return fig
+                        }
+                           )
+        return fig
