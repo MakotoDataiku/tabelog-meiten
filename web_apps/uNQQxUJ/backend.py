@@ -24,6 +24,7 @@ wiki_model = word2vec.Word2Vec.load(wiki_model_path)
 # Loading dataset
 dataset = dataiku.Dataset("w2v_for_viz_clustered_prepared")
 df = dataset.get_dataframe()
+df['size'] = 3
 
 # colors
 gridcolor = 'rgb(204, 204, 0)'
@@ -37,7 +38,8 @@ translator = GoogleTranslator(source='japanese', target='english')  # output -> 
 fig = px.scatter_3d(df, x='x', y='y', z='z', 
                     opacity=0.8, 
                     color='cluster_labels',
-                    size = pd.Series([3]*df.shape[0]),
+                    # size = pd.Series([3]*df.shape[0]),
+                    size = 'size'
                     #hover_data=["words"],
                     # hover_data='cluster_labels'
                    
@@ -88,16 +90,17 @@ fig.update_layout(
 
 list_words = ["豚骨", "醤油"]
 indices = df[df['words'].isin(list_words)].index
-print(indices)
-sizes = pd.Series([3]*df.shape[0])
-sizes[indices] = 15
+df.loc[df['words'].isin(list_words), 'size'] = 15
+#print(indices)
+#sizes = pd.Series([3]*df.shape[0])
+#sizes[indices] = 15
 # colors = ['blue',]*10
 # colors[point["pointNumber"]] = 'red'
 
         
 fig.update_traces(marker=dict(
     #size=2,
-    size = sizes,
+    size = df['size'],
     line=dict(
         width=0,
         color='DarkSlateGrey')),
