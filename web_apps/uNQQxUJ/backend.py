@@ -137,7 +137,8 @@ app.layout = html.Div(
                     children=[
                         html.Div(textbox),
                         html.Div(submitButton),
-                        html.Div(id='ramen-similar-words')
+                        html.Div(id='ramen-similar-words'),
+                        html.Div(id='wiki-similar-words')
                     ],
                     style={
                         'backgroundColor':'black', 
@@ -162,6 +163,22 @@ app.layout = html.Div(
 def update_ramen_output(n_clicks, value):
     if n_clicks > 0:
         similar_words = ramen_model.wv.most_similar(value)
+        textarea = []
+        for w in similar_words:
+            pair = str(w[0]) + " : " + str(w[1])
+            textarea.append(pair)
+            textarea.append(html.Br())      
+        return html.P(textarea, style = {'color':'white'})
+    
+    
+@app.callback(
+    Output('wiki-similar-words', 'children'),
+    Input('word-button', 'n_clicks'),
+    State('word', 'value'),
+)
+def update_wiki_output(n_clicks, value):
+    if n_clicks > 0:
+        similar_words = wiki_model.wv.most_similar(value)
         textarea = []
         for w in similar_words:
             pair = str(w[0]) + " : " + str(w[1])
