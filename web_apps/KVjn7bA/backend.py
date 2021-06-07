@@ -27,19 +27,22 @@ fig.update_layout(
             backgroundcolor="black",
             gridcolor="white",
             showbackground=True,
-            zerolinecolor="white",),
+            #zerolinecolor="white",
+        ),
         yaxis = dict(
             # backgroundcolor="rgb(230, 200,230)",
             backgroundcolor="black",
             gridcolor="white",
             showbackground=True,
-            zerolinecolor="white"),
+            #zerolinecolor="white"
+        ),
         zaxis = dict(
             # backgroundcolor="rgb(230, 230,200)",
             backgroundcolor="black",
             gridcolor="white",
             showbackground=True,
-            zerolinecolor="white",)))
+            #zerolinecolor="white",
+        )))
 
 
 app.layout = html.Div(children=[
