@@ -101,7 +101,7 @@ scatterPlot = dcc.Graph(
 textbox = dcc.Textarea(
     id='word',
     value = 'ラーメン',
-    style={'width': '30%', 'height': 40},
+    style={'width': '100%', 'height': 40},
     )
 
 
@@ -122,12 +122,14 @@ app.layout = html.Div(
                     scatterPlot, 
                     style={
                         'backgroundColor':'black', 
+                        'width': '80%',
                         'display': 'inline-block'
                     }),
                 html.Div(
                     textbox,
                     style={
                         'backgroundColor':'black', 
+                        'width': '20%',
                         'display': 'inline-block'
                     }
                 )
