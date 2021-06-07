@@ -41,19 +41,19 @@
         "mapping": [
           {
             "from": "cluster_0",
-            "to": "レビュー(Reviews / websites)"
+            "to": "店内の様子(interior)"
           },
           {
             "from": "cluster_1",
-            "to": "立地・外観(Appearances, locations)"
+            "to": "レビュー(reviews)"
           },
           {
             "from": "cluster_2",
-            "to": "営業形態(Operations, services)"
+            "to": "味・具材(Taste, ingredients)"
           },
           {
             "from": "cluster_3",
-            "to": "味・具材(Taste, ingredients)"
+            "to": "外観・立地(appearance/locations)"
           },
           {
             "from": "cluster_outliers",
