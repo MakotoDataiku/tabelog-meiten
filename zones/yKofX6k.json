@@ -41,10 +41,6 @@
     {
       "objectId": "compute_ramen_vocab_by_clusters_prepared",
       "objectType": "RECIPE"
-    },
-    {
-      "objectId": "compute_cluster_visualized",
-      "objectType": "RECIPE"
     }
   ],
   "shared": [],
