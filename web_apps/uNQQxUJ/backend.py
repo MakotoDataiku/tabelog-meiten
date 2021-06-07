@@ -163,7 +163,7 @@ app.layout = html.Div(
 def update_ramen_output(n_clicks, value):
     if n_clicks > 0:
         similar_words = ramen_model.wv.most_similar(value)
-        textarea = []
+        textarea = ["Ramen model", html.Br()]
         for w in similar_words:
             pair = str(w[0]) + " : " + str(w[1])
             textarea.append(pair)
@@ -179,7 +179,7 @@ def update_ramen_output(n_clicks, value):
 def update_wiki_output(n_clicks, value):
     if n_clicks > 0:
         similar_words = wiki_model.wv.most_similar(value)
-        textarea = []
+        textarea = ["Wikipedia model", html.Br()]
         for w in similar_words:
             pair = str(w[0]) + " : " + str(w[1])
             textarea.append(pair)
