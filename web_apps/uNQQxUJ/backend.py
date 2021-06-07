@@ -86,12 +86,14 @@ fig.update_layout(
             zerolinecolor=gridcolor,
         )))
 
+list_words = ["豚骨", "醤油"]
+indices = df[df['words'].isin(list_words)].index
+print(indices)
 sizes = pd.Series([3]*df.shape[0])
-sizes[0] = 15
+sizes[indices] = 15
 # colors = ['blue',]*10
 # colors[point["pointNumber"]] = 'red'
 
-        
         
 fig.update_traces(marker=dict(
     #size=2,
