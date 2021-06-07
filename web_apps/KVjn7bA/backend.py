@@ -24,7 +24,7 @@ fig = px.scatter_3d(df, x='x', y='y', z='z',
                        'y':False,
                        'z':False,
                        'words':True,
-                       #'cluster_labels':True
+                       'cluster_labels':False
                    }
                    
                    )
