@@ -63,9 +63,11 @@ fig.update_layout(
         )))
 
 fig.update_traces(marker=dict(size=2,
-                              line=dict(width=0,
-                                        color='DarkSlateGrey')),
-                  selector=dict(mode='markers'))
+                              line=dict(
+                                  width=0,
+                                  color='DarkSlateGrey')),
+                  # selector=dict(mode='markers')
+                 )
 
 
 app.layout = html.Div(children=[
