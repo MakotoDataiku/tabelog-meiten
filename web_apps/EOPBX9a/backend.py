@@ -127,7 +127,7 @@ app.layout = html.Div(
         html.Div(
             children=[
                 html.Div(
-                    fig, 
+                    scatterPlot, 
                     style={
                         'backgroundColor':'black', 
                         'width': '80%',
