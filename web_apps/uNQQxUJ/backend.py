@@ -170,7 +170,7 @@ def update_ramen_output(n_clicks, value):
             textarea.append(html.Br()) 
         div = html.P(
             children = [
-                html.P("Ramen model"),
+                html.H3("Ramen model"),
                 html.Div(textarea)
             ],
             style = {'color':'white'})
