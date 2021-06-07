@@ -34,7 +34,7 @@ fig.update_layout(
     paper_bgcolor="black",
     # legend_bgcolor='white',
     legend_title_font_color='yellow',
-    legend_font_color='white',
+    legend_font_color='yellow',
     scene = dict(
         xaxis = dict(
             # backgroundcolor="rgb(200, 200, 230)",
