@@ -129,8 +129,8 @@ app.layout = html.Div(
                     }),
                 html.Div(
                     children=[
-                        textbox,
-                        #submitButton
+                        html.Div(textbox),
+                        html.Div(submitButton),
                     ],
                     style={
                         'backgroundColor':'black', 
