@@ -16,7 +16,7 @@ fig = px.scatter_3d(df, x='x', y='y', z='z', opacity=0.4, hover_data=["vocabs"])
 
 
 app.layout = html.Div(children=[
-    html.H1(children='Hello Dash'),
+    html.H1(children='Vizualizing the ramen universe'),
 
     dcc.Graph(
         id='example-graph',
