@@ -30,6 +30,7 @@ df['size'] = 3
 gridcolor = 'rgb(204, 204, 0)'
 titlecolor = 'rgb(230, 230, 0)'
 
+
 # others
 # translator = Translator(service_urls=['translate.googleapis.com'])
 translator = GoogleTranslator(source='japanese', target='english')  # output -> Weiter so, du bist großartig
