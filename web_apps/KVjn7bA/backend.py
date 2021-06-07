@@ -89,7 +89,7 @@ app.layout = html.Div(children=[
         figure=fig,
         style={
             'height':1000, 
-            'width':'80%', 
+            'width':'100%', 
             'backgroundColor':'black'
         }
     ), style={'backgroundColor':'black'})
