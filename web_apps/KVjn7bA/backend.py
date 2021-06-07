@@ -37,12 +37,13 @@ fig.update_layout(
     plot_bgcolor='black',
     paper_bgcolor="black",
     legend_title_font_color='white',
-    legend_font_color='white',
+    
     legend=dict(
         yanchor="top",
         y=1.04,
         xanchor="left",
-        x=0.01
+        x=0.01,
+        font_color='white',
     ),
     scene = dict(
         xaxis = dict(
