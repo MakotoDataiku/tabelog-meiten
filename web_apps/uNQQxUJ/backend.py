@@ -130,7 +130,8 @@ app.layout = html.Div(
                     style={
                         'backgroundColor':'black', 
                         'width': '20%',
-                        'display': 'inline-block'
+                        'display': 'inline-block',
+                        'vertical-align': 'middle'
                     }
                 )
             ],
