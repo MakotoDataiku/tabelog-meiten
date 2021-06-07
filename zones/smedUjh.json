@@ -37,6 +37,14 @@
     {
       "objectId": "w2v_for_viz_clustered",
       "objectType": "DATASET"
+    },
+    {
+      "objectId": "w2v_for_viz_clustered_prepared",
+      "objectType": "DATASET"
+    },
+    {
+      "objectId": "compute_w2v_for_viz_clustered_prepared",
+      "objectType": "RECIPE"
     }
   ],
   "shared": [],
