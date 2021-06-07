@@ -84,13 +84,13 @@ list_words = ["豚骨", "醤油"]
 df_points = df[df['words'].isin(list_words)]
 indices = df_points.index
 df.loc[df['words'].isin(list_words), 'size'] = 50
-"""
+
 fig.update_traces(marker=dict(
     line=dict(
         width=0,
         color='DarkSlateGrey')),
                  )
-
+"""
 
 scatterPlot = dcc.Graph(
         id='3d-plot',
