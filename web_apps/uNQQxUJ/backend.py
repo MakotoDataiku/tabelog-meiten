@@ -163,12 +163,17 @@ app.layout = html.Div(
 def update_ramen_output(n_clicks, value):
     if n_clicks > 0:
         similar_words = ramen_model.wv.most_similar(value)
-        textarea = ["Ramen model", html.Br()]
+        textarea = []
         for w in similar_words:
             pair = str(w[0]) + " : " + str(w[1])
             textarea.append(pair)
             textarea.append(html.Br()) 
-        div = html.P(textarea, style = {'color':'white'})
+        div = html.P(
+            children = [
+                html.P("Ramen model")
+                html.Div(textarea)
+            ],
+            style = {'color':'white'})
         return div
     
     
