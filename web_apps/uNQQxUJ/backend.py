@@ -101,7 +101,7 @@ scatterPlot = dcc.Graph(
 textbox = dcc.Textarea(
     id='word',
     value = 'ラーメン',
-    style={'width': '100%', 'height': 40},
+    style={'width': '80%', 'height': 20},
     )
 
 
