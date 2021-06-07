@@ -7,7 +7,8 @@ from dataiku import pandasutils as pdu
 from gensim.models import word2vec
 from dash.dependencies import Input, Output, State
 import dash_table as dt
-from googletrans import Translator
+from deep_translator import GoogleTranslator
+
 
 # Loading ramen model
 folder_path = dataiku.Folder("m9JZdV7b").get_path()
@@ -20,7 +21,7 @@ wiki_model_path = "/Users/mmiyazaki/dataiku/Design/DATA_DIR/managed_folders/WIKI
 wiki_model = word2vec.Word2Vec.load(wiki_model_path)
 
 # Some functions
-translator = Translator(service_urls=['translate.googleapis.com'])
+translator = GoogleTranslator(source='japanese', target='english')  # output -> Weiter so, du bist großartig
 
 # Components
 
