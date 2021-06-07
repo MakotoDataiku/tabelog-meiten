@@ -107,7 +107,7 @@ fig.update_traces(marker=dict(
                   # selector=dict(mode='markers')
                  )
 
-fig.add_traces(
+fig.add_trace(
     x=[0], y=[0], z=[0], marker=dict(size=10), overwrite=True
     
 )
