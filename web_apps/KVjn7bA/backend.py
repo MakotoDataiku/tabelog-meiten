@@ -46,14 +46,14 @@ fig.update_layout(
         yaxis = dict(
             # backgroundcolor="rgb(230, 200,230)",
             backgroundcolor="black",
-            gridcolor="white",
+            gridcolor="yellow",
             showbackground=True,
             zerolinecolor="white"
         ),
         zaxis = dict(
             # backgroundcolor="rgb(230, 230,200)",
             backgroundcolor="black",
-            gridcolor="white",
+            gridcolor="yellow",
             showbackground=True,
             zerolinecolor="white",
         )))
