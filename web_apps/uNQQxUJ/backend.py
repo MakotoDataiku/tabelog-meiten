@@ -190,5 +190,10 @@ def update_wiki_output(n_clicks, value):
             pair = str(w[0]) + " : " + str(w[1])
             textarea.append(pair)
             textarea.append(html.Br())      
-        div = html.P(textarea, style = {'color':'white'})
+        div = html.P(
+            children = [
+                html.H3("Wikipedia model"),
+                html.Div(textarea)
+            ],
+            style = {'color':'white'})
         return div
