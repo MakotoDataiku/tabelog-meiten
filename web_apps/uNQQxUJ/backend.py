@@ -32,7 +32,7 @@ titlecolor = 'rgb(230, 230, 0)'
 # others
 # translator = Translator(service_urls=['translate.googleapis.com'])
 translator = GoogleTranslator(source='en', target='ja')  # output -> Weiter so, du bist großartig
-
+print(GoogleTranslator.get_supported_languages())
 
 # Components
 fig = px.scatter_3d(df, x='x', y='y', z='z', 
