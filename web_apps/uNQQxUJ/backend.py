@@ -3,11 +3,22 @@ import dataiku
 import dash_core_components as dcc
 import dash_html_components as html
 import pandas as pd
+from gensim.models import word2vec
+
+
+# Loading ramen model
+folder_path = dataiku.Folder("m9JZdV7b").get_path()
+model_path = folder_path + "/word2vec_ramen_model.model"
+print(model_path)
+ramen_model = word2vec.Word2Vec.load(model_path)
+
+# Loading generic model
+wiki_model_path = "/Users/mmiyazaki/dataiku/Design/DATA_DIR/managed_folders/WIKIPEDIAJP/jU2z0VpV/word2vec_model.model"
+wiki_model = word2vec.Word2Vec.load(wiki_model_path)
 
 
 
-
-
+# Loading dataset
 dataset = dataiku.Dataset("w2v_for_viz_clustered_prepared")
 df = dataset.get_dataframe()
 
