@@ -27,6 +27,7 @@ df['size'] = 3
 x = df['x'].values
 y = df['y'].values
 z = df['z'].values
+color = df['cluster_labels'].values
 
 # colors
 gridcolor = 'rgb(204, 204, 0)'
@@ -39,8 +40,15 @@ translator = GoogleTranslator(source='japanese', target='english')  # output -> 
 # Components
 fig = go.Figure(
     go.Scatter3d(
-    x=x, y=y, z=z,
-    mode='markers')
+        x=x, y=y, z=z,
+        mode='markers',
+        marker=dict(
+            size=3,
+            color=color,                # set color to an array/list of desired values
+            # colorscale='Viridis',   # choose a colorscale
+            opacity=0.8
+        )
+    )
 )
 
 
