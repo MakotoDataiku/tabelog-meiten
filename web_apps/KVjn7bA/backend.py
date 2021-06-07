@@ -60,6 +60,7 @@ fig.update_layout(
 
 
 app.layout = html.Div(children=[
+    html.H1(style={'backgroundColor':'black'}),
     html.H1(
         children='Vizualizing the ramen universe',
         style={'backgroundColor':'black', 'color': 'white'}),
