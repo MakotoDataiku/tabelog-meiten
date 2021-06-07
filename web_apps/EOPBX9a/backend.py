@@ -34,9 +34,9 @@ gridcolor = 'rgb(204, 204, 0)'
 titlecolor = 'rgb(230, 230, 0)'
 palette = px.colors.qualitative.Light24
 clusters_unique = df['cluster_labels'].unique()
-color = zip(clusters_unique, palette)
+#color = zip(clusters_unique, palette)
 color_dict = {clusters_unique[i]:palette[i] for i in range(len(clusters_unique))}
-cluster_color = [color_dict(c) for c in clusters]
+cluster_color = [color_dict[c] for c in clusters]
 
 
 # others
