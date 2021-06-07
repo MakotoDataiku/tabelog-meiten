@@ -31,6 +31,7 @@ app.layout = html.Div(children=[
             'height':1000, 
             'width':'80%', 
             'backgroundColor':'black'
-        }
+        },
+        scene: {'bgcolor': "green"}
     )
 ])
