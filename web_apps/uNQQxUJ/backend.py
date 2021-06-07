@@ -108,7 +108,7 @@ fig.update_traces(marker=dict(
                   # selector=dict(mode='markers')
                  )
 
-fig.add_trace(
+fig.add_traces(
     data=[px.scatter_3d(df_points, x='x', y='y', z='z')], marker=dict(size=10), overwrite=True
     
 )
