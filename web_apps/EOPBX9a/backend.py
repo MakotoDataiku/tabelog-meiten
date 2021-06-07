@@ -32,6 +32,9 @@ color = df['cluster_labels'].values
 # colors
 gridcolor = 'rgb(204, 204, 0)'
 titlecolor = 'rgb(230, 230, 0)'
+palette = px.colors.qualitative.Light24
+clusters = df['cluster_labels'].unique()
+color = zip(clusters, palette)
 
 # others
 # translator = Translator(service_urls=['translate.googleapis.com'])
