@@ -49,11 +49,6 @@
       "table": 0
     },
     {
-      "name": "words",
-      "type": "string",
-      "table": 1
-    },
-    {
       "name": "cluster_labels",
       "type": "string",
       "table": 1
@@ -132,10 +127,6 @@
           },
           {
             "name": "vocabs",
-            "type": "string"
-          },
-          {
-            "name": "words",
             "type": "string"
           },
           {
