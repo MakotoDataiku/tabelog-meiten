@@ -39,7 +39,7 @@ fig = px.scatter_3d(df, x='x', y='y', z='z',
                     opacity=0.8, 
                     color='cluster_labels',
                     # size = pd.Series([3]*df.shape[0]),
-                    size = 'size'
+                    size = 'size',
                     #hover_data=["words"],
                     # hover_data='cluster_labels'
                    
