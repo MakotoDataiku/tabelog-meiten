@@ -29,7 +29,7 @@ app.layout = html.Div(children=[
         figure=fig,
         style={
             'height':1000, 
-            'width':'100%', 
+            'width':'80%', 
             'backgroundColor':'black'
         }
     )
