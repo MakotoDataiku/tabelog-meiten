@@ -33,6 +33,7 @@ fig.update_layout(
     plot_bgcolor='black',
     paper_bgcolor="black",
     # legend_bgcolor='white',
+    legend_title_font_color='yellow',
     legend_font_color='white',
     scene = dict(
         xaxis = dict(
