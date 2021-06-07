@@ -17,7 +17,7 @@ fig = px.scatter_3d(df, x='x', y='y', z='z',
                     hover_data=["vocabs"])
 
 fig.update_layout(plot_bgcolor='black',
-        scene= {'bgcolor': "green"})
+                  scene= {'bgcolor': "black"})
 
 
 app.layout = html.Div(children=[
