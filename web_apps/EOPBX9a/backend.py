@@ -43,7 +43,7 @@ fig = go.Figure(
     mode='markers')
 )
 
-"""
+
 fig.update_layout(
     plot_bgcolor='black',
     paper_bgcolor="black",
@@ -79,7 +79,7 @@ fig.update_layout(
             showbackground=True,
             zerolinecolor=gridcolor,
         )))
-"""
+
 
 """
 list_words = ["豚骨", "醤油"]
