@@ -164,7 +164,7 @@ def update_ramen_output(n_clicks, value):
         similar_words = ramen_model.wv.most_similar(value)
         textarea = []
         for w in similar_words:
-            pair = w[0] + ":" + w[1]
+            pair = str(w[0]) + " : " + str(w[1])
             textarea.append(pair)
             textarea.append(html.Br())      
         return html.P(textarea, style = {'color':'white'})
