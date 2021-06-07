@@ -211,11 +211,12 @@ def update_plot(n_clicks, value):
     if n_clicks > 0:
         similar_words = ramen_model.wv.most_similar(value)
         list_words = [w[0] for w in simliar_words]
+        """
         fig = px.scatter_3d(df, x='x', y='y', z='z', 
                         opacity=0.8, 
                         color='cluster_labels',
                         size = pd.Series([3]*df.shape[0]),
-                        sizes[0] = 15,
+                        size[df["words"].isin(list_words)] = 15,
                         hover_data={
                            'x':False,
                            'y':False,
@@ -224,4 +225,6 @@ def update_plot(n_clicks, value):
                            'cluster_labels':False
                         }
                            )
+        """
+        fig.add_trace(px.scatter_3d(0,0,0))
         return fig
