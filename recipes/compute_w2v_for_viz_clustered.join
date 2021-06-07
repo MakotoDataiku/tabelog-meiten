@@ -4,34 +4,58 @@
       "table2": 1,
       "table1": 0,
       "conditionsMode": "AND",
+      "rightLimit": {
+        "decisionColumn": {},
+        "maxMatches": 1,
+        "type": "KEEP_LARGEST",
+        "enabled": false
+      },
       "type": "LEFT",
       "outerJoinOnTheLeft": true,
-      "on": []
+      "on": [
+        {
+          "column1": {
+            "name": "vocabs",
+            "table": 0
+          },
+          "column2": {
+            "name": "words",
+            "table": 1
+          },
+          "type": "EQ"
+        }
+      ]
     }
   ],
   "selectedColumns": [
     {
       "name": "x",
+      "type": "float",
       "table": 0
     },
     {
       "name": "y",
+      "type": "float",
       "table": 0
     },
     {
       "name": "z",
+      "type": "float",
       "table": 0
     },
     {
       "name": "vocabs",
+      "type": "string",
       "table": 0
     },
     {
       "name": "words",
+      "type": "string",
       "table": 1
     },
     {
       "name": "cluster_labels",
+      "type": "string",
       "table": 1
     }
   ],
@@ -89,5 +113,39 @@
       "computedColumns": []
     }
   ],
+  "computedColumns": [],
+  "postFilter": {
+    "$status": {
+      "schema": {
+        "columns": [
+          {
+            "name": "x",
+            "type": "float"
+          },
+          {
+            "name": "y",
+            "type": "float"
+          },
+          {
+            "name": "z",
+            "type": "float"
+          },
+          {
+            "name": "vocabs",
+            "type": "string"
+          },
+          {
+            "name": "words",
+            "type": "string"
+          },
+          {
+            "name": "cluster_labels",
+            "type": "string"
+          }
+        ],
+        "userModified": false
+      }
+    }
+  },
   "enableAutoCastInJoinConditions": false
 }
