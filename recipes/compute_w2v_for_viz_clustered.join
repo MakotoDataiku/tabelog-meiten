@@ -15,7 +15,7 @@
       "on": [
         {
           "column1": {
-            "name": "vocabs",
+            "name": "words",
             "table": 0
           },
           "column2": {
@@ -41,11 +41,6 @@
     {
       "name": "z",
       "type": "float",
-      "table": 0
-    },
-    {
-      "name": "vocabs",
-      "type": "string",
       "table": 0
     },
     {
@@ -124,10 +119,6 @@
           {
             "name": "z",
             "type": "float"
-          },
-          {
-            "name": "vocabs",
-            "type": "string"
           },
           {
             "name": "cluster_labels",
