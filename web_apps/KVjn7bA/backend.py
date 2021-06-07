@@ -39,7 +39,7 @@ fig.update_layout(
         xaxis = dict(
             # backgroundcolor="rgb(200, 200, 230)",
             backgroundcolor="black",
-            gridcolor="white",
+            gridcolor="yellow",
             showbackground=True,
             zerolinecolor="white",
         ),
