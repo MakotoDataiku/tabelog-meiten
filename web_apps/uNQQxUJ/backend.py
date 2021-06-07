@@ -212,8 +212,10 @@ def update_plot(n_clicks, value):
             y = df_sliced.y.values[0]
             x = df_sliced.z.values[0]
             print(x, y, z)
+            """
             fig.add_scatter(
                 x=x, y= y, z=z, 
                 mode="markers",
                 marker=dict(size=20, color="MediumPurple"))
+            """
         return html.Div()
