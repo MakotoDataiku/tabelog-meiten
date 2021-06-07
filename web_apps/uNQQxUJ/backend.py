@@ -186,7 +186,8 @@ def update_wiki_output(n_clicks, value):
         similar_words = wiki_model.wv.most_similar(value)
         textarea = ["Wikipedia model", html.Br()]
         for w in similar_words:
-            pair = str(w[0]) + " : " + str(w[1])
+            w_en = translator.translate(w[1], dest='en').text
+            pair = str(w[0]) + " : " + str(w_en)
             textarea.append(pair)
             textarea.append(html.Br())      
         div = html.P(
