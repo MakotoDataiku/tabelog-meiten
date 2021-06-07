@@ -90,7 +90,7 @@ fig.update_layout(
 
 list_words = ["豚骨", "醤油"]
 indices = df[df['words'].isin(list_words)].index
-df.loc[df['words'].isin(list_words), 'size'] = 15
+df.loc[df['words'].isin(list_words), 'size'] = 50
 #print(indices)
 #sizes = pd.Series([3]*df.shape[0])
 #sizes[indices] = 15
