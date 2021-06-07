@@ -8,9 +8,13 @@ import pandas as pd
 
 
 
-# Uncomment the following to read your own dataset
 dataset = dataiku.Dataset("w2v_for_viz_clustered_prepared")
 df = dataset.get_dataframe()
+
+# colors
+gridcolor = 'rgb(204, 204, 0)'
+titlecolor = 'rgb(230, 230, 0)'
+
 
 fig = px.scatter_3d(df, x='x', y='y', z='z', 
                     opacity=0.8, 
@@ -39,21 +43,21 @@ fig.update_layout(
         xaxis = dict(
             # backgroundcolor="rgb(200, 200, 230)",
             backgroundcolor="black",
-            gridcolor="yellow",
+            gridcolor=gridcolor,
             showbackground=True,
             zerolinecolor="white",
         ),
         yaxis = dict(
             # backgroundcolor="rgb(230, 200,230)",
             backgroundcolor="black",
-            gridcolor="yellow",
+            gridcolor=gridcolor,
             showbackground=True,
             zerolinecolor="white"
         ),
         zaxis = dict(
             # backgroundcolor="rgb(230, 230,200)",
             backgroundcolor="black",
-            gridcolor="yellow",
+            gridcolor=gridcolor,
             showbackground=True,
             zerolinecolor="white",
         )))
@@ -64,7 +68,7 @@ app.layout = html.Div(children=[
         children='Vizualizing the ramen universe',
         style={
             'backgroundColor':'black', 
-            'color': 'rgb(204, 204, 0)',
+            'color': titlecolor,
             'text-align': 'center'
         }),
 
