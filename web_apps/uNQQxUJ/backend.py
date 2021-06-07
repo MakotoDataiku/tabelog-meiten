@@ -89,7 +89,8 @@ fig.update_layout(
         )))
 
 list_words = ["豚骨", "醤油"]
-indices = df[df['words'].isin(list_words)].index
+df_points = df[df['words'].isin(list_words)]
+indices = df_points.index
 df.loc[df['words'].isin(list_words), 'size'] = 50
 #print(indices)
 #sizes = pd.Series([3]*df.shape[0])
@@ -108,7 +109,7 @@ fig.update_traces(marker=dict(
                  )
 
 fig.add_trace(
-    data=[px.scatter_3d(x=0, y=0, z=0)], marker=dict(size=10), overwrite=True
+    data=[px.scatter_3d(df_points, x='x', y='y', z='z')], marker=dict(size=10), overwrite=True
     
 )
 
