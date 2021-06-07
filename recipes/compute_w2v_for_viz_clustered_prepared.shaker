@@ -26,8 +26,51 @@
     "autoRefreshSample": false
   },
   "explorationFilters": [],
-  "exploreUIParams": {},
-  "steps": [],
+  "origin": "PREPARE_RECIPE",
+  "exploreUIParams": {
+    "autoRefresh": true
+  },
+  "steps": [
+    {
+      "preview": false,
+      "metaType": "PROCESSOR",
+      "disabled": false,
+      "type": "FindReplace",
+      "params": {
+        "output": "",
+        "mapping": [
+          {
+            "from": "cluster_0",
+            "to": "レビュー"
+          },
+          {
+            "from": "cluster_1",
+            "to": "立地・外観"
+          },
+          {
+            "from": "cluster_2",
+            "to": "営業形態"
+          },
+          {
+            "from": "cluster_3",
+            "to": "味・具材"
+          },
+          {
+            "from": "cluster_outliers",
+            "to": "その他"
+          }
+        ],
+        "normalization": "EXACT",
+        "columns": [
+          "cluster_labels"
+        ],
+        "appliesTo": "SINGLE_COLUMN",
+        "stopAfterFirstMatch": false,
+        "matching": "SUBSTRING"
+      },
+      "alwaysShowComment": false
+    }
+  ],
   "maxProcessedMemTableBytes": -1,
   "previewMode": "ALL_ROWS",
   "vizSampling": {
@@ -35,7 +78,13 @@
     "autoRefreshSample": false
   },
   "analysisColumnData": {},
-  "columnWidthsByName": {},
+  "columnWidthsByName": {
+    "cluster_labels": 148,
+    "x": 169,
+    "words": 113,
+    "y": 169,
+    "z": 162
+  },
   "sorting": [],
   "globalSearchQuery": "",
   "coloring": {
