@@ -62,6 +62,11 @@ fig.update_layout(
             zerolinecolor=gridcolor,
         )))
 
+fig.update_traces(marker=dict(size=20,
+                              line=dict(width=0,
+                                        color='DarkSlateGrey')),
+                  selector=dict(mode='markers'))
+
 
 app.layout = html.Div(children=[
     html.H1(
