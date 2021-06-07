@@ -167,8 +167,9 @@ def update_ramen_output(n_clicks, value):
         for w in similar_words:
             pair = str(w[0]) + " : " + str(w[1])
             textarea.append(pair)
-            textarea.append(html.Br())      
-        return html.P(textarea, style = {'color':'white'})
+            textarea.append(html.Br()) 
+        div = html.P(textarea, style = {'color':'white'})
+        return div
     
     
 @app.callback(
@@ -184,4 +185,5 @@ def update_wiki_output(n_clicks, value):
             pair = str(w[0]) + " : " + str(w[1])
             textarea.append(pair)
             textarea.append(html.Br())      
-        return html.P(textarea, style = {'color':'white'})
+        div = html.P(textarea, style = {'color':'white'})
+        return div
