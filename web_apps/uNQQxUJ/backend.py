@@ -86,12 +86,25 @@ fig.update_layout(
             zerolinecolor=gridcolor,
         )))
 
-fig.update_traces(marker=dict(size=2,
-                              line=dict(
-                                  width=0,
-                                  color='DarkSlateGrey')),
+sizes = pd.Series([3]*df.shape[0])
+sizes[0] = 15
+# colors = ['blue',]*10
+# colors[point["pointNumber"]] = 'red'
+fig.update_traces(
+    marker_size=sizes, 
+    #marker_color=colors
+)
+        
+        
+fig.update_traces(marker=dict(
+    #size=2,
+    size = sizes,
+    line=dict(
+        width=0,
+        color='DarkSlateGrey')),
                   # selector=dict(mode='markers')
                  )
+
 
 scatterPlot = dcc.Graph(
         id='3d-plot',
@@ -201,7 +214,8 @@ def update_wiki_output(n_clicks, value):
             ],
             style = {'color':'white'})
         return div
-
+    
+"""
 @app.callback(
     Output('3d-plot', 'figure'),
     Input('word-button', 'n_clicks'),
@@ -212,7 +226,7 @@ def update_plot(n_clicks, value):
         similar_words = ramen_model.wv.most_similar(value)
         list_words = [w[0] for w in simliar_words]
         indices = df[df['words'].isin(list_words)].index
-        """
+        
         fig = px.scatter_3d(df, x='x', y='y', z='z', 
                         opacity=0.8, 
                         color='cluster_labels',
@@ -226,7 +240,7 @@ def update_plot(n_clicks, value):
                            'cluster_labels':False
                         }
                            )
-        """
+        
         sizes = pd.Series([3]*df.shape[0])
         sizes[indices] = 15
         # colors = ['blue',]*10
@@ -237,3 +251,4 @@ def update_plot(n_clicks, value):
         )
         # fig.add_trace(px.scatter_3d(0,0,0))
         return fig
+"""
