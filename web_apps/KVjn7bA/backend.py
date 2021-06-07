@@ -73,4 +73,4 @@ app.layout = html.Div(children=[
             'backgroundColor':'black'
         }
     ), style={'backgroundColor':'black'})
-])
+], style={'backgroundColor':'black'})
