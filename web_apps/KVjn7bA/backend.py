@@ -62,7 +62,7 @@ fig.update_layout(
             zerolinecolor=gridcolor,
         )))
 
-fig.update_traces(marker=dict(size=20,
+fig.update_traces(marker=dict(size=2,
                               line=dict(width=0,
                                         color='DarkSlateGrey')),
                   selector=dict(mode='markers'))
