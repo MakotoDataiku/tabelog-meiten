@@ -12,7 +12,7 @@ import pandas as pd
 dataset = dataiku.Dataset("w2v_for_viz")
 df = dataset.get_dataframe()
 
-fig = px.scatter_3d(df, x='x', y='y', z='z')
+fig = px.scatter_3d(df, x='x', y='y', z='z', opacity=0.7, hover_data=["vocabs"])
 
 
 app.layout = html.Div(children=[
