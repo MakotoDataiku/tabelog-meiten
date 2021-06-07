@@ -100,12 +100,17 @@ df.loc[df['words'].isin(list_words), 'size'] = 50
         
 fig.update_traces(marker=dict(
     #size=2,
-    size = df['size'],
+    #size = df['size'],
     line=dict(
         width=0,
         color='DarkSlateGrey')),
                   # selector=dict(mode='markers')
                  )
+
+fig.update_traces(
+    x=0, y=0, z=0, size = 100
+    
+)
 
 
 scatterPlot = dcc.Graph(
