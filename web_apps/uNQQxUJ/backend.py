@@ -92,25 +92,15 @@ list_words = ["豚骨", "醤油"]
 df_points = df[df['words'].isin(list_words)]
 indices = df_points.index
 df.loc[df['words'].isin(list_words), 'size'] = 50
-#print(indices)
-#sizes = pd.Series([3]*df.shape[0])
-#sizes[indices] = 15
-# colors = ['blue',]*10
-# colors[point["pointNumber"]] = 'red'
-
         
 fig.update_traces(marker=dict(
-    #size=2,
-    #size = df['size'],
     line=dict(
         width=0,
         color='DarkSlateGrey')),
-                  # selector=dict(mode='markers')
                  )
 
-fig.add_traces(
+fig.add_trace(
     px.scatter_3d(df_points, x='x', y='y', z='z')
-    
 )
 
 
