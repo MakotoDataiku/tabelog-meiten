@@ -36,9 +36,14 @@ fig = px.scatter_3d(df, x='x', y='y', z='z',
 fig.update_layout(
     plot_bgcolor='black',
     paper_bgcolor="black",
-    # legend_bgcolor='white',
     legend_title_font_color='white',
     legend_font_color='white',
+    legend=dict(
+        yanchor="top",
+        y=1.04,
+        xanchor="left",
+        x=0.01
+    ),
     scene = dict(
         xaxis = dict(
             # backgroundcolor="rgb(200, 200, 230)",
