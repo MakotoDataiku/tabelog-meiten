@@ -5,6 +5,7 @@ import dash_html_components as html
 import pandas as pd
 from gensim.models import word2vec
 from googletrans import Translator
+from dash.dependencies import Input, Output, State
 
 
 # Loading ramen model
