@@ -211,6 +211,7 @@ def update_plot(n_clicks, value):
     if n_clicks > 0:
         similar_words = ramen_model.wv.most_similar(value)
         list_words = [w[0] for w in simliar_words]
+        indices = df[df['words'].isin(list_words)].index
         """
         fig = px.scatter_3d(df, x='x', y='y', z='z', 
                         opacity=0.8, 
@@ -226,5 +227,13 @@ def update_plot(n_clicks, value):
                         }
                            )
         """
-        fig.add_trace(px.scatter_3d(0,0,0))
+        sizes = pd.Series([3]*df.shape[0])
+        sizes[indices] = 15
+        # colors = ['blue',]*10
+        # colors[point["pointNumber"]] = 'red'
+        fig.update_traces(
+            marker_size=sizes, 
+            #marker_color=colors
+        )
+        # fig.add_trace(px.scatter_3d(0,0,0))
         return fig
