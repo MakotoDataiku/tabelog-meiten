@@ -31,7 +31,7 @@ titlecolor = 'rgb(230, 230, 0)'
 
 # others
 # translator = Translator(service_urls=['translate.googleapis.com'])
-translator = GoogleTranslator(source='en', target='jp')  # output -> Weiter so, du bist großartig
+translator = GoogleTranslator(source='en', target='ja')  # output -> Weiter so, du bist großartig
 
 
 # Components
