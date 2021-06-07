@@ -46,7 +46,7 @@ app.layout = html.Div(children=[
         children='Vizualizing the ramen universe',
         style={'backgroundColor':'white'}),
 
-    dcc.Graph(
+    html.Div(dcc.Graph(
         id='example-graph',
         figure=fig,
         style={
@@ -54,5 +54,5 @@ app.layout = html.Div(children=[
             'width':'80%', 
             'backgroundColor':'black'
         }
-    )
+    ))
 ])
