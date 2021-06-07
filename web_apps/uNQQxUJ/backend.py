@@ -6,6 +6,7 @@ import pandas as pd
 from gensim.models import word2vec
 from googletrans import Translator
 from dash.dependencies import Input, Output, State
+from deep_translator import GoogleTranslator
 
 
 # Loading ramen model
@@ -29,7 +30,8 @@ gridcolor = 'rgb(204, 204, 0)'
 titlecolor = 'rgb(230, 230, 0)'
 
 # others
-translator = Translator(service_urls=['translate.googleapis.com'])
+# translator = Translator(service_urls=['translate.googleapis.com'])
+translator = GoogleTranslator(source='en', target='jp')  # output -> Weiter so, du bist großartig
 
 
 # Components
@@ -164,7 +166,8 @@ def update_ramen_output(n_clicks, value):
         similar_words = ramen_model.wv.most_similar(value)
         textarea = []
         for w in similar_words:
-            w_en = translator.translate(w[0], dest='en').text
+            # w_en = translator.translate(w[0], dest='en').text
+            w_en = translator.translate(w[0])
             pair = str(w[0]) + " : " + str(w_en)
             textarea.append(pair)
             textarea.append(html.Br()) 
