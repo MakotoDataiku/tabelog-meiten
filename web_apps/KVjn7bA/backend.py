@@ -45,21 +45,21 @@ fig.update_layout(
             backgroundcolor="black",
             gridcolor=gridcolor,
             showbackground=True,
-            zerolinecolor="white",
+            zerolinecolor=gridcolor,
         ),
         yaxis = dict(
             # backgroundcolor="rgb(230, 200,230)",
             backgroundcolor="black",
             gridcolor=gridcolor,
             showbackground=True,
-            zerolinecolor="white"
+            zerolinecolor=gridcolor
         ),
         zaxis = dict(
             # backgroundcolor="rgb(230, 230,200)",
             backgroundcolor="black",
             gridcolor=gridcolor,
             showbackground=True,
-            zerolinecolor="white",
+            zerolinecolor=gridcolor,
         )))
 
 
