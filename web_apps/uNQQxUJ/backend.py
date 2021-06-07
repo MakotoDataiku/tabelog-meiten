@@ -29,7 +29,6 @@ gridcolor = 'rgb(204, 204, 0)'
 titlecolor = 'rgb(230, 230, 0)'
 
 # others
-translator = Translator(service_urls=['translate.googleapis.com'])
 
 
 # Components
@@ -186,6 +185,7 @@ def update_wiki_output(n_clicks, value):
         similar_words = wiki_model.wv.most_similar(value)
         textarea = ["Wikipedia model", html.Br()]
         for w in similar_words:
+            translator = Translator(service_urls=['translate.googleapis.com'])
             w_en = translator.translate(w[0], dest='en').text
             pair = str(w[0]) + " : " + str(w_en)
             textarea.append(pair)
