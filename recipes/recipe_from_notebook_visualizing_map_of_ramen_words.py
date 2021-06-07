@@ -31,7 +31,7 @@ X_tsne = tsne.fit_transform(X)
 
 # -------------------------------------------------------------------------------- NOTEBOOK-CELL: CODE
 df = pd.DataFrame(X_tsne, index=vocabs, columns=['x', 'y', 'z'])
-df['vocabs'] = df.index
+df['words'] = df.index
 
 # -------------------------------------------------------------------------------- NOTEBOOK-CELL: CODE
 """
