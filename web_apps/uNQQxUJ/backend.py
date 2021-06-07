@@ -32,7 +32,6 @@ titlecolor = 'rgb(230, 230, 0)'
 # others
 # translator = Translator(service_urls=['translate.googleapis.com'])
 translator = GoogleTranslator(source='japanese', target='english')  # output -> Weiter so, du bist großartig
-print(GoogleTranslator.get_supported_languages())
 
 # Components
 fig = px.scatter_3d(df, x='x', y='y', z='z', 
@@ -203,7 +202,6 @@ def update_wiki_output(n_clicks, value):
             style = {'color':'white'})
         return div
 
-"""
 @app.callback(
     Output('3d-plot', 'figure'),
     Input('word-button', 'n_clicks'),
@@ -211,17 +209,20 @@ def update_wiki_output(n_clicks, value):
 )
 def update_plot(n_clicks, value):
     if n_clicks > 0:
-        similar_words = ramen_model.wv.most_similar(value)
-                for w in similar_words:
-            word = w[0]
-            df_sliced = df[df['words']==word]
-            x = df_sliced.x.values[0]
-            y = df_sliced.y.values[0]
-            x = df_sliced.z.values[0]
-            print(x, y, z)
-            fig.add_scatter(
-                x=x, y= y, z=z, 
-                mode="markers",
-                marker=dict(size=20, color="MediumPurple"))
-        return html.Div()
-"""
+    similar_words = ramen_model.wv.most_similar(value)
+    list_words = [w[0] for w in simliar_words]
+    fig = px.scatter_3d(df, x='x', y='y', z='z', 
+                    opacity=0.8, 
+                    color='cluster_labels',
+                    size = pd.Series([3]*df.shape[0]),
+                    size[df["words"].isin(list_words)] = 15
+                   
+                    hover_data={
+                       'x':False,
+                       'y':False,
+                       'z':False,
+                       'words':True,
+                       'cluster_labels':False
+                   }
+                   )
+        return fig
