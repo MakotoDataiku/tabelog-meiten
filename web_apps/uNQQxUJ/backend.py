@@ -4,6 +4,7 @@ import dash_core_components as dcc
 import dash_html_components as html
 import pandas as pd
 from gensim.models import word2vec
+from googletrans import Translator
 
 
 # Loading ramen model
@@ -25,6 +26,10 @@ df = dataset.get_dataframe()
 # colors
 gridcolor = 'rgb(204, 204, 0)'
 titlecolor = 'rgb(230, 230, 0)'
+
+# others
+translator = Translator(service_urls=['translate.googleapis.com'])
+
 
 # Components
 fig = px.scatter_3d(df, x='x', y='y', z='z', 
@@ -131,6 +136,7 @@ app.layout = html.Div(
                     children=[
                         html.Div(textbox),
                         html.Div(submitButton),
+                        html.Div(id='ramen-similar-words')
                     ],
                     style={
                         'backgroundColor':'black', 
@@ -144,3 +150,26 @@ app.layout = html.Div(
         )
     ], 
     style={'backgroundColor':'black'})
+
+
+# Callbacks
+@app.callback(
+    Output('ramen-similar-words', 'children'),
+    Input('word-button', 'n_clicks'),
+    State('word', 'value'),
+)
+def update_ramen_output(n_clicks, value):
+    if n_clicks > 0:
+        similar_words = ramen_model.wv.most_similar(value)
+        textarea = []
+        for w in similar_words:
+            y = list(w)
+            print(y)
+            # y[1] = round(y[1], 4)
+            y[1] = translator.translate(y[0], src='ja', dest='en').text
+            print(translator.translate(y[0], src='ja', dest='en').text)
+            w = tuple(y)
+            #print(w)
+            textarea.append(str(w))
+            textarea.append(html.Br())      
+        return html.P(textarea)
