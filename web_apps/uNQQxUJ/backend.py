@@ -131,7 +131,7 @@ app.layout = html.Div(
                         'backgroundColor':'black', 
                         'width': '80%',
                         'display': 'inline-block',
-                        'vertical-align': 'middle'
+                        'vertical-align': 'top'
                     }),
                 html.Div(
                     children=[
