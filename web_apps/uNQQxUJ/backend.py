@@ -103,6 +103,7 @@ textbox = dcc.Textarea(
     value = 'ラーメン',
     style={'width': '80%', 'height': 20},
     )
+submitButton = html.Button('Submit', id='word-button', n_clicks=0),
 
 
 # Layouts
@@ -127,7 +128,10 @@ app.layout = html.Div(
                         'vertical-align': 'middle'
                     }),
                 html.Div(
-                    textbox,
+                    children=[
+                        textbox,
+                        submitButton
+                    ],
                     style={
                         'backgroundColor':'black', 
                         'width': '20%',
