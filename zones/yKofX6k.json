@@ -43,7 +43,12 @@
       "objectType": "RECIPE"
     }
   ],
-  "shared": [],
+  "shared": [
+    {
+      "objectId": "ramen_vocab",
+      "objectType": "DATASET"
+    }
+  ],
   "tags": [],
   "customFields": {},
   "checklists": {
