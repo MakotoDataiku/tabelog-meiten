@@ -49,8 +49,10 @@ translator = GoogleTranslator(source='japanese', target='english')  # output -> 
 switchClustering = daq.ToggleSwitch(
     id='switch-clustering',
     value=False,
-    label='Clustering',
-    labelPosition='bottom',
+    size = 100
+    label = dict(
+        label='Clustering', 
+        labelPosition='bottom')
     )
 
 legend_dict = dict(
