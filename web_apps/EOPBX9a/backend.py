@@ -228,7 +228,7 @@ def update_ramen_output(n_clicks, value):
                 style = {'color':'white'})
             return div
         except KeyError:
-            return html.P("Ramen model doesn't know this word...", style = {'color':'white'})
+            return html.P("Ramen model doesn't know the word {}.".format(str(value)), style = {'color':'white'})
     
     
 @app.callback(
@@ -255,7 +255,7 @@ def update_wiki_output(n_clicks, value):
                 style = {'color':'white'})
             return div
         except KeyError:
-            return html.P("Wiki model doesn't know the word {}...".format(str(value)), style = {'color':'white'})
+            return html.P("Wiki model doesn't know the word {}.".format(str(value)), style = {'color':'white'})
     
 
 @app.callback(
