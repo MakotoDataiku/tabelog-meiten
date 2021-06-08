@@ -232,7 +232,7 @@ def update_wiki_output(n_clicks, value):
             style = {'color':'white'})
         return div
     
-"""
+
 @app.callback(
     Output('3d-plot', 'figure'),
     Input('word-button', 'n_clicks'),
@@ -242,30 +242,27 @@ def update_plot(n_clicks, value):
     if n_clicks > 0:
         similar_words = ramen_model.wv.most_similar(value)
         list_words = [w[0] for w in simliar_words]
-        indices = df[df['words'].isin(list_words)].index
         
-        fig = px.scatter_3d(df, x='x', y='y', z='z', 
-                        opacity=0.8, 
-                        color='cluster_labels',
-                        size = pd.Series([3]*df.shape[0]),
-                        size[df["words"].isin(list_words)] = 15,
-                        hover_data={
-                           'x':False,
-                           'y':False,
-                           'z':False,
-                           'words':True,
-                           'cluster_labels':False
-                        }
-                           )
+        df_selected = df[df['words'].isin(list_words)]
+        x = df_selected['x'].values
+        y = df_selected['y'].values
+        z = df_selected['z'].values
+        words = df_selected['words'].values
         
-        sizes = pd.Series([3]*df.shape[0])
-        sizes[indices] = 15
-        # colors = ['blue',]*10
-        # colors[point["pointNumber"]] = 'red'
-        fig.update_traces(
-            marker_size=sizes, 
-            #marker_color=colors
+        fig.add_trace(
+            go.Scatter3d(
+                x=x, 
+                y=y,
+                z=z,
+                mode='markers',
+                name=c,
+                text = words,
+                hovertemplate = '%{text}<extra></extra>',
+                marker=dict(
+                    size=30,
+                    opacity=0.8
+                ),
+            ),
         )
-        # fig.add_trace(px.scatter_3d(0,0,0))
+        
         return fig
-"""
