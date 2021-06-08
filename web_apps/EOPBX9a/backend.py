@@ -25,9 +25,6 @@ wiki_model = word2vec.Word2Vec.load(wiki_model_path)
 dataset = dataiku.Dataset("w2v_for_viz_clustered_prepared")
 df = dataset.get_dataframe()
 df['size'] = 3
-#x = df['x'].values
-#y = df['y'].values
-#z = df['z'].values
 
 df_dict = {}
 for c in df['cluster_labels'].unique():
@@ -48,8 +45,6 @@ cluster_color = [color_dict[c] for c in clusters]
 translator = GoogleTranslator(source='japanese', target='english')  # output -> Weiter so, du bist großartig
 
 # Components
-
-    
 legend_dict = dict(
     itemsizing="constant",
     #itemwidth=30,
@@ -88,21 +83,18 @@ scene_dict = dict(
     )
 )
 
+textbox_pos = dcc.Textarea(
+    id='text-pos',
+    value = 'ラーメン 北海道',
+    style={'width': '100%', 'height': 40},
+    )
 
+textbox_neg = dcc.Textarea(
+    id='text-neg',
+    value = '',
+    style={'width': '100%', 'height': 40},
+    )
 
-
-"""
-list_words = ["豚骨", "醤油"]
-df_points = df[df['words'].isin(list_words)]
-indices = df_points.index
-df.loc[df['words'].isin(list_words), 'size'] = 50
-
-fig.update_traces(marker=dict(
-    line=dict(
-        width=0,
-        color='DarkSlateGrey')),
-                 )
-"""
 
 scatterPlot = dcc.Graph(
         id='scatter-plot',
@@ -160,6 +152,28 @@ app.layout = html.Div(
                 )
             ],
             
+        ),
+        html.Div(
+            children = [
+                html.Div(
+                    textbox_pos,
+                    style={
+                        'backgroundColor':'black', 
+                        'width': '20%',
+                        'display': 'inline-block',
+                        'vertical-align': 'middle'
+                    }
+                ),
+                html.Div(
+                    textbox_neg,
+                    style={
+                        'backgroundColor':'black', 
+                        'width': '20%',
+                        'display': 'inline-block',
+                        'vertical-align': 'middle'
+                    }
+                )
+            ]
         )
     ], 
     style={'backgroundColor':'black'})
