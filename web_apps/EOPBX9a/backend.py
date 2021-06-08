@@ -183,7 +183,7 @@ app.layout = html.Div(
     ], 
     style={'backgroundColor':'black'})
 
-print(fig.data)
+print(fig.data[0].data)
 # Callbacks
 @app.callback(
     Output('ramen-similar-words', 'children'),
