@@ -8,6 +8,7 @@ from googletrans import Translator
 from dash.dependencies import Input, Output, State
 from deep_translator import GoogleTranslator
 import plotly.graph_objects as go
+import numpy as np
 
 
 # Loading ramen model
