@@ -269,6 +269,7 @@ def update_plot(n_clicks, value):
         y_selected = df_selected['y'].values
         z_selected = df_selected['z'].values
         words_selected = df_selected['words'].values
+        words_translated = translator.translate(words_selected)
         
         fig = go.Figure()
         
@@ -300,7 +301,7 @@ def update_plot(n_clicks, value):
                 mode='markers',
                 name="Similar words",
                 text = words_selected,
-                hovertemplate = '%{text}<extra></extra>',
+                hovertemplate = '%{text}{words_translated}<extra></extra>',
                 marker=dict(
                     size=30,
                     opacity=1,
