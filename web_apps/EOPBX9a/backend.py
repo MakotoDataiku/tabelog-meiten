@@ -282,10 +282,10 @@ def update_plot(n_clicks, value):
             )
         fig.add_trace(
             go.Scatter3d(
-                x = x_selected
-                y = y_selected
-                z = z_selected
-                words = words_selected
+                x = x_selected,
+                y = y_selected,
+                z = z_selected,
+                words = words_selected,
                 mode='markers',
                 name="Similar words",
                 text = words_selected,
