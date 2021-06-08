@@ -53,6 +53,7 @@ for c in df_dict.keys():
     x = df_c['x'].values
     y = df_c['y'].values
     z = df_c['z'].values
+    words = df_c['words'].values
     fig.add_trace(
         go.Scatter3d(
             x=x, 
@@ -60,7 +61,8 @@ for c in df_dict.keys():
             z=z,
             mode='markers',
             name=c,
-            text=df_c['words'],
+            text = words,
+            hovertemplate = '%{words}<extra></extra>',
             marker=dict(
                 size=3,
                 # color=cluster_color, # set color to an array/list of desired values
