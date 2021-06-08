@@ -48,7 +48,7 @@ translator = GoogleTranslator(source='japanese', target='english')  # output -> 
 # Components
 switchClustering = daq.ToggleSwitch(
     id='switch-clustering',
-    value=True,
+    value=False,
     size = 50,
     labelPosition='top',
     color='rgb(128, 255, 128)',
