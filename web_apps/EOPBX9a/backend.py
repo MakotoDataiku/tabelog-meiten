@@ -302,10 +302,11 @@ def update_plot(n_clicks, value):
                 text = words_selected,
                 hovertemplate = '%{text}<extra></extra>',
                 marker=dict(
-                        size=50,
-                        opacity=1
-                    ),
-                )
+                    size=30,
+                    opacity=1,
+                    color="yellow",
+                ),
+            )
         )
         
             
