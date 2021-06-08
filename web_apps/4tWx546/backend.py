@@ -311,7 +311,7 @@ def update_plot(n_clicks, switch, value):
             hoverlabel=dict(
                 bgcolor="white",
                 font_size=16,
-                font_family="Rockwell"
+                font_family="Meiryo"
             )
         )
         return fig
