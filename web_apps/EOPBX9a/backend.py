@@ -150,7 +150,10 @@ app.layout = html.Div(
                     }),
                 html.Div(
                     children=[
-                        html.Div(switchClustering),
+                        html.Div(
+                            switchClustering,
+                            style={'textAlign': 'left'}
+                        ),
                         html.Div(textbox),
                         html.Div(submitButton),
                         html.Div(id='ramen-similar-words'),
