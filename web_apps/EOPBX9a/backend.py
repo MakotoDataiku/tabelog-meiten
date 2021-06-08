@@ -24,9 +24,14 @@ wiki_model = word2vec.Word2Vec.load(wiki_model_path)
 dataset = dataiku.Dataset("w2v_for_viz_clustered_prepared")
 df = dataset.get_dataframe()
 df['size'] = 3
-x = df['x'].values
-y = df['y'].values
-z = df['z'].values
+#x = df['x'].values
+#y = df['y'].values
+#z = df['z'].values
+
+df_dict = {}
+for c in df['cluster_labels'].unique():
+    df_dict[c] = df[df['cluster_labels']==c]
+
 clusters = df['cluster_labels'].values
 
 # colors
@@ -42,6 +47,29 @@ cluster_color = [color_dict[c] for c in clusters]
 translator = GoogleTranslator(source='japanese', target='english')  # output -> Weiter so, du bist großartig
 
 # Components
+fig = go.Figure()
+for c in df_dict.keys():
+    df_c = df_dict[c]
+    x = df_c[x].values
+    y = df_c[y].values
+    z = df_c[z].values
+    fig.add_trace(
+        go.Scatter3d(
+            x=x, 
+            y=y,
+            z=z,
+            mode='markers',
+            name=c,
+            marker=dict(
+                size=3,
+                # color=cluster_color, # set color to an array/list of desired values
+                # colorscale='Viridis',   # choose a colorscale
+                opacity=0.8
+            ),
+        ),
+    )
+
+
 scatter3D = go.Scatter3d(
     x=x, y=y, z=z,
     mode='markers',
@@ -53,12 +81,9 @@ scatter3D = go.Scatter3d(
     )
 )
 
-fig = go.Figure(
-    scatter3D
-)
+
 
 fig.update_layout(
-    showlegend=True,
     plot_bgcolor='black',
     paper_bgcolor="black",
     legend=dict(
