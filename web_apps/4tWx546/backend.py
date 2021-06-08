@@ -48,7 +48,7 @@ translator = GoogleTranslator(source='japanese', target='english')  # output -> 
 # Components
 switchClustering = daq.ToggleSwitch(
     id='switch-clustering',
-    value=False,
+    value=True,
     size = 50,
     labelPosition='top',
     label = dict(
@@ -277,11 +277,40 @@ def update_wiki_output(n_clicks, value):
 @app.callback(
     Output('scatter-plot', 'figure'),
     Input('word-button', 'n_clicks'),
-    # Input('switch-clustering', 'value'),
+    Input('switch-clustering', 'value'),
     State('word', 'value'),
 )
-def update_plot(n_clicks, value):
-    if n_clicks == 0:
+def update_plot(n_clicks, switch, value):
+    if n_clicks == 0 and switch == True:
+        fig = go.Figure()
+        x = df['x'].values
+        y = df['y'].values
+        z = df['z'].values
+        words = df['words'].values
+        fig.add_trace(
+            go.Scatter3d(
+                x=x, 
+                y=y,
+                z=z,
+                mode='markers',
+                name=c,
+                text = words,
+                hovertemplate = '%{text}<extra></extra>',
+                marker=dict(
+                    size=3,
+                    opacity=0.8
+                ),
+            ),
+        )
+        fig.update_layout(
+            plot_bgcolor='black',
+            paper_bgcolor="black",
+            legend = legend_dict,
+            scene = scene_dict
+        )
+        return fig
+        
+    if n_clicks == 0 and switch == False:
         
         fig = go.Figure()
         for c in df_dict.keys():
