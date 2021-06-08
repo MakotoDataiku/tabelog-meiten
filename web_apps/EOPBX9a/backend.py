@@ -187,7 +187,7 @@ app.layout = html.Div(
 print(fig.data[0].text)
 arr_text = fig.data[0].text
 trace_index = np.where(arr_text == "イメージ")[0]
-print(trace_index)
+print(fig.data[0])
 fig.data[0][trace_index]["marker"]["size"] = 50
 
 # Callbacks
