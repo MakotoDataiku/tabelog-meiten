@@ -253,7 +253,8 @@ def update_wiki_output(n_clicks, value):
 def update_plot(n_clicks, value):
     if n_clicks > 0:
         similar_words = ramen_model.wv.most_similar(value)
-        list_words = [w[0] for w in simliar_words]     
+        list_words = [w[0] for w in similar_words]   
+        print(list_words)
         df_selected = df[df['words'].isin(list_words)]
         x_selected = df_selected['x'].values
         y_selected = df_selected['y'].values
