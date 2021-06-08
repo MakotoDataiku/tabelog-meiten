@@ -269,7 +269,7 @@ def update_plot(n_clicks, value):
         y_selected = df_selected['y'].values
         z_selected = df_selected['z'].values
         words_selected = df_selected['words'].values
-        words_translated = translator.translate(words_selected)
+        words_translated = [translator.translate(w) for w in words_selected]
         print(words_translated)
         fig = go.Figure()
         
