@@ -173,6 +173,7 @@ app.layout = html.Div(
                         'display': 'inline-block',
                         'vertical-align': 'middle',
                         'horizontal-align':'middle',
+                        'textAlign': 'center'
                     }
                 )
             ]
