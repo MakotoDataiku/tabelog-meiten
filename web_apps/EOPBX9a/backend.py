@@ -212,6 +212,7 @@ def update_ramen_output(n_clicks, value):
     if n_clicks > 0:
         try:
             similar_words = ramen_model.wv.most_similar(value)
+            print(similar_words)
             textarea = []
             for w in similar_words:
                 # w_en = translator.translate(w[0], dest='en').text
