@@ -68,7 +68,7 @@ legend_dict = dict(
     font_color='white',
     title_font_color='white',
     orientation="h",
-    font_size =30,
+    font_size =20,
 
 )
 
