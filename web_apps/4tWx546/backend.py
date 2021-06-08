@@ -343,7 +343,10 @@ def update_plot(n_clicks, switch, value):
             plot_bgcolor='black',
             paper_bgcolor="black",
             legend = legend_dict,
-            scene = scene_dict
+            scene = scene_dict,
+            hoverlabel=dict(
+                font_size=20,
+            )
         )
         
         return fig
@@ -403,7 +406,10 @@ def update_plot(n_clicks, switch, value):
             plot_bgcolor='black',
             paper_bgcolor="black",
             legend = legend_dict,
-            scene = scene_dict
+            scene = scene_dict,
+            hoverlabel=dict(
+                font_size=20,
+            )
         )
         
         return fig
