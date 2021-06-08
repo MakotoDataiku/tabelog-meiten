@@ -34,31 +34,31 @@ gridcolor = 'rgb(204, 204, 0)'
 titlecolor = 'rgb(230, 230, 0)'
 palette = px.colors.qualitative.Light24
 clusters_unique = df['cluster_labels'].unique()
-#color = zip(clusters_unique, palette)
 color_dict = {clusters_unique[i]:palette[i] for i in range(len(clusters_unique))}
 cluster_color = [color_dict[c] for c in clusters]
 
 
 # others
-# translator = Translator(service_urls=['translate.googleapis.com'])
 translator = GoogleTranslator(source='japanese', target='english')  # output -> Weiter so, du bist großartig
 
 # Components
-fig = go.Figure(
-    go.Scatter3d(
-        x=x, y=y, z=z,
-        mode='markers',
-        marker=dict(
-            size=3,
-            color=cluster_color,                # set color to an array/list of desired values
-            # colorscale='Viridis',   # choose a colorscale
-            opacity=0.8
-        )
+scatter3D = go.Scatter3d(
+    x=x, y=y, z=z,
+    mode='markers',
+    marker=dict(
+        size=3,
+        color=cluster_color, # set color to an array/list of desired values
+        # colorscale='Viridis',   # choose a colorscale
+        opacity=0.8
     )
 )
 
+fig = go.Figure(
+    scatter3D
+)
 
 fig.update_layout(
+    showlegend=True,
     plot_bgcolor='black',
     paper_bgcolor="black",
     legend=dict(
