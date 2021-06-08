@@ -131,7 +131,7 @@ fig.update_traces(marker=dict(
 """
 
 scatterPlot = dcc.Graph(
-        id='3d-plot',
+        id='scatter-plot',
         figure=fig,
         style={
             'height':1000, 
@@ -190,11 +190,11 @@ app.layout = html.Div(
     ], 
     style={'backgroundColor':'black'})
 
-print(fig.data[0].text)
-arr_text = fig.data[0].text
-trace_index = np.where(arr_text == "イメージ")[0]
-print(fig.data[0]["marker"])
-fig.data[0][trace_index]["marker"]["size"] = 50
+#print(fig.data[0].text)
+#arr_text = fig.data[0].text
+#trace_index = np.where(arr_text == "イメージ")[0]
+#print(fig.data[0]["marker"])
+#fig.data[0][trace_index]["marker"]["size"] = 50
 
 # Callbacks
 @app.callback(
@@ -244,37 +244,64 @@ def update_wiki_output(n_clicks, value):
             style = {'color':'white'})
         return div
     
-"""
+
 @app.callback(
-    Output('3d-plot', 'figure'),
+    Output('scatter-plot', 'figure'),
     Input('word-button', 'n_clicks'),
     State('word', 'value'),
 )
 def update_plot(n_clicks, value):
     if n_clicks > 0:
         similar_words = ramen_model.wv.most_similar(value)
-        list_words = [w[0] for w in simliar_words]
-        
+        list_words = [w[0] for w in simliar_words]     
         df_selected = df[df['words'].isin(list_words)]
-        x = df_selected['x'].values
-        y = df_selected['y'].values
-        z = df_selected['z'].values
-        words = df_selected['words'].values
+        x_selected = df_selected['x'].values
+        y_selected = df_selected['y'].values
+        z_selected = df_selected['z'].values
+        words_selected = df_selected['words'].values
         
+        fig = go.Figure()
+        for c in df_dict.keys():
+            df_c = df_dict[c]
+            x = df_c['x'].values
+            y = df_c['y'].values
+            z = df_c['z'].values
+            words = df_c['words'].values
+            fig.add_trace(
+                go.Scatter3d(
+                    x=x, y=y, z=z,
+                    mode='markers',
+                    name=c,
+                    text = words,
+                    hovertemplate = '%{text}<extra></extra>',
+                    marker=dict(
+                        size=3,
+                        opacity=0.8
+                    ),
+                ),
+            )
         fig.add_trace(
             go.Scatter3d(
-                x=x, 
-                y=y,
-                z=z,
+                x = x_selected
+                y = y_selected
+                z = z_selected
+                words = words_selected
                 mode='markers',
-                name=c,
-                text = words,
+                name="Similar words",
+                text = words_selected,
                 hovertemplate = '%{text}<extra></extra>',
                 marker=dict(
-                    size=30,
-                    opacity=0.8
-                ),
-            ),
+                        size=50,
+                        opacity=1
+                    ),
+                )
+        )
+            
+        fig.update_layout(
+            plot_bgcolor='black',
+            paper_bgcolor="black",
+            legend = legend_dict,
+            scene = scene_dict
         )
         
-        return fig"""
+        return fig
