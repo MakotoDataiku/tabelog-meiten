@@ -210,21 +210,24 @@ app.layout = html.Div(
 )
 def update_ramen_output(n_clicks, value):
     if n_clicks > 0:
-        similar_words = ramen_model.wv.most_similar(value)
-        textarea = []
-        for w in similar_words:
-            # w_en = translator.translate(w[0], dest='en').text
-            w_en = translator.translate(w[0])
-            pair = str(w[0]) + " : " + str(w_en)
-            textarea.append(pair)
-            textarea.append(html.Br()) 
-        div = html.P(
-            children = [
-                html.H3("Ramen model"),
-                html.Div(textarea)
-            ],
-            style = {'color':'white'})
-        return div
+        try:
+            similar_words = ramen_model.wv.most_similar(value)
+            textarea = []
+            for w in similar_words:
+                # w_en = translator.translate(w[0], dest='en').text
+                w_en = translator.translate(w[0])
+                pair = str(w[0]) + " : " + str(w_en)
+                textarea.append(pair)
+                textarea.append(html.Br()) 
+            div = html.P(
+                children = [
+                    html.H3("Ramen model"),
+                    html.Div(textarea)
+                ],
+                style = {'color':'white'})
+            return div
+        except KeyError:
+            return html.P("I don't know this word...")
     
     
 @app.callback(
