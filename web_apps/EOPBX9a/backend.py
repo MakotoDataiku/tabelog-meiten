@@ -354,4 +354,7 @@ def update_plot(n_clicks, value):
 def update_word_play(n_clicks, value_pos, value_neg):
     if n_clicks > 0:
         print(value_pos, value_neg)
+        list_pos = value_pos.replace(" ", ",").replace("　", ",").replace("、", ",").split(",")
+        list_neg = value_neg.replace(" ", ",").replace("　", ",").replace("、", ",").split(",")
+        print(list_pos, list_neg)
         return "ttt"
