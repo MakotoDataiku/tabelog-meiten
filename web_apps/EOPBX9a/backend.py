@@ -265,4 +265,4 @@ def update_plot(n_clicks, value):
             ),
         )
         
-        return fig
+        return fig"""
