@@ -125,7 +125,7 @@ textbox = dcc.Textarea(
     value = 'ラーメン',
     style={'width': '80%', 'height': 20},
     )
-submitButton = html.Button('Submit', id='word-button', n_clicks=0),
+submitButton = html.Button('Find words nearby', id='word-button', n_clicks=0),
 submitButton2 = html.Button('Submit', id='word-button-2', n_clicks=0),
 
 # Layouts
