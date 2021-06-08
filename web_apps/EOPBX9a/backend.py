@@ -159,7 +159,7 @@ app.layout = html.Div(
                     textbox_pos,
                     style={
                         'backgroundColor':'black', 
-                        'width': '100%',
+                        'width': '50%',
                         'display': 'inline-block',
                         'vertical-align': 'middle',
                         'horizontal-align':'middle',
@@ -169,7 +169,7 @@ app.layout = html.Div(
                     textbox_neg,
                     style={
                         'backgroundColor':'black', 
-                        'width': '100%',
+                        'width': '50%',
                         'display': 'inline-block',
                         'vertical-align': 'middle',
                         'horizontal-align':'middle',
