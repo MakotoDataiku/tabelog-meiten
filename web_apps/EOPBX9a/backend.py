@@ -161,7 +161,8 @@ app.layout = html.Div(
                         'backgroundColor':'black', 
                         'width': '20%',
                         'display': 'inline-block',
-                        'vertical-align': 'middle'
+                        'vertical-align': 'middle',
+                        'horizontal-align':'middle',
                     }
                 ),
                 html.Div(
@@ -170,7 +171,8 @@ app.layout = html.Div(
                         'backgroundColor':'black', 
                         'width': '20%',
                         'display': 'inline-block',
-                        'vertical-align': 'middle'
+                        'vertical-align': 'middle',
+                        'horizontal-align':'middle',
                     }
                 )
             ]
