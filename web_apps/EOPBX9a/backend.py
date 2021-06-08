@@ -50,9 +50,9 @@ translator = GoogleTranslator(source='japanese', target='english')  # output -> 
 fig = go.Figure()
 for c in df_dict.keys():
     df_c = df_dict[c]
-    x = df_c[x].values
-    y = df_c[y].values
-    z = df_c[z].values
+    x = df_c['x'].values
+    y = df_c['y'].values
+    z = df_c['z'].values
     fig.add_trace(
         go.Scatter3d(
             x=x, 
