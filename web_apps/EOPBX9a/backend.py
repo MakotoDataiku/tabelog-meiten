@@ -191,7 +191,13 @@ app.layout = html.Div(
                 )
             ]
         ),
-        html.Div(id="word-play-box")
+        html.Div(
+            id="word-play-box",
+            style={
+                'backgroundColor':'black',
+                'textAlign': 'center'
+            }
+        )
     ], 
     style={'backgroundColor':'black'})
 
