@@ -293,7 +293,7 @@ def update_plot(n_clicks, switch, value):
                 y=y,
                 z=z,
                 mode='markers',
-                name=c,
+                #name=c,
                 text = words,
                 hovertemplate = '%{text}<extra></extra>',
                 marker=dict(
