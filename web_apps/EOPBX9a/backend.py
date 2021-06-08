@@ -70,45 +70,51 @@ for c in df_dict.keys():
             ),
         ),
     )
+    
+legend_dict = dict(
+    itemsizing="constant",
+    #itemwidth=30,
+    yanchor="top",
+    y=1.04,
+    xanchor="left",
+    x=0.01,
+    font_color='white',
+    title_font_color='white',
+    orientation="h",
+    font_size =20,
+
+)
+
+scene_dict = dict(
+    xaxis = dict(
+        # backgroundcolor="rgb(200, 200, 230)",
+        backgroundcolor="black",
+        gridcolor=gridcolor,
+        showbackground=True,
+        zerolinecolor=gridcolor,
+    ),
+    yaxis = dict(
+        # backgroundcolor="rgb(230, 200,230)",
+        backgroundcolor="black",
+        gridcolor=gridcolor,
+        showbackground=True,
+        zerolinecolor=gridcolor
+    ),
+    zaxis = dict(
+        # backgroundcolor="rgb(230, 230,200)",
+        backgroundcolor="black",
+        gridcolor=gridcolor,
+        showbackground=True,
+        zerolinecolor=gridcolor,
+    )
+)
 
 fig.update_layout(
     plot_bgcolor='black',
     paper_bgcolor="black",
-    legend=dict(
-        itemsizing="constant",
-        #itemwidth=30,
-        yanchor="top",
-        y=1.04,
-        xanchor="left",
-        x=0.01,
-        font_color='white',
-        title_font_color='white',
-        orientation="h",
-        font_size =20,
-        
-    ),
-    scene = dict(
-        xaxis = dict(
-            # backgroundcolor="rgb(200, 200, 230)",
-            backgroundcolor="black",
-            gridcolor=gridcolor,
-            showbackground=True,
-            zerolinecolor=gridcolor,
-        ),
-        yaxis = dict(
-            # backgroundcolor="rgb(230, 200,230)",
-            backgroundcolor="black",
-            gridcolor=gridcolor,
-            showbackground=True,
-            zerolinecolor=gridcolor
-        ),
-        zaxis = dict(
-            # backgroundcolor="rgb(230, 230,200)",
-            backgroundcolor="black",
-            gridcolor=gridcolor,
-            showbackground=True,
-            zerolinecolor=gridcolor,
-        )))
+    legend = legend_dict,
+    scene = scene_dict
+)
 
 
 """
