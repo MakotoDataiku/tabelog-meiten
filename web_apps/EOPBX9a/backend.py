@@ -157,7 +157,7 @@ app.layout = html.Div(
             children = [
                 html.Div(
                     children=[
-                        html.H3("Words to add", style={'color':'white'}),
+                        html.H2("Words to add", style={'color':'white'}),
                         html.Div(textbox_pos)
                     ],
                     style={
@@ -169,7 +169,7 @@ app.layout = html.Div(
                 ),
                 html.Div(
                     children=[
-                        html.H3("Words to subtract", style={'color':'white'}),
+                        html.H2("Words to subtract", style={'color':'white'}),
                         html.Div(textbox_neg)
                     ],
                     style={
