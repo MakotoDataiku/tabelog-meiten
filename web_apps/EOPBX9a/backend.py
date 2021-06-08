@@ -190,7 +190,8 @@ app.layout = html.Div(
                     
                 )
             ]
-        )
+        ),
+        html.Div(id="word-play-box")
     ], 
     style={'backgroundColor':'black'})
 
@@ -344,3 +345,13 @@ def update_plot(n_clicks, value):
         
         return fig
 
+@app.callback(
+    Output('word-play-box', 'children'),
+    Input('word-button-2', 'n_clicks'),
+    State('text-pos', 'value'),
+    State('text-neg', 'value'),
+)
+def update_word_play(n_clicks, value_pos, value_neg):
+    if n_clicks > 0:
+        print(value_pos, value_neg)
+        return "ttt"
