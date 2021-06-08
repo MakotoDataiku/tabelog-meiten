@@ -9,6 +9,7 @@ from dash.dependencies import Input, Output, State
 from deep_translator import GoogleTranslator
 import plotly.graph_objects as go
 import numpy as np
+import dash_daq as daq
 
 
 # Loading ramen model
@@ -45,6 +46,13 @@ cluster_color = [color_dict[c] for c in clusters]
 translator = GoogleTranslator(source='japanese', target='english')  # output -> Weiter so, du bist großartig
 
 # Components
+switchClustering = daq.ToggleSwitch(
+    id='switch-clustering',
+    value=False,
+    label='Clustering',
+    labelPosition='bottom',
+    )
+
 legend_dict = dict(
     itemsizing="constant",
     #itemwidth=30,
@@ -138,6 +146,7 @@ app.layout = html.Div(
                     }),
                 html.Div(
                     children=[
+                        html.Div(switchClustering),
                         html.Div(textbox),
                         html.Div(submitButton),
                         html.Div(id='ramen-similar-words'),
