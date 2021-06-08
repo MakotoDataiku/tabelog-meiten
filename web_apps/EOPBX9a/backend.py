@@ -86,13 +86,13 @@ scene_dict = dict(
 textbox_pos = dcc.Textarea(
     id='text-pos',
     value = 'ラーメン 北海道',
-    style={'width': '100%', 'height': 40, 'horizontal-align':'middle'},
+    style={'width': '40%', 'height': 20, 'horizontal-align':'middle'},
     )
 
 textbox_neg = dcc.Textarea(
     id='text-neg',
     value = '',
-    style={'width': '100%', 'height': 40},
+    style={'width': '40%', 'height': 20},
     )
 
 
