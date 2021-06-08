@@ -48,28 +48,7 @@ cluster_color = [color_dict[c] for c in clusters]
 translator = GoogleTranslator(source='japanese', target='english')  # output -> Weiter so, du bist großartig
 
 # Components
-fig = go.Figure()
-for c in df_dict.keys():
-    df_c = df_dict[c]
-    x = df_c['x'].values
-    y = df_c['y'].values
-    z = df_c['z'].values
-    words = df_c['words'].values
-    fig.add_trace(
-        go.Scatter3d(
-            x=x, 
-            y=y,
-            z=z,
-            mode='markers',
-            name=c,
-            text = words,
-            hovertemplate = '%{text}<extra></extra>',
-            marker=dict(
-                size=3,
-                opacity=0.8
-            ),
-        ),
-    )
+
     
 legend_dict = dict(
     itemsizing="constant",
@@ -109,12 +88,7 @@ scene_dict = dict(
     )
 )
 
-fig.update_layout(
-    plot_bgcolor='black',
-    paper_bgcolor="black",
-    legend = legend_dict,
-    scene = scene_dict
-)
+
 
 
 """
@@ -132,7 +106,7 @@ fig.update_traces(marker=dict(
 
 scatterPlot = dcc.Graph(
         id='scatter-plot',
-        figure=fig,
+        #figure=fig,
         style={
             'height':1000, 
             'width':'100%', 
@@ -252,7 +226,41 @@ def update_wiki_output(n_clicks, value):
     State('word', 'value'),
 )
 def update_plot(n_clicks, value):
-    if n_clicks > 0:
+    if n_clicks == 0:
+        
+        fig = go.Figure()
+        for c in df_dict.keys():
+            df_c = df_dict[c]
+            x = df_c['x'].values
+            y = df_c['y'].values
+            z = df_c['z'].values
+            words = df_c['words'].values
+            fig.add_trace(
+                go.Scatter3d(
+                    x=x, 
+                    y=y,
+                    z=z,
+                    mode='markers',
+                    name=c,
+                    text = words,
+                    hovertemplate = '%{text}<extra></extra>',
+                    marker=dict(
+                        size=3,
+                        opacity=0.8
+                    ),
+                ),
+            )
+            
+        fig.update_layout(
+            plot_bgcolor='black',
+            paper_bgcolor="black",
+            legend = legend_dict,
+            scene = scene_dict
+        )
+        
+        return fig
+            
+    elif n_clicks > 0:
         similar_words = ramen_model.wv.most_similar(value)
         list_words = [w[0] for w in similar_words]   
         print(list_words)
