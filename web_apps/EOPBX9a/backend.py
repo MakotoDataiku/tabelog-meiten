@@ -152,7 +152,7 @@ app.layout = html.Div(
                     children=[
                         html.Div(
                             switchClustering,
-                            style={'textAlign': 'top'}
+                            style={'vertical-align': 'top'}
                         ),
                         html.Div(textbox),
                         html.Div(submitButton),
