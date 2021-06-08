@@ -309,9 +309,7 @@ def update_plot(n_clicks, switch, value):
             legend = legend_dict,
             scene = scene_dict,
             hoverlabel=dict(
-                #bgcolor="white",
-                font_size=16,
-                #font_family="Meiryo"
+                font_size=20,
             )
         )
         return fig
