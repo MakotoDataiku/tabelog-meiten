@@ -65,31 +65,16 @@ for c in df_dict.keys():
             hovertemplate = '%{text}<extra></extra>',
             marker=dict(
                 size=3,
-                # color=cluster_color, # set color to an array/list of desired values
-                # colorscale='Viridis',   # choose a colorscale
                 opacity=0.8
             ),
         ),
     )
 
-
-scatter3D = go.Scatter3d(
-    x=x, y=y, z=z,
-    mode='markers',
-    marker=dict(
-        size=3,
-        color=cluster_color, # set color to an array/list of desired values
-        # colorscale='Viridis',   # choose a colorscale
-        opacity=0.8
-    )
-)
-
-
-
 fig.update_layout(
     plot_bgcolor='black',
     paper_bgcolor="black",
     legend=dict(
+        itemsizing=10,
         yanchor="top",
         y=1.04,
         xanchor="left",
@@ -97,7 +82,8 @@ fig.update_layout(
         font_color='white',
         title_font_color='white',
         orientation="h",
-        font_size =15
+        font_size =20,
+        
     ),
     scene = dict(
         xaxis = dict(
