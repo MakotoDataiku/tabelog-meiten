@@ -50,9 +50,11 @@ switchClustering = daq.ToggleSwitch(
     id='switch-clustering',
     value=False,
     size = 50,
+    labelPosition='bottom',
     label = dict(
         label='Clustering', 
-        labelPosition='bottom')
+        style={'color':"white"}
+        )
     )
 
 legend_dict = dict(
