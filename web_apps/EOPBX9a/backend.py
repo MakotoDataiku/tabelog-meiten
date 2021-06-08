@@ -282,6 +282,7 @@ def update_plot(n_clicks, value):
                     ),
                 ),
             )
+        """
         fig.add_trace(
             go.Scatter3d(
                 x = x_selected,
@@ -298,6 +299,7 @@ def update_plot(n_clicks, value):
                     ),
                 )
         )
+        """
             
         fig.update_layout(
             plot_bgcolor='black',
