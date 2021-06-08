@@ -282,7 +282,7 @@ def update_wiki_output(n_clicks, value):
     State('word', 'value'),
 )
 def update_plot(n_clicks, switch, value):
-    if switch == True:
+    if switch == False:
         fig = go.Figure()
         x = df['x'].values
         y = df['y'].values
@@ -314,7 +314,7 @@ def update_plot(n_clicks, switch, value):
         )
         return fig
         
-    elif switch == False and n_clicks == 0:
+    elif switch == True and n_clicks == 0:
         
         fig = go.Figure()
         for c in df_dict.keys():
@@ -351,7 +351,7 @@ def update_plot(n_clicks, switch, value):
         
         return fig
             
-    elif switch == False and n_clicks > 0:
+    elif switch == True and n_clicks > 0:
         similar_words = ramen_model.wv.most_similar(value)
         list_words = [w[0] for w in similar_words]
         print(list_words)
