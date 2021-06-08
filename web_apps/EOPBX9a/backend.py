@@ -301,7 +301,7 @@ def update_plot(n_clicks, value):
                 mode='markers',
                 name="Similar words",
                 text = ['{}:{}'.format(w, t) for w, t in zip(words_selected, words_translated)],
-                hovertemplate = '%{text}<extra></extra>'
+                hovertemplate = '%{text}<extra></extra>',
                 marker=dict(
                     size=30,
                     opacity=1,
