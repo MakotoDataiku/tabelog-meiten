@@ -126,7 +126,6 @@ submitButton = html.Button('Submit', id='word-button', n_clicks=0),
 # Layouts
 app.layout = html.Div(
     children=[
-        html.Div(id='temporary'),
         html.H1(
             children='Vizualizing the ramen universe',
             style={
@@ -165,11 +164,6 @@ app.layout = html.Div(
     ], 
     style={'backgroundColor':'black'})
 
-#print(fig.data[0].text)
-#arr_text = fig.data[0].text
-#trace_index = np.where(arr_text == "イメージ")[0]
-#print(fig.data[0]["marker"])
-#fig.data[0][trace_index]["marker"]["size"] = 50
 
 # Callbacks
 @app.callback(
