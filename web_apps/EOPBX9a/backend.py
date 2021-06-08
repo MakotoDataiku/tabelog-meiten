@@ -263,6 +263,7 @@ def update_plot(n_clicks, value):
         words_selected = df_selected['words'].values
         
         fig = go.Figure()
+        """
         for c in df_dict.keys():
             df_c = df_dict[c]
             x = df_c['x'].values
@@ -283,6 +284,7 @@ def update_plot(n_clicks, value):
                 ),
             )
         """
+        
         fig.add_trace(
             go.Scatter3d(
                 x = x_selected,
@@ -299,7 +301,7 @@ def update_plot(n_clicks, value):
                     ),
                 )
         )
-        """
+        
             
         fig.update_layout(
             plot_bgcolor='black',
