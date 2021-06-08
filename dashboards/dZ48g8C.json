@@ -9,7 +9,7 @@
             "box": {
               "top": 0,
               "left": 0,
-              "width": 2,
+              "width": 5,
               "height": 1
             },
             "clickAction": "OPEN_INSIGHT",
@@ -33,11 +33,11 @@
   "name": "「隠れた名店」発見器\u0027s default dashboard",
   "showGrid": true,
   "versionTag": {
-    "versionNumber": 4,
+    "versionNumber": 5,
     "lastModifiedBy": {
       "login": "admin"
     },
-    "lastModifiedOn": 1623193523614
+    "lastModifiedOn": 1623193528007
   },
   "creationTag": {
     "versionNumber": 0,
