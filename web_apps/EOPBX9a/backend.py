@@ -152,6 +152,7 @@ submitButton = html.Button('Submit', id='word-button', n_clicks=0),
 # Layouts
 app.layout = html.Div(
     children=[
+        html.Div(id='temporary'),
         html.H1(
             children='Vizualizing the ramen universe',
             style={
@@ -246,7 +247,7 @@ def update_wiki_output(n_clicks, value):
     
 
 @app.callback(
-    Output('scatter-plot', 'figure'),
+    Output('temporary', 'children'),
     Input('word-button', 'n_clicks'),
     State('word', 'value'),
 )
@@ -305,4 +306,4 @@ def update_plot(n_clicks, value):
             scene = scene_dict
         )
         
-        return fig
+        return "Here is the text!"
