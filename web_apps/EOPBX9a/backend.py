@@ -186,8 +186,10 @@ app.layout = html.Div(
 
 print(fig.data[0].text)
 arr_text = fig.data[0].text
-index = np.where(arr_text == "イメージ")[0]
+trace_index = np.where(arr_text == "イメージ")[0]
 print(index)
+fig.data[0][trace_index]["marker"]["size"] = 50
+
 # Callbacks
 @app.callback(
     Output('ramen-similar-words', 'children'),
