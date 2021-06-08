@@ -287,7 +287,7 @@ def update_plot(n_clicks, value):
             
     elif n_clicks > 0:
         similar_words = ramen_model.wv.most_similar(value)
-        list_words = [w[0] for w in similar_words]   
+        list_words = [w[0] for w in similar_words]
         print(list_words)
         df_selected = df[df['words'].isin(list_words)]
         x_selected = df_selected['x'].values
@@ -362,4 +362,18 @@ def update_word_play(n_clicks, value_pos, value_neg):
         else:
             similar_words = ramen_model.most_similar(positive=list_pos, negative=list_neg)
         print(similar_words)
-        return "ttt"
+        #list_words = [w[0] for w in similar_words]
+        textarea = []
+        for w in similar_words:
+            # w_en = translator.translate(w[0], dest='en').text
+            w_en = translator.translate(w[0])
+            pair = str(w[0]) + " : " + str(w_en)
+            textarea.append(pair)
+            textarea.append(html.Br()) 
+        div = html.P(
+            children = [
+                html.H3("Result"),
+                html.Div(textarea)
+            ],
+            style = {'color':'white'})
+        return div
