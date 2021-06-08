@@ -186,7 +186,7 @@ app.layout = html.Div(
 
 print(fig.data[0].text)
 arr_text = fig.data[0].text
-index = np.where(arr_text == "空芯菜")[0]
+index = np.where(arr_text == "イメージ")[0]
 print(index)
 # Callbacks
 @app.callback(
