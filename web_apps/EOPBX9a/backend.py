@@ -168,7 +168,7 @@ app.layout = html.Div(
                 ),
                 html.Div(
                     children=[
-                        html.Div("Negative words", style={'size':50}),
+                        html.H4("Negative words", style={'color':'white'}),
                         html.Div(textbox_neg)
                     ],
                     style={
