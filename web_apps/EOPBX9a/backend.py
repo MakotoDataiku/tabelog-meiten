@@ -247,7 +247,7 @@ def update_wiki_output(n_clicks, value):
     
 
 @app.callback(
-    Output('temporary', 'children'),
+    Output('scatter-plot', 'figure'),
     Input('word-button', 'n_clicks'),
     State('word', 'value'),
 )
@@ -309,4 +309,4 @@ def update_plot(n_clicks, value):
             scene = scene_dict
         )
         
-        return "Here is the text!"
+        return fig
