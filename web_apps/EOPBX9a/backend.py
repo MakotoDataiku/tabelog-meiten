@@ -277,6 +277,7 @@ def update_wiki_output(n_clicks, value):
 @app.callback(
     Output('scatter-plot', 'figure'),
     Input('word-button', 'n_clicks'),
+    # Input('switch-clustering', 'value'),
     State('word', 'value'),
 )
 def update_plot(n_clicks, value):
@@ -406,3 +407,12 @@ def update_word_play(n_clicks, value_pos, value_neg):
             ],
             style = {'color':'white'})
         return div
+
+"""
+@app.callback(
+    Output('scatter-plot', 'figure'),
+    Input('switch-clustering', 'value')
+)
+def apply_clustering(value):
+    if value:
+"""
