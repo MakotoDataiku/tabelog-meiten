@@ -166,8 +166,8 @@ app.layout = html.Div(
                         'textAlign': 'center'
                     }
                 ),
-                html.Div("Negative words",
-                    textbox_neg,
+                html.Div(["Negative words",
+                    textbox_neg,]
                     style={
                         'backgroundColor':'black', 
                         'width': '50%',
