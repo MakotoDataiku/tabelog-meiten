@@ -113,7 +113,7 @@ textbox = dcc.Textarea(
     style={'width': '80%', 'height': 20},
     )
 submitButton = html.Button('Submit', id='word-button', n_clicks=0),
-
+submitButton2 = html.Button('Submit', id='word-button-2', n_clicks=0),
 
 # Layouts
 app.layout = html.Div(
@@ -162,7 +162,7 @@ app.layout = html.Div(
                     ],
                     style={
                         'backgroundColor':'black', 
-                        'width': '50%',
+                        'width': '40%',
                         'display': 'inline-block',
                         'textAlign': 'center'
                     }
@@ -174,10 +174,20 @@ app.layout = html.Div(
                     ],
                     style={
                         'backgroundColor':'black', 
-                        'width': '50%',
+                        'width': '40%',
                         'display': 'inline-block',
                         'textAlign': 'center'
                     }
+                ),
+                html.Div(
+                    submitButton2,
+                    style={
+                        'backgroundColor':'black', 
+                        'width': '10%',
+                        'display': 'inline-block',
+                        'textAlign': 'center'
+                    }
+                    
                 )
             ]
         )
@@ -333,3 +343,9 @@ def update_plot(n_clicks, value):
         )
         
         return fig
+
+@app.callback(
+    #Output('scatter-plot', 'figure'),
+    Input('word-button', 'n_clicks'),
+    State('word', 'value'),
+)
