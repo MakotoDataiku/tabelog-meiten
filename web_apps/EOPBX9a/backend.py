@@ -344,8 +344,3 @@ def update_plot(n_clicks, value):
         
         return fig
 
-@app.callback(
-    #Output('scatter-plot', 'figure'),
-    Input('word-button', 'n_clicks'),
-    State('word', 'value'),
-)
