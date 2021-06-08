@@ -62,7 +62,8 @@ def get_translated_reviews(url, max_page = 10):
 
 # -------------------------------------------------------------------------------- NOTEBOOK-CELL: CODE
 #url = 'https://www.tripadvisor.com/Restaurant_Review-g187147-d10085290-Reviews-Kodawari_Ramen_Yokocho-Paris_Ile_de_France.html'
-url = 'https://www.tripadvisor.com.sg/Restaurant_Review-g294265-d8507071-Reviews-The_Ramen_Stall-Singapore.html'
+#url = 'https://www.tripadvisor.com.sg/Restaurant_Review-g294265-d8507071-Reviews-The_Ramen_Stall-Singapore.html'
+url = 'https://www.tripadvisor.com/Restaurant_Review-g255060-d10194847-Reviews-Spice_Alley-Sydney_New_South_Wales.html'
 
 # -------------------------------------------------------------------------------- NOTEBOOK-CELL: CODE
 trip_advisor_reviews_df = get_translated_reviews(url, max_page = 3)
