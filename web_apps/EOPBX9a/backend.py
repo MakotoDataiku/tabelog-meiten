@@ -62,7 +62,7 @@ for c in df_dict.keys():
             mode='markers',
             name=c,
             text = words,
-            hovertemplate = '%{text}',
+            hovertemplate = '%{text}<extra></extra>',
             marker=dict(
                 size=3,
                 # color=cluster_color, # set color to an array/list of desired values
