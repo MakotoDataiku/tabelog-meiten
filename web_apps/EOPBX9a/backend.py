@@ -75,7 +75,7 @@ fig.update_layout(
     paper_bgcolor="black",
     legend=dict(
         #itemsizing=10,
-        itemwidth=10,
+        itemwidth=30,
         yanchor="top",
         y=1.04,
         xanchor="left",
