@@ -183,7 +183,7 @@ app.layout = html.Div(
     ], 
     style={'backgroundColor':'black'})
 
-
+print(fig.data)
 # Callbacks
 @app.callback(
     Output('ramen-similar-words', 'children'),
@@ -232,7 +232,7 @@ def update_wiki_output(n_clicks, value):
             style = {'color':'white'})
         return div
     
-
+"""
 @app.callback(
     Output('3d-plot', 'figure'),
     Input('word-button', 'n_clicks'),
