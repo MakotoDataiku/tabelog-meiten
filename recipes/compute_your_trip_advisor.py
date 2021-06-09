@@ -21,7 +21,7 @@ def get_reviews(response):
 
 # -------------------------------------------------------------------------------- NOTEBOOK-CELL: CODE
 def translate_reviews(reviews):
-    translator = GoogleTranslator(source='japanese', target='english')  # output -> Weiter so, du bist großartig
+    translator = GoogleTranslator(source='english', target='japanese')  # output -> Weiter so, du bist großartig
 
     #translator = Translator(service_urls=['translate.googleapis.com'])
     reviews_translated = []
