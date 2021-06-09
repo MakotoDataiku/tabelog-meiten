@@ -58,7 +58,7 @@
           "behavior": "INLINE_AUTO_SAVE",
           "params": [
             {
-              "name": "TripAdvisor URL",
+              "name": "url",
               "type": "STRING",
               "label": "TripAdvisor URL of your restaurant",
               "description": "TripAdvisor URL of your restaurant",
