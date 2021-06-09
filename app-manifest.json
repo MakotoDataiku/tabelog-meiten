@@ -10,14 +10,41 @@
     "exportManagedFolders": false,
     "exportAllInputManagedFolders": false,
     "exportInsightsData": false,
-    "includedDatasetsData": [],
-    "includedSavedModels": [],
-    "includedManagedFolders": [],
+    "includedDatasetsData": [
+      {
+        "name": "reviews_TF_IDF",
+        "type": "Filesystem"
+      }
+    ],
+    "includedSavedModels": [
+      {
+        "id": "g8m6xujs",
+        "name": "Clustering ramen vocabs!"
+      }
+    ],
+    "includedManagedFolders": [
+      {
+        "id": "tMMk2S0T",
+        "name": "TF-IDF model"
+      },
+      {
+        "id": "POe5uF4H",
+        "name": "ramen_dictionary"
+      },
+      {
+        "id": "m9JZdV7b",
+        "name": "word2vec"
+      },
+      {
+        "id": "0kM5kXKs",
+        "name": "wakati-dictionary"
+      }
+    ],
     "includedModelEvaluationStores": [],
     "exportGitRepository": false
   },
   "instanceFeatures": {
-    "showFlowNavLink": false,
+    "showFlowNavLink": true,
     "showLabNavLink": false,
     "showCodeNavLink": false,
     "showVersionControlFeatures": false
