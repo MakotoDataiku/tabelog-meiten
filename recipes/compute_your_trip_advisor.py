@@ -63,7 +63,12 @@ def get_translated_reviews(url, max_page = 10):
 # -------------------------------------------------------------------------------- NOTEBOOK-CELL: CODE
 #url = 'https://www.tripadvisor.com/Restaurant_Review-g187147-d10085290-Reviews-Kodawari_Ramen_Yokocho-Paris_Ile_de_France.html'
 #url = 'https://www.tripadvisor.com.sg/Restaurant_Review-g294265-d8507071-Reviews-The_Ramen_Stall-Singapore.html'
-url = 'https://www.tripadvisor.com/Restaurant_Review-g294265-d5421132-Reviews-MENYA_SANJI_Singapore-Singapore.html'
+#url = 'https://www.tripadvisor.com/Restaurant_Review-g294265-d5421132-Reviews-MENYA_SANJI_Singapore-Singapore.html'
+
+client = dataiku.api_client()
+project = client.get_project(dataiku.get_custom_variables()['projectKey'])
+project_variables = project.get_variables()
+url = project_variables['standard']['url']
 
 # -------------------------------------------------------------------------------- NOTEBOOK-CELL: CODE
 trip_advisor_reviews_df = get_translated_reviews(url, max_page = 3)
