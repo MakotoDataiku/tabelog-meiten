@@ -3,7 +3,7 @@
     "exportUploads": false,
     "exportAllInputDatasets": false,
     "exportAllDatasets": false,
-    "exportManagedFS": false,
+    "exportManagedFS": true,
     "exportAnalysisModels": false,
     "exportSavedModels": false,
     "exportModelEvaluationStores": false,
