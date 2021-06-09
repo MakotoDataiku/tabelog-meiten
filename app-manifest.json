@@ -23,7 +23,42 @@
     "showVersionControlFeatures": false
   },
   "useAppHomepage": true,
-  "homepageSections": [],
+  "homepageSections": [
+    {
+      "sectionTitle": "What is your best \u0026 secret ramen restaurant?",
+      "tiles": [
+        {
+          "behavior": "INLINE_AUTO_SAVE",
+          "params": [
+            {
+              "name": "TripAdvisor URL",
+              "type": "STRING",
+              "label": "TripAdvisor URL of your restaurant",
+              "description": "TripAdvisor URL of your restaurant",
+              "mandatory": false,
+              "canSelectForeign": false,
+              "markCreatedAsBuilt": false,
+              "allowDuplicates": true,
+              "getChoicesFromPython": false,
+              "canCreateDataset": false
+            }
+          ],
+          "type": "PROJECT_VARIABLES_EDIT",
+          "prompt": "Paste the URL of your TripAdvisor restraurant"
+        },
+        {
+          "scenarioId": "GETBESTRAMEN",
+          "type": "SCENARIO_RUN",
+          "prompt": "Get recommendation"
+        },
+        {
+          "dashboardId": "dZ48g8C",
+          "type": "DASHBOARD_LINK",
+          "prompt": "See the result"
+        }
+      ]
+    }
+  ],
   "label": "「隠れた名店」を探してみた",
   "shortDesc": "The template *「隠れた名店」を探してみた* was created by Makoto Miyazaki on Jun 09th 2021",
   "tags": [],
