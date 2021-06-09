@@ -7,6 +7,7 @@ from bs4 import BeautifulSoup
 import requests
 import time
 from googletrans import Translator
+from deep_translator import GoogleTranslator
 
 # -------------------------------------------------------------------------------- NOTEBOOK-CELL: CODE
 def get_reviews(response):
@@ -20,11 +21,16 @@ def get_reviews(response):
 
 # -------------------------------------------------------------------------------- NOTEBOOK-CELL: CODE
 def translate_reviews(reviews):
-    translator = Translator(service_urls=['translate.googleapis.com'])
+    translator = GoogleTranslator(source='japanese', target='english')  # output -> Weiter so, du bist großartig
+
+    #translator = Translator(service_urls=['translate.googleapis.com'])
     reviews_translated = []
-    translations = translator.translate(reviews, dest='ja')
-    for translation in translations:
-        reviews_translated.append(translation.text)
+    for review in reviews:
+        translated = translator.translate(review)
+        reviews_translated.append(translated)
+    #translations = translator.translate(reviews, dest='ja')
+    #for translation in translations:
+    #    reviews_translated.append(translation.text)
     return reviews_translated
 
 # -------------------------------------------------------------------------------- NOTEBOOK-CELL: CODE
@@ -71,7 +77,7 @@ project_variables = project.get_variables()
 url = project_variables['standard']['url']
 
 # -------------------------------------------------------------------------------- NOTEBOOK-CELL: CODE
-trip_advisor_reviews_df = get_translated_reviews(url, max_page = 2)
+trip_advisor_reviews_df = get_translated_reviews(url, max_page = 1)
 
 # -------------------------------------------------------------------------------- NOTEBOOK-CELL: CODE
 # Write recipe outputs
