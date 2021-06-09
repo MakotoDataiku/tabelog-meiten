@@ -71,7 +71,7 @@ project_variables = project.get_variables()
 url = project_variables['standard']['url']
 
 # -------------------------------------------------------------------------------- NOTEBOOK-CELL: CODE
-trip_advisor_reviews_df = get_translated_reviews(url, max_page = 3)
+trip_advisor_reviews_df = get_translated_reviews(url, max_page = 2)
 
 # -------------------------------------------------------------------------------- NOTEBOOK-CELL: CODE
 # Write recipe outputs
