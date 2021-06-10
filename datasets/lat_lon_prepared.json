@@ -59,11 +59,11 @@
     "dimensions": []
   },
   "versionTag": {
-    "versionNumber": 0,
+    "versionNumber": 1,
     "lastModifiedBy": {
       "login": "admin"
     },
-    "lastModifiedOn": 1623335762008
+    "lastModifiedOn": 1623335794153
   },
   "creationTag": {
     "versionNumber": 0,
@@ -125,6 +125,10 @@
       {
         "name": "longitude",
         "type": "double"
+      },
+      {
+        "name": "GeoPoint",
+        "type": "string"
       }
     ],
     "userModified": true
