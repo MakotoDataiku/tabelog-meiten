@@ -107,10 +107,89 @@
     {
       "last": false,
       "max": false,
+      "column": "都",
+      "count": false,
+      "$idx": 2,
+      "sum": false,
+      "concat": false,
+      "type": "string",
+      "countDistinct": false,
+      "min": false,
+      "avg": false,
+      "stddev": false,
+      "first": false
+    },
+    {
+      "last": false,
+      "max": false,
+      "column": "市",
+      "count": false,
+      "$idx": 3,
+      "sum": false,
+      "concat": false,
+      "type": "string",
+      "countDistinct": false,
+      "min": false,
+      "avg": false,
+      "stddev": false,
+      "first": false
+    },
+    {
+      "last": false,
+      "max": false,
+      "column": "区",
+      "count": false,
+      "$idx": 4,
+      "sum": false,
+      "concat": false,
+      "type": "string",
+      "countDistinct": false,
+      "min": false,
+      "avg": false,
+      "stddev": false,
+      "first": false
+    },
+    {
+      "last": false,
+      "max": false,
+      "column": "番地",
+      "count": false,
+      "$idx": 5,
+      "sum": false,
+      "concat": false,
+      "type": "string",
+      "countDistinct": false,
+      "min": false,
+      "avg": false,
+      "stddev": false,
+      "first": false
+    },
+    {
+      "last": false,
+      "max": false,
+      "column": "address_cleaned",
+      "count": false,
+      "$idx": 6,
+      "sum": false,
+      "concat": false,
+      "type": "string",
+      "concatDistinct": false,
+      "countDistinct": false,
+      "min": false,
+      "avg": false,
+      "$selected": false,
+      "stddev": false,
+      "first": true,
+      "orderColumn": "store_id",
+      "concatSeparator": ","
+    },
+    {
+      "last": false,
+      "max": false,
       "firstLastNotNull": false,
       "column": "ward",
       "count": false,
-      "$idx": 2,
+      "$idx": 7,
       "sum": false,
       "concat": false,
       "type": "string",
@@ -131,7 +210,7 @@
       "firstLastNotNull": false,
       "column": "review",
       "count": false,
-      "$idx": 3,
+      "$idx": 8,
       "sum": false,
       "concat": true,
       "type": "string",
@@ -152,7 +231,7 @@
       "firstLastNotNull": false,
       "column": "review_star",
       "count": false,
-      "$idx": 4,
+      "$idx": 9,
       "sum": false,
       "concat": false,
       "type": "string",
@@ -190,7 +269,12 @@
       "readParams": {
         "mode": "AUTO",
         "autoModeRepartitionInto": 10,
-        "map": {}
+        "map": {
+          "clean_ramen": {
+            "cache": false,
+            "repartition": 10
+          }
+        }
       },
       "overwriteOutputSchema": false,
       "executionEngine": "SPARK_SUBMIT",
@@ -200,6 +284,7 @@
       }
     }
   },
+  "engineType": "SPARK",
   "enlargeYourBits": true,
   "outputColumnNameOverrides": {
     "address_first": "address",
@@ -230,6 +315,10 @@
           },
           {
             "name": "address_first",
+            "type": "string"
+          },
+          {
+            "name": "address_cleaned_first",
             "type": "string"
           },
           {
