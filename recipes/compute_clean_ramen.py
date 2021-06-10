@@ -5,7 +5,7 @@ from dataiku import pandasutils as pdu
 from clear_stop_words import clean_text
 
 # Read recipe inputs
-raw_ramen = dataiku.Dataset("raw_ramen")
+raw_ramen = dataiku.Dataset("raw_ramen_locations")
 df = raw_ramen.get_dataframe()
 
 df["review"] = df["review"].apply(clean_text)
