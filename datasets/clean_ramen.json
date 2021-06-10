@@ -59,11 +59,11 @@
     "dimensions": []
   },
   "versionTag": {
-    "versionNumber": 1,
+    "versionNumber": 2,
     "lastModifiedBy": {
       "login": "admin"
     },
-    "lastModifiedOn": 1622801502579
+    "lastModifiedOn": 1623330525281
   },
   "creationTag": {
     "versionNumber": 0,
@@ -96,6 +96,26 @@
       },
       {
         "name": "address",
+        "type": "string"
+      },
+      {
+        "name": "都",
+        "type": "string"
+      },
+      {
+        "name": "市",
+        "type": "string"
+      },
+      {
+        "name": "区",
+        "type": "string"
+      },
+      {
+        "name": "番地",
+        "type": "string"
+      },
+      {
+        "name": "address_cleaned",
         "type": "string"
       },
       {
