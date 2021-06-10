@@ -27,14 +27,6 @@
       "objectType": "RECIPE"
     },
     {
-      "objectId": "lat_lon",
-      "objectType": "DATASET"
-    },
-    {
-      "objectId": "compute_lat_lon",
-      "objectType": "RECIPE"
-    },
-    {
       "objectId": "Zv18PGRj",
       "objectType": "MANAGED_FOLDER"
     },
@@ -48,14 +40,6 @@
     },
     {
       "objectId": "compute_raw_ramen_locations",
-      "objectType": "RECIPE"
-    },
-    {
-      "objectId": "lat_lon_prepared",
-      "objectType": "DATASET"
-    },
-    {
-      "objectId": "compute_lat_lon_prepared",
       "objectType": "RECIPE"
     }
   ],
