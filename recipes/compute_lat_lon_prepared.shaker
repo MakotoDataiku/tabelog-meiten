@@ -38,8 +38,8 @@
       "type": "GeoPointCreator",
       "params": {
         "out_column": "GeoPoint",
-        "lat_column": "longitude",
-        "lon_column": "latitude"
+        "lat_column": "latitude",
+        "lon_column": "longitude"
       },
       "alwaysShowComment": false
     }
@@ -53,16 +53,17 @@
   "analysisColumnData": {},
   "columnWidthsByName": {
     "store_id": 100,
-    "score": 100,
-    "GeoPoint": 211,
     "review_cnt": 100,
     "address": 295,
+    "latitude": 106,
+    "lon": 100,
+    "ward": 100,
+    "score": 100,
+    "GeoPoint": 211,
     "la": 100,
     "review": 300,
-    "latitude": 106,
     "store_name": 134,
     "address_cleaned": 176,
-    "ward": 100,
     "longitude": 113
   },
   "sorting": [],
