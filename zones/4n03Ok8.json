@@ -49,6 +49,14 @@
     {
       "objectId": "compute_raw_ramen_locations",
       "objectType": "RECIPE"
+    },
+    {
+      "objectId": "lat_lon_prepared",
+      "objectType": "DATASET"
+    },
+    {
+      "objectId": "compute_lat_lon_prepared",
+      "objectType": "RECIPE"
     }
   ],
   "shared": [],
