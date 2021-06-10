@@ -73,8 +73,15 @@ def get_translated_reviews(url, max_page = 10):
 
 client = dataiku.api_client()
 project = client.get_project(dataiku.get_custom_variables()['projectKey'])
+
+# -------------------------------------------------------------------------------- NOTEBOOK-CELL: CODE
 project_variables = project.get_variables()
-url = project_variables['standard']['url']
+
+# -------------------------------------------------------------------------------- NOTEBOOK-CELL: CODE
+project_variables
+
+# -------------------------------------------------------------------------------- NOTEBOOK-CELL: CODE
+url = project_variables['local']['url']
 
 # -------------------------------------------------------------------------------- NOTEBOOK-CELL: CODE
 trip_advisor_reviews_df = get_translated_reviews(url, max_page = 1)
