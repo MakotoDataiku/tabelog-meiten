@@ -14,7 +14,7 @@ import geocoder
 # -------------------------------------------------------------------------------- NOTEBOOK-CELL: CODE
 # Read recipe inputs
 raw_ramen = dataiku.Dataset("ramen_by_store_name")
-df = raw_ramen.get_dataframe(limit=100)
+df = raw_ramen.get_dataframe()
 
 # -------------------------------------------------------------------------------- NOTEBOOK-CELL: CODE
 df.head()
