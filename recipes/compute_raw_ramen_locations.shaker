@@ -25,9 +25,90 @@
     },
     "autoRefreshSample": false
   },
-  "explorationFilters": [],
-  "exploreUIParams": {},
-  "steps": [],
+  "explorationFilters": [
+    {
+      "validityFilter": {
+        "column": "番地1",
+        "type": "validity",
+        "params": {
+          "nok": false,
+          "type": "Text",
+          "ok": false,
+          "empty": true
+        }
+      },
+      "column": "番地1",
+      "active": true,
+      "alphanumFilter": {
+        "values": [],
+        "column": "番地1",
+        "type": "alphanum",
+        "params": {
+          "mode": "full_string",
+          "normalization": "exact"
+        }
+      },
+      "type": "columnFilter",
+      "$$hashKey": "object:9244",
+      "facet": {
+        "columnType": "ALPHANUM",
+        "selectedValues": {},
+        "column": "番地1",
+        "sort": "count",
+        "type": "facet",
+        "currentMode": "ALPHANUM"
+      },
+      "currentMode": "FACET"
+    }
+  ],
+  "origin": "PREPARE_RECIPE",
+  "exploreUIParams": {
+    "autoRefresh": true
+  },
+  "steps": [
+    {
+      "preview": false,
+      "metaType": "PROCESSOR",
+      "disabled": false,
+      "type": "RegexpExtractor",
+      "params": {
+        "found_col": false,
+        "extractAllOccurrences": false,
+        "prefix": "都",
+        "column": "address",
+        "pattern": "(.*都)"
+      },
+      "alwaysShowComment": false
+    },
+    {
+      "preview": false,
+      "metaType": "PROCESSOR",
+      "disabled": false,
+      "type": "RegexpExtractor",
+      "params": {
+        "found_col": false,
+        "extractAllOccurrences": false,
+        "prefix": "区",
+        "column": "address",
+        "pattern": "都(.*区)"
+      },
+      "alwaysShowComment": false
+    },
+    {
+      "preview": true,
+      "metaType": "PROCESSOR",
+      "disabled": false,
+      "type": "RegexpExtractor",
+      "params": {
+        "found_col": false,
+        "extractAllOccurrences": false,
+        "prefix": "番地",
+        "column": "address",
+        "pattern": "([0-9]+(-[0-9]+)+)"
+      },
+      "alwaysShowComment": false
+    }
+  ],
   "maxProcessedMemTableBytes": -1,
   "previewMode": "ALL_ROWS",
   "vizSampling": {
@@ -35,7 +116,23 @@
     "autoRefreshSample": false
   },
   "analysisColumnData": {},
-  "columnWidthsByName": {},
+  "columnWidthsByName": {
+    "store_id": 106,
+    "review_cnt": 100,
+    "address": 288,
+    "都1": 100,
+    "番地": 100,
+    "番地1": 100,
+    "ward": 100,
+    "番地2": 100,
+    "1": 100,
+    "score": 100,
+    "found": 100,
+    "review": 300,
+    "review_star": 100,
+    "store_name": 134,
+    "区1": 100
+  },
   "sorting": [],
   "globalSearchQuery": "",
   "coloring": {
