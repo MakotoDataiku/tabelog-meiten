@@ -33,6 +33,10 @@
     {
       "objectId": "compute_lat_lon",
       "objectType": "RECIPE"
+    },
+    {
+      "objectId": "Zv18PGRj",
+      "objectType": "MANAGED_FOLDER"
     }
   ],
   "shared": [],
