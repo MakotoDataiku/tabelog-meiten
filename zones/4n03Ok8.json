@@ -49,10 +49,6 @@
     {
       "objectId": "compute_raw_ramen_locations",
       "objectType": "RECIPE"
-    },
-    {
-      "objectId": "raw_ramen_distinct",
-      "objectType": "DATASET"
     }
   ],
   "shared": [],
