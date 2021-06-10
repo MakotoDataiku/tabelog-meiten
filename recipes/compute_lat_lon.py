@@ -14,7 +14,7 @@ import geocoder
 # -------------------------------------------------------------------------------- NOTEBOOK-CELL: CODE
 # Read recipe inputs
 raw_ramen = dataiku.Dataset("ramen_by_store_name")
-df = raw_ramen.get_dataframe()
+df = raw_ramen.get_dataframe(limit=100)
 
 # -------------------------------------------------------------------------------- NOTEBOOK-CELL: CODE
 df.head()
@@ -30,7 +30,7 @@ def geocoding_lat_lon(address):
         longitude = g.json['raw']['latLng']['lng']
         return latitude, longitude
     except:
-        return np.nan
+        return np.nan, np.nan
 
 # -------------------------------------------------------------------------------- NOTEBOOK-CELL: CODE
 df['latitude'], df['longitude'] = zip(*df['address_cleaned'].map(geocoding_lat_lon))
