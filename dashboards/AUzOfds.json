@@ -63,8 +63,8 @@
             "box": {
               "top": 0,
               "left": 0,
-              "width": 3,
-              "height": 3
+              "width": 12,
+              "height": 14
             },
             "clickAction": "DO_NOTHING",
             "tileParams": {
@@ -87,11 +87,11 @@
   "name": "Tabelogレビュー分析",
   "showGrid": true,
   "versionTag": {
-    "versionNumber": 10,
+    "versionNumber": 11,
     "lastModifiedBy": {
       "login": "admin"
     },
-    "lastModifiedOn": 1623331575749
+    "lastModifiedOn": 1623331589364
   },
   "creationTag": {
     "versionNumber": 0,
