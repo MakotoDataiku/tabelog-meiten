@@ -41,6 +41,14 @@
     {
       "objectId": "compute_Zv18PGRj",
       "objectType": "RECIPE"
+    },
+    {
+      "objectId": "raw_ramen_locations",
+      "objectType": "DATASET"
+    },
+    {
+      "objectId": "compute_raw_ramen_locations",
+      "objectType": "RECIPE"
     }
   ],
   "shared": [],
