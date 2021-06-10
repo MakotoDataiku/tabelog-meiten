@@ -25,42 +25,7 @@
     },
     "autoRefreshSample": false
   },
-  "explorationFilters": [
-    {
-      "validityFilter": {
-        "column": "番地1",
-        "type": "validity",
-        "params": {
-          "nok": false,
-          "type": "Text",
-          "ok": false,
-          "empty": true
-        }
-      },
-      "column": "番地1",
-      "active": true,
-      "alphanumFilter": {
-        "values": [],
-        "column": "番地1",
-        "type": "alphanum",
-        "params": {
-          "mode": "full_string",
-          "normalization": "exact"
-        }
-      },
-      "type": "columnFilter",
-      "$$hashKey": "object:9244",
-      "facet": {
-        "columnType": "ALPHANUM",
-        "selectedValues": {},
-        "column": "番地1",
-        "sort": "count",
-        "type": "facet",
-        "currentMode": "ALPHANUM"
-      },
-      "currentMode": "FACET"
-    }
-  ],
+  "explorationFilters": [],
   "origin": "PREPARE_RECIPE",
   "exploreUIParams": {
     "autoRefresh": true
@@ -88,6 +53,20 @@
       "params": {
         "found_col": false,
         "extractAllOccurrences": false,
+        "prefix": "市",
+        "column": "address",
+        "pattern": "都(.*市)"
+      },
+      "alwaysShowComment": false
+    },
+    {
+      "preview": false,
+      "metaType": "PROCESSOR",
+      "disabled": false,
+      "type": "RegexpExtractor",
+      "params": {
+        "found_col": false,
+        "extractAllOccurrences": false,
         "prefix": "区",
         "column": "address",
         "pattern": "都(.*区)"
@@ -95,7 +74,7 @@
       "alwaysShowComment": false
     },
     {
-      "preview": true,
+      "preview": false,
       "metaType": "PROCESSOR",
       "disabled": false,
       "type": "RegexpExtractor",
@@ -104,7 +83,86 @@
         "extractAllOccurrences": false,
         "prefix": "番地",
         "column": "address",
-        "pattern": "([0-9]+(-[0-9]+)+)"
+        "pattern": "([0-9-]+)"
+      },
+      "alwaysShowComment": false
+    },
+    {
+      "preview": false,
+      "metaType": "PROCESSOR",
+      "disabled": false,
+      "type": "PythonUDF",
+      "params": {
+        "mode": "CELL",
+        "envSelection": {
+          "envMode": "INHERIT"
+        },
+        "stopOnError": true,
+        "pythonSourceCode": "# Modify the process function to fit your needs\nimport re\ndef process(row):\n    # In \u0027cell\u0027 mode, the process function must return\n    # a single cell value for each row,\n    # which will be affected to a new column.\n    # The \u0027row\u0027 argument is a dictionary of columns of the row\n    match \u003d re.search(r\"([0-9-])+\", row[\"address\"]).group()\n    return match\n",
+        "useKernel": false,
+        "column": "番地",
+        "sourceColumnsList": [],
+        "usePythonUnicode": true,
+        "vectorSize": 256,
+        "vectorize": false
+      },
+      "alwaysShowComment": false
+    },
+    {
+      "preview": false,
+      "metaType": "PROCESSOR",
+      "disabled": false,
+      "type": "ColumnsSelector",
+      "params": {
+        "columns": [
+          "番地"
+        ],
+        "keep": false,
+        "appliesTo": "SINGLE_COLUMN"
+      },
+      "alwaysShowComment": false
+    },
+    {
+      "preview": false,
+      "metaType": "PROCESSOR",
+      "disabled": false,
+      "type": "ColumnRenamer",
+      "params": {
+        "renamings": [
+          {
+            "from": "都1",
+            "to": "都"
+          },
+          {
+            "from": "市1",
+            "to": "市"
+          },
+          {
+            "from": "区1",
+            "to": "区"
+          },
+          {
+            "from": "番地1",
+            "to": "番地"
+          }
+        ]
+      },
+      "alwaysShowComment": false
+    },
+    {
+      "preview": false,
+      "metaType": "PROCESSOR",
+      "disabled": false,
+      "type": "ColumnReorder",
+      "params": {
+        "referenceColumn": "番地",
+        "columns": [
+          "都",
+          "市",
+          "区"
+        ],
+        "reorderAction": "BEFORE_COLUMN",
+        "appliesTo": "COLUMNS"
       },
       "alwaysShowComment": false
     }
@@ -119,19 +177,24 @@
   "columnWidthsByName": {
     "store_id": 106,
     "review_cnt": 100,
+    "市": 100,
     "address": 288,
+    "市1": 100,
     "都1": 100,
     "番地": 100,
     "番地1": 100,
     "ward": 100,
-    "番地2": 100,
+    "番地2": 121,
     "1": 100,
     "score": 100,
     "found": 100,
     "review": 300,
     "review_star": 100,
     "store_name": 134,
-    "区1": 100
+    "区": 100,
+    "区1": 100,
+    "番地found": 100,
+    "都": 100
   },
   "sorting": [],
   "globalSearchQuery": "",
