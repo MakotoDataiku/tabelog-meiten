@@ -1,22 +1,40 @@
+# -------------------------------------------------------------------------------- NOTEBOOK-CELL: CODE
 # -*- coding: utf-8 -*-
 import dataiku
 import pandas as pd, numpy as np
 from dataiku import pandasutils as pdu
 from get_lat_lon import get_lat_lon_from_address
 
+import tqdm
+import requests
+from bs4 import BeautifulSoup
+import time
+import geocoder
+
+# -------------------------------------------------------------------------------- NOTEBOOK-CELL: CODE
 # Read recipe inputs
-raw_ramen = dataiku.Dataset("raw_ramen")
+raw_ramen = dataiku.Dataset("ramen_by_store_name")
 df = raw_ramen.get_dataframe()
 
+# -------------------------------------------------------------------------------- NOTEBOOK-CELL: CODE
+df.head()
 
+# -------------------------------------------------------------------------------- NOTEBOOK-CELL: CODE
+addresses = df['address_cleaned'].tolist()
 
-# Compute recipe outputs from inputs
-# TODO: Replace this part by your actual code that computes the output, as a Pandas dataframe
-# NB: DSS also supports other kinds of APIs for reading and writing data. Please see doc.
+# -------------------------------------------------------------------------------- NOTEBOOK-CELL: CODE
+def geocoding_lat_lon(address):
+    try:
+        g = geocoder.mapquest(address, key='eOUDWog4FKpjWQmPZWRCzhiKr3GW0mEr')
+        latitude = g.json['raw']['latLng']['lat']
+        longitude = g.json['raw']['latLng']['lng']
+        return latitude, longitude
+    except:
+        return np.nan
 
-lat_lon_df = raw_ramen_df # For this sample code, simply copy input to output
+# -------------------------------------------------------------------------------- NOTEBOOK-CELL: CODE
+df['latitude'], df['longitude'] = zip(*df['address_cleaned'].map(geocoding_lat_lon))
 
-
-# Write recipe outputs
+# -------------------------------------------------------------------------------- NOTEBOOK-CELL: CODE
 lat_lon = dataiku.Dataset("lat_lon")
-lat_lon.write_with_schema(lat_lon_df)
+lat_lon.write_with_schema(df)
