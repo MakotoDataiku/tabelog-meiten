@@ -30,14 +30,14 @@
   ],
   "owner": "admin",
   "listed": true,
-  "name": "「隠れた名店」発見器\u0027s default dashboard",
+  "name": "あなたの隠れた名店は？",
   "showGrid": true,
   "versionTag": {
-    "versionNumber": 6,
+    "versionNumber": 7,
     "lastModifiedBy": {
       "login": "admin"
     },
-    "lastModifiedOn": 1623313537004
+    "lastModifiedOn": 1623313560259
   },
   "creationTag": {
     "versionNumber": 0,
