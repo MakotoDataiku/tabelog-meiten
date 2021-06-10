@@ -59,11 +59,11 @@
     "dimensions": []
   },
   "versionTag": {
-    "versionNumber": 2,
+    "versionNumber": 3,
     "lastModifiedBy": {
       "login": "admin"
     },
-    "lastModifiedOn": 1623327035947
+    "lastModifiedOn": 1623327965449
   },
   "creationTag": {
     "versionNumber": 0,
@@ -115,6 +115,10 @@
         "type": "string"
       },
       {
+        "name": "address_cleaned",
+        "type": "string"
+      },
+      {
         "name": "score",
         "type": "double"
       },
@@ -132,6 +136,18 @@
       },
       {
         "name": "review_star",
+        "type": "string"
+      },
+      {
+        "name": "addresslat",
+        "type": "double"
+      },
+      {
+        "name": "addresslon",
+        "type": "double"
+      },
+      {
+        "name": "addressgranularity",
         "type": "string"
       }
     ],
