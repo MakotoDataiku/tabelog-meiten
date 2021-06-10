@@ -186,7 +186,7 @@
     {
       "preview": false,
       "metaType": "PROCESSOR",
-      "disabled": false,
+      "disabled": true,
       "type": "Geocoder",
       "params": {
         "inCol": "address_cleaned",
