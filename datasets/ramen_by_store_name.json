@@ -60,11 +60,11 @@
     "dimensions": []
   },
   "versionTag": {
-    "versionNumber": 7,
+    "versionNumber": 8,
     "lastModifiedBy": {
       "login": "admin"
     },
-    "lastModifiedOn": 1622802211503
+    "lastModifiedOn": 1623330587723
   },
   "creationTag": {
     "versionNumber": 0,
@@ -105,6 +105,10 @@
       },
       {
         "name": "address",
+        "type": "string"
+      },
+      {
+        "name": "address_cleaned_first",
         "type": "string"
       },
       {
