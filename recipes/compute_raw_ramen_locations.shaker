@@ -165,6 +165,36 @@
         "appliesTo": "COLUMNS"
       },
       "alwaysShowComment": false
+    },
+    {
+      "preview": false,
+      "metaType": "PROCESSOR",
+      "disabled": false,
+      "type": "ColumnsConcat",
+      "params": {
+        "outputColumn": "address_cleaned",
+        "columns": [
+          "都",
+          "市",
+          "区",
+          "番地"
+        ],
+        "join": ""
+      },
+      "alwaysShowComment": false
+    },
+    {
+      "preview": false,
+      "metaType": "PROCESSOR",
+      "disabled": false,
+      "type": "Geocoder",
+      "params": {
+        "inCol": "address_cleaned",
+        "apiKey": "eOUDWog4FKpjWQmPZWRCzhiKr3GW0mEr",
+        "api": "MAPQUEST",
+        "prefixOutCol": "address"
+      },
+      "alwaysShowComment": false
     }
   ],
   "maxProcessedMemTableBytes": -1,
@@ -175,23 +205,28 @@
   },
   "analysisColumnData": {},
   "columnWidthsByName": {
-    "store_id": 106,
+    "": 100,
     "review_cnt": 100,
     "市": 100,
-    "address": 288,
-    "市1": 100,
+    "addresslat": 120,
     "都1": 100,
     "番地": 100,
-    "番地1": 100,
     "ward": 100,
-    "番地2": 121,
-    "1": 100,
     "score": 100,
     "found": 100,
     "review": 300,
     "review_star": 100,
     "store_name": 134,
+    "store_id": 106,
+    "address": 288,
+    "市1": 100,
+    "番地1": 100,
+    "addressgranularity": 150,
+    "番地2": 121,
+    "1": 100,
+    "addresslon": 120,
     "区": 100,
+    "address_cleaned": 289,
     "区1": 100,
     "番地found": 100,
     "都": 100
