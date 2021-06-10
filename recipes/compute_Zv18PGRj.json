@@ -3,7 +3,20 @@
   "neverRecomputeExistingPartitions": false,
   "optionalDependencies": false,
   "params": {
-    "customConfig": {},
+    "customConfig": {
+      "language": "ja",
+      "remove_stopwords": true,
+      "remove_punctuation": true,
+      "case_insensitive": true,
+      "max_words": 1000,
+      "color_palette": "default",
+      "color_list": [
+        "#1F77B4",
+        "#FF7F0E",
+        "#2CA02C"
+      ],
+      "text_column": "review"
+    },
     "containerSelection": {
       "containerMode": "INHERIT"
     }
@@ -37,11 +50,11 @@
   },
   "labels": [],
   "versionTag": {
-    "versionNumber": 0,
+    "versionNumber": 1,
     "lastModifiedBy": {
       "login": "admin"
     },
-    "lastModifiedOn": 1623313182209
+    "lastModifiedOn": 1623313218988
   },
   "creationTag": {
     "versionNumber": 0,
