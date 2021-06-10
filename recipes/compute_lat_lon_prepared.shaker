@@ -38,8 +38,8 @@
       "type": "GeoPointCreator",
       "params": {
         "out_column": "GeoPoint",
-        "lat_column": "latitude",
-        "lon_column": "longitude"
+        "lat_column": "longitude",
+        "lon_column": "latitude"
       },
       "alwaysShowComment": false
     }
@@ -57,6 +57,7 @@
     "GeoPoint": 211,
     "review_cnt": 100,
     "address": 295,
+    "la": 100,
     "review": 300,
     "latitude": 106,
     "store_name": 134,
