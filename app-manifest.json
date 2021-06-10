@@ -89,5 +89,7 @@
   "label": "「隠れた名店」を探してみた",
   "shortDesc": "The template *「隠れた名店」を探してみた* was created by Makoto Miyazaki on Jun 09th 2021",
   "tags": [],
+  "imgPattern": 4,
+  "showInitials": false,
   "instantiationPermission": "USE_APP_MASTER_PERMISSIONS"
 }
