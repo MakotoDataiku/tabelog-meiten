@@ -60,11 +60,11 @@
   "name": "Tabelogレビュー分析",
   "showGrid": true,
   "versionTag": {
-    "versionNumber": 7,
+    "versionNumber": 8,
     "lastModifiedBy": {
       "login": "admin"
     },
-    "lastModifiedOn": 1623313858942
+    "lastModifiedOn": 1623331498766
   },
   "creationTag": {
     "versionNumber": 0,
