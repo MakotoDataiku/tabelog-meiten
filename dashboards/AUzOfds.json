@@ -53,6 +53,13 @@
         ]
       },
       "showTitle": false
+    },
+    {
+      "id": "tguBk9U",
+      "grid": {
+        "tiles": []
+      },
+      "showTitle": false
     }
   ],
   "owner": "admin",
@@ -60,11 +67,11 @@
   "name": "Tabelogレビュー分析",
   "showGrid": true,
   "versionTag": {
-    "versionNumber": 8,
+    "versionNumber": 9,
     "lastModifiedBy": {
       "login": "admin"
     },
-    "lastModifiedOn": 1623331498766
+    "lastModifiedOn": 1623331523859
   },
   "creationTag": {
     "versionNumber": 0,
