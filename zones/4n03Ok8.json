@@ -37,6 +37,10 @@
     {
       "objectId": "Zv18PGRj",
       "objectType": "MANAGED_FOLDER"
+    },
+    {
+      "objectId": "compute_Zv18PGRj",
+      "objectType": "RECIPE"
     }
   ],
   "shared": [],
