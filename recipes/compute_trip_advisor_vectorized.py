@@ -26,14 +26,14 @@ tagger_path = '-Owakati -d ' + wakati_folder
 df.head()
 
 # -------------------------------------------------------------------------------- NOTEBOOK-CELL: CODE
-tagger = MeCab.Tagger(tagger_path)#タグはMeCab.Tagger（neologd辞書）を使用
+tagger = MeCab.Tagger(tagger_path)
 tagger.parse('')
 
 # -------------------------------------------------------------------------------- NOTEBOOK-CELL: CODE
 def tokenize_ja(text, lower):
     node = tagger.parseToNode(str(text))
     while node:
-        if lower and node.feature.split(',')[0] in ["名詞","形容詞"]:#分かち書きで取得する品詞を指定
+        if lower and node.feature.split(',')[0] in ["名詞","形容詞"]:
             yield node.surface.lower()
         node = node.next
 def tokenize(content, token_min_len, token_max_len, lower):
@@ -43,7 +43,6 @@ def tokenize(content, token_min_len, token_max_len, lower):
     ]
 
 # -------------------------------------------------------------------------------- NOTEBOOK-CELL: CODE
-#コーパス作成
 wakati_ramen_text = []
 for i in df['review']:
     txt = tokenize(i, 2, 10000, True)
@@ -56,9 +55,6 @@ vocab = list(set([item for sublist in wakati_ramen_text for item in sublist]))
 len(vocab)
 
 # -------------------------------------------------------------------------------- NOTEBOOK-CELL: CODE
-# max_vocab = 30000 #40000にしても結果は同じだった
-# vocab = list(word2vec_ramen_model.wv.vocab.keys())[:max_vocab]
-# vectors = [ramen_model.wv[word] for word in vocab]
 vectors = []
 vocabs = []
 for word in vocab:
