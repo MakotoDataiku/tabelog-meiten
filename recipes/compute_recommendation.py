@@ -6,6 +6,8 @@ from dataiku import pandasutils as pdu
 from gensim.models import word2vec
 import itertools
 from itertools import product
+from itertools import combinations 
+from tqdm import tqdm
 
 # -------------------------------------------------------------------------------- NOTEBOOK-CELL: CODE
 def cos_sim(v1, v2):
@@ -32,9 +34,6 @@ for i,data in enumerate(f):
     words_ta.append(word)
 
 # -------------------------------------------------------------------------------- NOTEBOOK-CELL: CODE
-words_ta
-
-# -------------------------------------------------------------------------------- NOTEBOOK-CELL: CODE
 word_ta_vectors = [ramen_model.wv[w] for w in words_ta]
 
 # -------------------------------------------------------------------------------- NOTEBOOK-CELL: CODE
@@ -48,21 +47,50 @@ for a in arr:
 word_list.append(words_ta)
 
 # -------------------------------------------------------------------------------- NOTEBOOK-CELL: CODE
-uniq_words = list(set(itertools.chain.from_iterable(word_list)))    
+i = 0
+for l in word_list:
+    for w in l:
+        i += 1
+
+# -------------------------------------------------------------------------------- NOTEBOOK-CELL: CODE
+print("{} words detected before removing duplicates".format(i))
+
+# -------------------------------------------------------------------------------- NOTEBOOK-CELL: CODE
+uniq_words = list(set(itertools.chain.from_iterable(word_list)))
+
+# -------------------------------------------------------------------------------- NOTEBOOK-CELL: CODE
+print("{} words detected after removing duplicates".format(len(uniq_words)))
+
+# -------------------------------------------------------------------------------- NOTEBOOK-CELL: CODE
+def combine(arr, s): 
+    return list(combinations(arr, s))
+
+# -------------------------------------------------------------------------------- NOTEBOOK-CELL: CODE
+len(combine(uniq_words, 2))
+
+# -------------------------------------------------------------------------------- NOTEBOOK-CELL: CODE
+#scores = {}
+#for word1, word2 in product(uniq_words, repeat=2):
+#    # print(word1, word2)
+#    scores[(word1, word2)] =  cos_sim(ramen_model.wv[word1], ramen_model.wv[word2])
+
+# -------------------------------------------------------------------------------- NOTEBOOK-CELL: CODE
 scores = {}
-for word1, word2 in product(uniq_words, repeat=2):
+for touple in tqdm(combine(uniq_words, 2)):
     # print(word1, word2)
-    scores[(word1, word2)] =  cos_sim(ramen_model.wv[word1], ramen_model.wv[word2])
+    similarity = cos_sim(ramen_model.wv[touple[0]], ramen_model.wv[touple[1]])
+    scores[(touple[0], touple[1])] = similarity
+    scores[(touple[1], touple[0])] = similarity
 
 # -------------------------------------------------------------------------------- NOTEBOOK-CELL: CODE
-scores
+# score of the same words is 1
+for w in tqdm(uniq_words):
+    scores[(w, w)] = 1
 
 # -------------------------------------------------------------------------------- NOTEBOOK-CELL: CODE
-df
-
-# -------------------------------------------------------------------------------- NOTEBOOK-CELL: CODE
+"""
 avg_avg_scores = []
-for word_2 in words_ta:
+for word_2 in tqdm(words_ta):
     avg_scores = []
     for review in df["texts_tfidf_sorted_top20"].values:
         review = review.replace("'", "").replace("[", "").replace("]", "").replace(" ", "").split(",")
@@ -72,10 +100,11 @@ for word_2 in words_ta:
             word_cross_scores.append(score)
         avg_scores.append(np.mean(word_cross_scores))
     avg_avg_scores.append(np.mean(avg_scores))
+"""
 
 # -------------------------------------------------------------------------------- NOTEBOOK-CELL: CODE
 avg_avg_scores = []
-for review in df["texts_tfidf_sorted_top20"].values:
+for review in tqdm(df["texts_tfidf_sorted_top20"].values):
     review = review.replace("'", "").replace("[", "").replace("]", "").replace(" ", "").split(",")
     avg_scores = []
     for word_1 in review:
