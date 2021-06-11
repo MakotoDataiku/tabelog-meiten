@@ -25,14 +25,14 @@ tagger_path
 df_ramen.head()
 
 # -------------------------------------------------------------------------------- NOTEBOOK-CELL: CODE
-tagger = MeCab.Tagger(tagger_path)#タグはMeCab.Tagger（neologd辞書）を使用
+tagger = MeCab.Tagger(tagger_path)
 tagger.parse('')
 
 # -------------------------------------------------------------------------------- NOTEBOOK-CELL: CODE
 def tokenize_ja(text, lower):
     node = tagger.parseToNode(str(text))
     while node:
-        if lower and node.feature.split(',')[0] in ["名詞","形容詞"]:#分かち書きで取得する品詞を指定
+        if lower and node.feature.split(',')[0] in ["名詞","形容詞"]:
             yield node.surface.lower()
         node = node.next
 def tokenize(content, token_min_len, token_max_len, lower):
@@ -42,7 +42,6 @@ def tokenize(content, token_min_len, token_max_len, lower):
     ]
 
 # -------------------------------------------------------------------------------- NOTEBOOK-CELL: CODE
-#コーパス作成
 wakati_ramen_text = []
 for i in df_ramen['review']:
     txt = tokenize(i, 2, 10000, True)
@@ -50,15 +49,12 @@ for i in df_ramen['review']:
 np.savetxt(text_folder + "/ramen_corpus.txt", wakati_ramen_text, fmt = '%s', delimiter = ',')
 
 # -------------------------------------------------------------------------------- NOTEBOOK-CELL: CODE
-# モデル作成
 word2vec_ramen_model = word2vec.Word2Vec(wakati_ramen_text, sg = 1, size = 300, window = 5, min_count = 5, iter = 100, workers = 3)
-#sg（0: CBOW, 1: skip-gram）,size（ベクトルの次元数）,window（学習に使う前後の単語数）,min_count（n回未満登場する単語を破棄）,iter（トレーニング反復回数）
 
 # -------------------------------------------------------------------------------- NOTEBOOK-CELL: CODE
-# モデルのセーブ
 word2vec_ramen_model.save(w2v_folder+"/word2vec_ramen_model.model")
 
-max_vocab = 30000 #40000にしても結果は同じだった
+max_vocab = 30000
 vocab = list(word2vec_ramen_model.wv.vocab.keys())[:max_vocab]
 vectors = [word2vec_ramen_model.wv[word] for word in vocab]
 
