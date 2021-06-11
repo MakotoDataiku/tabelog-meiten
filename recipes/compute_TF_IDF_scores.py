@@ -69,8 +69,7 @@ test_model.save(path_tf_idf)
 corpus_tfidf = test_model[corpus] # apply model to the corpus (just like 'transform' in scikit-learn)
 
 # -------------------------------------------------------------------------------- NOTEBOOK-CELL: CODE
-# id->単語へ変換
-texts_tfidf = [] # id -> 単語表示に変えた文書ごとのTF-IDF
+texts_tfidf = []
 for doc in corpus_tfidf:
     text_tfidf = []
     for word in doc:
@@ -81,8 +80,8 @@ from operator import itemgetter
 
 texts_tfidf_sorted_top20 = []
 
-# TF-IDF値を高い順に並び替え上位単語20個に絞る。
-# 各ラーメン店のレビューにおいて、TF-IDF値の高い20単語だけが残る。
+# Sort TF-IDF words
+# Keep the top 20 words in each review
 for i in range(len(texts_tfidf)):
     soted = sorted(texts_tfidf[i], key=itemgetter(1), reverse=True)
     soted_top20 = soted[:20]
