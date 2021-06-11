@@ -69,12 +69,6 @@ def combine(arr, s):
 len(combine(uniq_words, 2))
 
 # -------------------------------------------------------------------------------- NOTEBOOK-CELL: CODE
-#scores = {}
-#for word1, word2 in product(uniq_words, repeat=2):
-#    # print(word1, word2)
-#    scores[(word1, word2)] =  cos_sim(ramen_model.wv[word1], ramen_model.wv[word2])
-
-# -------------------------------------------------------------------------------- NOTEBOOK-CELL: CODE
 scores = {}
 for touple in tqdm(combine(uniq_words, 2)):
     # print(word1, word2)
@@ -87,20 +81,7 @@ for touple in tqdm(combine(uniq_words, 2)):
 for w in tqdm(uniq_words):
     scores[(w, w)] = 1
 
-# -------------------------------------------------------------------------------- NOTEBOOK-CELL: CODE
-"""
-avg_avg_scores = []
-for word_2 in tqdm(words_ta):
-    avg_scores = []
-    for review in df["texts_tfidf_sorted_top20"].values:
-        review = review.replace("'", "").replace("[", "").replace("]", "").replace(" ", "").split(",")
-        word_cross_scores = []
-        for word_1 in review:
-            score = scores[(word_1, word_2)]
-            word_cross_scores.append(score)
-        avg_scores.append(np.mean(word_cross_scores))
-    avg_avg_scores.append(np.mean(avg_scores))
-"""
+
 
 # -------------------------------------------------------------------------------- NOTEBOOK-CELL: CODE
 avg_avg_scores = []
